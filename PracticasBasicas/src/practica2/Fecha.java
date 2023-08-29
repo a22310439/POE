@@ -75,8 +75,9 @@ public class Fecha {
             }
         }
         
-        if(getMes() == 2 && (getAño() % 4) == 0 && getDia() == 29){
-            System.out.println("El anio es bisiesto, no puede tener 29 dias.");
+        if(getMes() == 2 && (getAño() % 4) != 0 && getDia() == 29){
+            System.out.println("El anio no es bisiesto y no puede tener 29 dias, intentalo de nuevo.");
+            return 0;
         }
         
         return 1;

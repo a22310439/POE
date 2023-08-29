@@ -88,6 +88,8 @@ public class Empleado {
             cantidadFinal = cantidadFinal + (cantidadFinal * 0.3);
         }
         
+        cantidadFinal = cantidadFinal - (cantidadFinal * 0.16);
+        
         return cantidadFinal;
     }
     
