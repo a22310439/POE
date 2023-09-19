@@ -1,4 +1,4 @@
-package test;
+package testvisual;
 
 
 public class JVisual extends javax.swing.JFrame {
@@ -26,7 +26,6 @@ public class JVisual extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Programa chingón");
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(500, 500));
 
         btnCancelar.setText("Botón presionable");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
