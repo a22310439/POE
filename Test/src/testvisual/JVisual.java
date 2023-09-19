@@ -2,7 +2,7 @@ package testvisual;
 
 
 public class JVisual extends javax.swing.JFrame {
-    int i =0;
+    int i = 0;
 
     /**
      * Creates new form JVisual
@@ -20,17 +20,17 @@ public class JVisual extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnCancelar = new javax.swing.JButton();
+        btnPresionable = new javax.swing.JButton();
         txtTitulo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Programa chingón");
         setBackground(new java.awt.Color(255, 255, 255));
 
-        btnCancelar.setText("Botón presionable");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btnPresionable.setText("Botón presionable que se presiona");
+        btnPresionable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
+                btnPresionableActionPerformed(evt);
             }
         });
 
@@ -43,13 +43,14 @@ public class JVisual extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCancelar)
-                .addGap(186, 186, 186))
             .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(136, 136, 136)
+                        .addComponent(btnPresionable)))
                 .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -58,14 +59,14 @@ public class JVisual extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
-                .addComponent(btnCancelar)
+                .addComponent(btnPresionable)
                 .addGap(87, 87, 87))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    private void btnPresionableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPresionableActionPerformed
         // TODO add your handling code here:
         switch(i){
             case 0:
@@ -81,15 +82,14 @@ public class JVisual extends javax.swing.JFrame {
                 txtTitulo.setText("AAAAAAAAAAAAAAAAAAAA");
                 break;
             case 4:
-                txtTitulo.setText("Presiona una vez más ese botón"
-                        + "\n para mandarte al chile!");
+                txtTitulo.setText("Presiona una vez más ese botón para mandarte al chile!");
                 break;
             case 5:
-                System.exit(WIDTH);
+                System.exit(0);
                 break;
         }
         i++;
-    }//GEN-LAST:event_btnCancelarActionPerformed
+    }//GEN-LAST:event_btnPresionableActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,7 +127,7 @@ public class JVisual extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnPresionable;
     private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables
 }
