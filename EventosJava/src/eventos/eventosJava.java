@@ -31,12 +31,30 @@ public class eventosJava extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnIngresar = new javax.swing.JButton();
         txtInfo = new javax.swing.JTextField();
-        btnMostrar = new javax.swing.JButton();
+        txtUser = new javax.swing.JTextField();
+        lblUsuario = new javax.swing.JLabel();
+        lblContra = new javax.swing.JLabel();
+        txtPass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(400, 336));
 
+        btnIngresar.setText("Ingresar");
+        btnIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnIngresarMouseEntered(evt);
+            }
+        });
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
+
+        txtInfo.setEditable(false);
+        txtInfo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtInfo.setText("Ingrese sus credenciales");
         txtInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtInfoActionPerformed(evt);
@@ -51,17 +69,23 @@ public class eventosJava extends javax.swing.JFrame {
             }
         });
 
-        btnMostrar.setText("Mostrar");
-        btnMostrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnMostrarMouseEntered(evt);
-            }
-        });
-        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
+        txtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMostrarActionPerformed(evt);
+                txtUserActionPerformed(evt);
             }
         });
+        txtUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUserKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUserKeyTyped(evt);
+            }
+        });
+
+        lblUsuario.setText("Usuario");
+
+        lblContra.setText("Contraseña");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -70,55 +94,90 @@ public class eventosJava extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(txtInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(149, 149, 149)
-                        .addComponent(btnMostrar)))
-                .addContainerGap(95, Short.MAX_VALUE))
+                        .addComponent(btnIngresar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                            .addComponent(lblUsuario)
+                            .addComponent(lblContra)
+                            .addComponent(txtPass)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(txtInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addContainerGap(32, Short.MAX_VALUE)
                 .addComponent(txtInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
-                .addComponent(btnMostrar)
+                .addGap(18, 18, 18)
+                .addComponent(lblUsuario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblContra)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(btnIngresar)
                 .addGap(71, 71, 71))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUserActionPerformed
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        // TODO add your handling code here:
+        txtInfo.setText("Usuario ingresado correctamente! Bienvenido, " + txtUser.getText());
+    }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void txtUserKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUserKeyPressed
+
+    private void txtUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUserKeyTyped
+
+    private void btnIngresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseEntered
+        // TODO add your handling code here:
+        if(!((txtUser.getText().equals("Alumno") && txtPass.getText().equals("CETIAlumno")) || (txtUser.getText().equals("Maestro") && txtPass.getText().equals("CETIMaestro")))){
+            btnIngresar.setLocation(random.nextInt(0, 350), random.nextInt(200, 350));
+        }
+        /*if(!credencialesCorrectas()){
+        btnIngresar.setLocation(random.nextInt(0, 350), random.nextInt(200, 350));
+        }*/
+    }//GEN-LAST:event_btnIngresarMouseEntered
+
     private void txtInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInfoActionPerformed
         // TODO add your handling code here:
-        System.out.println(evt.toString());
     }//GEN-LAST:event_txtInfoActionPerformed
-
-    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
-        // TODO add your handling code here:
-        txtInfo.setText("Usuario ingresado correctamente!");
-    }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void txtInfoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInfoKeyPressed
         // TODO add your handling code here:
-        System.out.println(evt.getKeyChar() + " " + evt.getKeyCode());
     }//GEN-LAST:event_txtInfoKeyPressed
 
     private void txtInfoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInfoKeyTyped
         // TODO add your handling code here:
     }//GEN-LAST:event_txtInfoKeyTyped
 
-    private void btnMostrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarMouseEntered
-        // TODO add your handling code here:
-        if(!"Inuyasha123".equals(txtInfo.getText())){
-            btnMostrar.setLocation(random.nextInt(0, 400), random.nextInt(200, 300));
-            while(btnMostrar.getY() > 400){
-                btnMostrar.setLocation(random.nextInt(0, 400), random.nextInt(200, 300));
-            }
+    public boolean credencialesCorrectas(){
+        if(txtUser.getText().equals("Alumno") && txtPass.getText().equals("CETIAlumno")){
+            return true;
+        }else if(txtUser.getText().equals("Maestro") && txtPass.getText().equals("CETIMaestro")){
+            return true;
+        }else{
+            return false;
         }
-    }//GEN-LAST:event_btnMostrarMouseEntered
-
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -155,7 +214,11 @@ public class eventosJava extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnMostrar;
+    private javax.swing.JButton btnIngresar;
+    private javax.swing.JLabel lblContra;
+    private javax.swing.JLabel lblUsuario;
     private javax.swing.JTextField txtInfo;
+    private javax.swing.JPasswordField txtPass;
+    private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }
