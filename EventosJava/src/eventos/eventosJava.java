@@ -21,6 +21,8 @@ public class eventosJava extends javax.swing.JFrame {
     public eventosJava() {
         initComponents();
     }
+    
+    Random random = new Random();
 
     /**
      * This method is called from within the constructor to initialize the form.
