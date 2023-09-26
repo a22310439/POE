@@ -4,6 +4,8 @@
  */
 package eventos;
 
+import java.util.Random;
+
 /**
  *
  * @author Asthok
@@ -13,6 +15,9 @@ public class eventosJava extends javax.swing.JFrame {
     /**
      * Creates new form eventosJava
      */
+    
+    Random random = new Random();
+    
     public eventosJava() {
         initComponents();
     }
@@ -30,6 +35,7 @@ public class eventosJava extends javax.swing.JFrame {
         btnMostrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(400, 336));
 
         txtInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +97,7 @@ public class eventosJava extends javax.swing.JFrame {
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
-        System.out.println(evt.toString());
+        txtInfo.setText("Usuario ingresado correctamente!");
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void txtInfoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInfoKeyPressed
@@ -105,8 +111,11 @@ public class eventosJava extends javax.swing.JFrame {
 
     private void btnMostrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMostrarMouseEntered
         // TODO add your handling code here:
-        if(txtInfo.getText() != "Mover"){
-            btnMostrar.setLocation((int)(Math.random()*100),(int)(Math.random()*100));
+        if(!"Inuyasha123".equals(txtInfo.getText())){
+            btnMostrar.setLocation(random.nextInt(0, 400), random.nextInt(200, 300));
+            while(btnMostrar.getY() > 400){
+                btnMostrar.setLocation(random.nextInt(0, 400), random.nextInt(200, 300));
+            }
         }
     }//GEN-LAST:event_btnMostrarMouseEntered
 
