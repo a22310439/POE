@@ -117,7 +117,7 @@ public class ActividadClase extends javax.swing.JFrame {
             if(txtNombre.getText().equals("Admin") && txtContraseña.getText().equals("Admin")){
                 System.out.println("Bienvenido, Admin!");
             }else
-                System.out.println("No eres Admin,.");
+                System.out.println("No eres Admin.");
         } else if (jrbCliente.isSelected()) {
             if(txtNombre.getText().equals("Cliente") && txtContraseña.getText().equals("Cliente")){
                 System.out.println("Bienvenido, Cliente!");

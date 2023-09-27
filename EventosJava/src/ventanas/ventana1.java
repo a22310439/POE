@@ -15,6 +15,7 @@ public class ventana1 extends javax.swing.JFrame {
 
         lblVentPrin = new javax.swing.JLabel();
         btnIrVent2 = new javax.swing.JButton();
+        txtDato = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -28,6 +29,12 @@ public class ventana1 extends javax.swing.JFrame {
             }
         });
 
+        txtDato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDatoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -35,10 +42,12 @@ public class ventana1 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(148, 148, 148)
                 .addComponent(btnIrVent2)
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblVentPrin, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(107, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtDato)
+                    .addComponent(lblVentPrin, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE))
                 .addGap(88, 88, 88))
         );
         layout.setVerticalGroup(
@@ -48,7 +57,9 @@ public class ventana1 extends javax.swing.JFrame {
                 .addComponent(lblVentPrin)
                 .addGap(18, 18, 18)
                 .addComponent(btnIrVent2)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(txtDato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
 
         pack();
@@ -61,11 +72,22 @@ public class ventana1 extends javax.swing.JFrame {
         }
         
         vent2.setVisible(true);
-        
         this.setVisible(false);
         
     }//GEN-LAST:event_btnIrVent2ActionPerformed
 
+    private void txtDatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDatoActionPerformed
+
+    public String enviarTxtFieldText(){
+        return txtDato.getText();
+    }
+    
+    public void editarTxtFieldText(String dato){
+        txtDato.setText(dato);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -104,5 +126,6 @@ public class ventana1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIrVent2;
     private javax.swing.JLabel lblVentPrin;
+    private javax.swing.JTextField txtDato;
     // End of variables declaration//GEN-END:variables
 }

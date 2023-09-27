@@ -16,10 +16,6 @@ public class ventana2 extends javax.swing.JFrame {
         this.vent1 = vent1;
         initComponents();
     }
-
-    /**
-     * Creates new form ventana2
-     */
     
     public ventana2() {
         initComponents();
@@ -36,8 +32,12 @@ public class ventana2 extends javax.swing.JFrame {
 
         lblVentSec = new javax.swing.JLabel();
         btnIrVent1 = new javax.swing.JButton();
+        txtInfo = new javax.swing.JTextField();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
             }
@@ -53,19 +53,27 @@ public class ventana2 extends javax.swing.JFrame {
             }
         });
 
+        txtInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtInfoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(100, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblVentSec)
-                        .addGap(76, 76, 76))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnIrVent1)
-                        .addGap(146, 146, 146))))
+                        .addGap(146, 146, 146))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblVentSec))
+                        .addGap(76, 76, 76))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -74,7 +82,9 @@ public class ventana2 extends javax.swing.JFrame {
                 .addComponent(lblVentSec)
                 .addGap(18, 18, 18)
                 .addComponent(btnIrVent1)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(txtInfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
 
         pack();
@@ -82,17 +92,26 @@ public class ventana2 extends javax.swing.JFrame {
 
     private void btnIrVent1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrVent1ActionPerformed
         // TODO add your handling code here:
-        
+        vent1.editarTxtFieldText(txtInfo.getText());
         vent1.setVisible(true);
-        
         this.setVisible(false);
     }//GEN-LAST:event_btnIrVent1ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
+        vent1.editarTxtFieldText(txtInfo.getText());
         vent1.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
+    private void txtInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInfoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtInfoActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        txtInfo.setText(vent1.enviarTxtFieldText());
+    }//GEN-LAST:event_formWindowActivated
+    
     /**
      * @param args the command line arguments
      */
@@ -129,5 +148,6 @@ public class ventana2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIrVent1;
     private javax.swing.JLabel lblVentSec;
+    private javax.swing.JTextField txtInfo;
     // End of variables declaration//GEN-END:variables
 }
