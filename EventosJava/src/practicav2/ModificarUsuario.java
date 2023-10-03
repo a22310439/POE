@@ -10,6 +10,7 @@ package practicav2;
  * @author Asthok
  */
 public class ModificarUsuario extends javax.swing.JFrame {
+    
 
     RegistrarUsuario ventRegUsuario = null;
     Usuario usuario1 = null;
@@ -175,6 +176,7 @@ public class ModificarUsuario extends javax.swing.JFrame {
     private void btnGuardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCambiosActionPerformed
         // TODO add your handling code here:
         modificarCambios();
+        ventRegUsuario.editarDatos(usuario1);
         this.setVisible(false);
         ventRegUsuario.setVisible(true);
     }//GEN-LAST:event_btnGuardarCambiosActionPerformed
@@ -186,7 +188,16 @@ public class ModificarUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        // TODO add your handling code here:       
+        // TODO add your handling code here:
+        txtNombre.setText(usuario1.getNombre());
+        txtEdad.setText("" + usuario1.getEdad());
+        txtEmail.setText(usuario1.getEmail());
+        txtTelefono.setText(usuario1.getTelefono());
+        if(usuario1.getCarrera().equals("IDS")){
+            jrbIDS.setSelected(true);
+        }else{
+            jrbMecatronica.setSelected(true);
+        }
     }//GEN-LAST:event_formWindowActivated
 
     public void modificarCambios(){

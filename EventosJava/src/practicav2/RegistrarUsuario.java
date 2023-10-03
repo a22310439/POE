@@ -4,7 +4,6 @@
  */
 package practicav2;
 
-
 /**
  *
  * @author Asthok
@@ -43,7 +42,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         lblCarrera = new javax.swing.JLabel();
         jrbIDS = new javax.swing.JRadioButton();
         jrbMecatronica = new javax.swing.JRadioButton();
-        btnModUsuario = new javax.swing.JButton();
+        btnRegUsuario = new javax.swing.JButton();
         btnMostrarDatos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,10 +71,10 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         grupoCarrera.add(jrbMecatronica);
         jrbMecatronica.setText("Mecatronica");
 
-        btnModUsuario.setText("Modificar Usuario");
-        btnModUsuario.addActionListener(new java.awt.event.ActionListener() {
+        btnRegUsuario.setText("Registrar Usuario");
+        btnRegUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModUsuarioActionPerformed(evt);
+                btnRegUsuarioActionPerformed(evt);
             }
         });
 
@@ -128,7 +127,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                         .addGap(81, 81, 81))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(52, 52, 52)
-                        .addComponent(btnModUsuario)
+                        .addComponent(btnRegUsuario)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jrbMecatronica)
@@ -166,7 +165,7 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                     .addComponent(jrbMecatronica))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnModUsuario)
+                    .addComponent(btnRegUsuario)
                     .addComponent(btnMostrarDatos))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
@@ -174,9 +173,27 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnModUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModUsuarioActionPerformed
+    private void btnRegUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegUsuarioActionPerformed
         // TODO add your handling code here:
+        modificarCambios();
         
+        if(ventModUsuario == null){
+            ventModUsuario = new ModificarUsuario(this, usuario1);
+        }
+        this.setVisible(false);
+        ventModUsuario.setVisible(true);
+    }//GEN-LAST:event_btnRegUsuarioActionPerformed
+
+    private void btnMostrarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarDatosActionPerformed
+        // TODO add your handling code here:
+        System.out.println(usuario1.toString());
+    }//GEN-LAST:event_btnMostrarDatosActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowActivated
+    
+    public void modificarCambios(){
         usuario1.setNombre(txtNombre.getText());
         usuario1.setEdad(Integer.parseInt(txtEdad.getText()));
         usuario1.setEmail(txtEmail.getText());
@@ -187,23 +204,19 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         }else if (jrbMecatronica.isSelected()){
             usuario1.setCarrera("Mecatronica");
         }
-        
-        
-        if(ventModUsuario == null){
-            ventModUsuario = new ModificarUsuario(this, usuario1);
+    }
+    
+    public void editarDatos(Usuario usuario1){
+        this.txtNombre.setText(usuario1.getNombre());
+        this.txtEdad.setText("" + usuario1.getEdad());
+        this.txtEmail.setText(usuario1.getEmail());
+        this.txtTelefono.setText(usuario1.getTelefono());
+        if(usuario1.getCarrera().equals("IDS")){
+            jrbIDS.setSelected(true);
+        }else{
+            jrbMecatronica.setSelected(true);
         }
-        ventModUsuario.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnModUsuarioActionPerformed
-
-    private void btnMostrarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarDatosActionPerformed
-        // TODO add your handling code here:
-        System.out.println(usuario1.toString());
-    }//GEN-LAST:event_btnMostrarDatosActionPerformed
-
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        // TODO add your handling code here:
-    }//GEN-LAST:event_formWindowActivated
+    }
     
     /**
      * @param args the command line arguments
@@ -242,8 +255,8 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnModUsuario;
     private javax.swing.JButton btnMostrarDatos;
+    private javax.swing.JButton btnRegUsuario;
     private javax.swing.ButtonGroup grupoCarrera;
     private javax.swing.JRadioButton jrbIDS;
     private javax.swing.JRadioButton jrbMecatronica;
