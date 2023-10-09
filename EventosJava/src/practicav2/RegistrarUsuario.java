@@ -207,10 +207,10 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }
     
     public void editarDatos(Usuario usuario1){
-        this.txtNombre.setText(usuario1.getNombre());
-        this.txtEdad.setText("" + usuario1.getEdad());
-        this.txtEmail.setText(usuario1.getEmail());
-        this.txtTelefono.setText(usuario1.getTelefono());
+        txtNombre.setText(usuario1.getNombre());
+        txtEdad.setText("" + usuario1.getEdad());
+        txtEmail.setText(usuario1.getEmail());
+        txtTelefono.setText(usuario1.getTelefono());
         if(usuario1.getCarrera().equals("IDS")){
             jrbIDS.setSelected(true);
         }else{

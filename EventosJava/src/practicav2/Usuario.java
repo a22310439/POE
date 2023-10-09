@@ -34,8 +34,6 @@ public class Usuario {
     public void setCarrera(String carrera) {
         this.carrera = carrera;
     }
-
-    
     
     public String getNombre() {
         return nombre;
