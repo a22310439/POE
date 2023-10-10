@@ -1,8 +1,16 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package visual;
 
+/**
+ *
+ * @author jaac2
+ */
 public class Paciente {
     private String nombre;
-    private String apellidos;
+    private String apellido;
     private int edad;
     private String email;
     private String telefono;
@@ -12,29 +20,23 @@ public class Paciente {
     private String tipoSangre;
     private String alergias;
     private String vacunas;
-    private String prioritario;
 
-    public Paciente(String nombre, String apellidos, int edad, String email, String telefono, String sexo, String nacionalidad, String residencia, String tipoSangre, String alergias, String vacunas, String prioritario){
+    public Paciente(String nombre){
         this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.edad = edad;
-        this.email = email;
-        this.telefono = telefono;
-        this.sexo = sexo;
-        this.nacionalidad = nacionalidad;
-        this.residencia = residencia;
-        this.tipoSangre = tipoSangre;
-        this.alergias = alergias;
-        this.vacunas = vacunas;
-        this.prioritario = prioritario;
+        this.apellido = "";
+    }
+
+    public Paciente(String nombre, String apellido){
+        this.nombre = nombre;
+        this.apellido = apellido;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public String getApellidos(){
-        return apellidos;
+    public String getApellido(){
+        return apellido;
     }
     
     public int getEdad() {
@@ -73,16 +75,12 @@ public class Paciente {
         return vacunas;
     }
     
-    public String getPrioritario() {
-        return prioritario;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public void setApellidos(String apellidos){
-        this.apellidos = apellidos;
+    public void setApellido(String apellido){
+        this.apellido = apellido;
     }
     
     public void setEdad(int edad) {
@@ -119,9 +117,5 @@ public class Paciente {
     
     public void setVacunas(String vacunas) {
         this.vacunas = vacunas;
-    }
-
-    public void setPrioritario(String prioritario) {
-        this.prioritario = prioritario;
     }
 }

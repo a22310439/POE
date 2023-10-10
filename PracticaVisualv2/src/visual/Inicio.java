@@ -2,10 +2,18 @@ package visual;
 
 public class Inicio extends javax.swing.JFrame {
 
+    /**
+     * Creates new form Inicio
+     */
+
+    Usuario Admin = new Usuario();
+    char[] contrasena = {'a', 'd', 'm', 'i', 'n'};
     VentanaPacientes ventPacientes = null;
 
     public Inicio() {
         initComponents();
+        Admin.setNombre("admin");
+        Admin.setContrasena(contrasena);
     }
 
     /**
@@ -17,16 +25,26 @@ public class Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblContrasena = new javax.swing.JLabel();
-        btnIngresar = new javax.swing.JButton();
-        pwdContrasena = new javax.swing.JPasswordField();
         lblIniciarSesion = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtInfo = new javax.swing.JTextArea();
+        lblContrasena = new javax.swing.JLabel();
+        btnIngresar = new javax.swing.JButton();
+        pwdContrasena = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblIniciarSesion.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        lblIniciarSesion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIniciarSesion.setText("Iniciar sesión");
+
+        lblUsuario.setText("Usuario");
+
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
 
         lblContrasena.setText("Contraseña:");
 
@@ -43,86 +61,61 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
-        lblIniciarSesion.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        lblIniciarSesion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIniciarSesion.setText("Iniciar sesión");
-
-        lblUsuario.setText("Usuario:");
-
-        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuarioActionPerformed(evt);
-            }
-        });
-
-        txtInfo.setEditable(false);
-        txtInfo.setColumns(20);
-        txtInfo.setRows(2);
-        txtInfo.setText("Bienvenido al sistema de pacientes, ingresa para poder ver o editar la\ninformación de los pacientes.");
-        jScrollPane1.setViewportView(txtInfo);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblContrasena)
+                    .addComponent(lblUsuario))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                    .addComponent(pwdContrasena))
+                .addGap(138, 138, 138))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnIngresar)
-                .addGap(163, 163, 163))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 13, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblUsuario)
-                    .addComponent(lblContrasena))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                    .addComponent(pwdContrasena))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(164, 164, 164))
+            .addComponent(lblIniciarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(lblIniciarSesion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUsuario)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pwdContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblContrasena))
-                .addGap(36, 36, 36)
+                    .addComponent(lblContrasena)
+                    .addComponent(pwdContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
                 .addComponent(btnIngresar)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        // TODO add your handling code here:
         procesoInicio();
-    }//GEN-LAST:event_txtUsuarioActionPerformed
+    }//GEN-LAST:event_btnIngresarActionPerformed
 
     private void pwdContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdContrasenaActionPerformed
-        System.out.println("Se ha ingresado algo en el Password Field");
+        // TODO add your handling code here:
         procesoInicio();
     }//GEN-LAST:event_pwdContrasenaActionPerformed
 
-    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
         procesoInicio();
-    }//GEN-LAST:event_btnIngresarActionPerformed
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,7 +153,7 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     public boolean verificarCredenciales(){
-        if(txtUsuario.getText().equals("admin") && verificarContrasena()){
+        if(txtUsuario.getText().equals(Admin.getNombre()) && verificarContrasena()){
             return true;
         }else{
             return false;
@@ -168,9 +161,8 @@ public class Inicio extends javax.swing.JFrame {
     }
 
     public boolean verificarContrasena(){
-        char[] contrasena = {'a', 'd', 'm', 'i', 'n'}; 
         for (int i=0; i < 5; i++) {
-            if(contrasena [i] != pwdContrasena.getPassword()[i]){
+            if(Admin.getContrasena()[i] != pwdContrasena.getPassword()[i]){
                 return false;
             }
         }
@@ -191,12 +183,10 @@ public class Inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblContrasena;
     private javax.swing.JLabel lblIniciarSesion;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JPasswordField pwdContrasena;
-    private javax.swing.JTextArea txtInfo;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }

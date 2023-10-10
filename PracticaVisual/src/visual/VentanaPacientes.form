@@ -1,0 +1,1336 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="grupoSexoPaciente1">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoSexoPaciente2">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoSexoPaciente3">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="grupoSexoPaciente4">
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[400, 550]"/>
+    </Property>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,38,0,0,1,-112"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+  <SubComponents>
+    <Container class="javax.swing.JTabbedPane" name="tbpnPacientes">
+      <Properties>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[400, 550]"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="tbpnPacientesStateChanged"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="First"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="tabPaciente1">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[400, 550]"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Jorge">
+                <Property name="tabTitle" type="java.lang.String" value="Jorge"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="lblVacunasPaciente1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblAlergiasPaciente1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTipoSangrePaciente1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblResidenciaPaciente1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNacionalidadPaciente1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblSexoPaciente1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblApellidosPaciente1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNombrePaciente1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEdadPaciente1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEmailPaciente1" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTelefonoPaciente1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtNombrePaciente1" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtApellidosPaciente1" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtEdadPaciente1" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtEmailPaciente1" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtTelefonoPaciente1" alignment="0" pref="200" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="rbHombrePaciente1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="rbMujerPaciente1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="rbOtroPaciente1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="txtResidenciaPaciente1" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtNacionalidadPaciente1" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtTipoSangrePaciente1" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtAlergiasPaciente1" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtVacunasPaciente1" alignment="0" pref="200" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="lblPrioritarioPaciente1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblPrioritarioSiNoPaciente1" min="-2" pref="37" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="91" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnCambiarVistaPaciente1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnEditarDatosPaciente1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNombrePaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNombrePaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblApellidosPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtApellidosPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblEdadPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEdadPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtEmailPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEmailPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtTelefonoPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTelefonoPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblSexoPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbHombrePaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbMujerPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbOtroPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNacionalidadPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNacionalidadPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtResidenciaPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblResidenciaPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblTipoSangrePaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtTipoSangrePaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblAlergiasPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtAlergiasPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblVacunasPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtVacunasPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblPrioritarioPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPrioritarioSiNoPaciente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnEditarDatosPaciente1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnCambiarVistaPaciente1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblNombrePaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtNombrePaciente1">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblApellidosPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Apellidos:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtApellidosPaciente1">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEdadPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Edad:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEdadPaciente1">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEmailPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Email:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEmailPaciente1">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblTelefonoPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Telefono:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtTelefonoPaciente1">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblSexoPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sexo:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbHombrePaciente1">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="grupoSexoPaciente1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Hombre"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbMujerPaciente1">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="grupoSexoPaciente1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mujer"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbOtroPaciente1">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="grupoSexoPaciente1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Otro"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblNacionalidadPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nacionalidad:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtNacionalidadPaciente1">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblResidenciaPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Residencia:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtResidenciaPaciente1">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblTipoSangrePaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tipo de Sangre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtTipoSangrePaciente1">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblAlergiasPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Alergias:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtAlergiasPaciente1">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblVacunasPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Vacunas:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtVacunasPaciente1">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPrioritarioPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Prioritario:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPrioritarioSiNoPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="-"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnEditarDatosPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Editar datos del paciente"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarDatosPaciente1ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnCambiarVistaPaciente1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cambiar de vista"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCambiarVistaPaciente1ActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="tabPaciente2">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[400, 550]"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Pedro">
+                <Property name="tabTitle" type="java.lang.String" value="Pedro"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="lblVacunasPaciente2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblAlergiasPaciente2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTipoSangrePaciente2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblResidenciaPaciente2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNacionalidadPaciente2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblSexoPaciente2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblApellidosPaciente2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNombrePaciente2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEdadPaciente2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEmailPaciente2" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTelefonoPaciente2" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="txtNombrePaciente2" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtApellidosPaciente2" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtEdadPaciente2" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtEmailPaciente2" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtTelefonoPaciente2" alignment="0" pref="200" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="rbHombrePaciente2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="rbMujerPaciente2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="rbOtroPaciente2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="txtResidenciaPaciente2" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtNacionalidadPaciente2" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtTipoSangrePaciente2" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtAlergiasPaciente2" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      <Component id="txtVacunasPaciente2" alignment="0" pref="200" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="lblPrioritarioPaciente2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblPrioritarioSiNoPaciente2" min="-2" pref="37" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="91" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnEditarDatosPaciente2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnCambiarVistaPaciente2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNombrePaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNombrePaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblApellidosPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtApellidosPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblEdadPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEdadPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtEmailPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEmailPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtTelefonoPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTelefonoPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblSexoPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbHombrePaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbMujerPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbOtroPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNacionalidadPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNacionalidadPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtResidenciaPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblResidenciaPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblTipoSangrePaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtTipoSangrePaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblAlergiasPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtAlergiasPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblVacunasPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtVacunasPaciente2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblPrioritarioPaciente2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPrioritarioSiNoPaciente2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnEditarDatosPaciente2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnCambiarVistaPaciente2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblNombrePaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtNombrePaciente2">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblApellidosPaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Apellidos:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtApellidosPaciente2">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEdadPaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Edad:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEdadPaciente2">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEmailPaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Email:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEmailPaciente2">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblTelefonoPaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Telefono:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtTelefonoPaciente2">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblSexoPaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sexo:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbHombrePaciente2">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="grupoSexoPaciente2"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Hombre"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbMujerPaciente2">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="grupoSexoPaciente2"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mujer"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbOtroPaciente2">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="grupoSexoPaciente2"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Otro"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblNacionalidadPaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nacionalidad:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtNacionalidadPaciente2">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblResidenciaPaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Residencia:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtResidenciaPaciente2">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblTipoSangrePaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tipo de Sangre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtTipoSangrePaciente2">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblAlergiasPaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Alergias:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtAlergiasPaciente2">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblVacunasPaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Vacunas:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtVacunasPaciente2">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPrioritarioPaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Prioritario:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPrioritarioSiNoPaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="-"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnEditarDatosPaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Editar datos del paciente"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarDatosPaciente2ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnCambiarVistaPaciente2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cambiar de vista"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCambiarVistaPaciente2ActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="tabPaciente3">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[400, 550]"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Alma">
+                <Property name="tabTitle" type="java.lang.String" value="Alma"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="lblAlergiasPaciente3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTipoSangrePaciente3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblResidenciaPaciente3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNacionalidadPaciente3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblSexoPaciente3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblApellidosPaciente3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNombrePaciente3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEdadPaciente3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEmailPaciente3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTelefonoPaciente3" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblVacunasPaciente3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPrioritarioPaciente3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtNombrePaciente3" alignment="0" pref="200" max="32767" attributes="0"/>
+                              <Component id="txtApellidosPaciente3" alignment="0" pref="200" max="32767" attributes="0"/>
+                              <Component id="txtEdadPaciente3" alignment="0" pref="200" max="32767" attributes="0"/>
+                              <Component id="txtEmailPaciente3" alignment="0" pref="200" max="32767" attributes="0"/>
+                              <Component id="txtTelefonoPaciente3" alignment="0" pref="200" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="rbHombrePaciente3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="rbMujerPaciente3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="rbOtroPaciente3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lblPrioritarioSiNoPaciente3" min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="txtTipoSangrePaciente3" min="-2" pref="200" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="txtResidenciaPaciente3" alignment="0" pref="200" max="32767" attributes="0"/>
+                              <Component id="txtNacionalidadPaciente3" alignment="0" pref="200" max="32767" attributes="0"/>
+                              <Component id="txtAlergiasPaciente3" alignment="0" pref="200" max="32767" attributes="0"/>
+                              <Component id="txtVacunasPaciente3" alignment="0" pref="200" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="91" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnCambiarVistaPaciente3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnEditarDatosPaciente3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNombrePaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNombrePaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblApellidosPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtApellidosPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblEdadPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEdadPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtEmailPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEmailPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtTelefonoPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTelefonoPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblSexoPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbHombrePaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbMujerPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbOtroPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNacionalidadPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNacionalidadPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtResidenciaPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblResidenciaPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblTipoSangrePaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtTipoSangrePaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblAlergiasPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtAlergiasPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblVacunasPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtVacunasPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblPrioritarioPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPrioritarioSiNoPaciente3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnEditarDatosPaciente3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnCambiarVistaPaciente3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblNombrePaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtNombrePaciente3">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblApellidosPaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Apellidos:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtApellidosPaciente3">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEdadPaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Edad:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEdadPaciente3">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEdadPaciente3ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEmailPaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Email:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEmailPaciente3">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEmailPaciente3ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblTelefonoPaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Telefono:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtTelefonoPaciente3">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblSexoPaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sexo:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbHombrePaciente3">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="grupoSexoPaciente3"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Hombre"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbMujerPaciente3">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="grupoSexoPaciente3"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mujer"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbOtroPaciente3">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="grupoSexoPaciente3"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Otro"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblNacionalidadPaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nacionalidad:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtNacionalidadPaciente3">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblResidenciaPaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Residencia:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtResidenciaPaciente3">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblTipoSangrePaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tipo de Sangre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtTipoSangrePaciente3">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblAlergiasPaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Alergias:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtAlergiasPaciente3">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblVacunasPaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Vacunas:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtVacunasPaciente3">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPrioritarioSiNoPaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="-"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPrioritarioPaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Prioritario:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnEditarDatosPaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Editar datos del paciente"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarDatosPaciente3ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnCambiarVistaPaciente3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cambiar de vista"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCambiarVistaPaciente3ActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="tabPaciente4">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[400, 550]"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Luis">
+                <Property name="tabTitle" type="java.lang.String" value="Luis"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="lblVacunasPaciente4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblAlergiasPaciente4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTipoSangrePaciente4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblResidenciaPaciente4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNacionalidadPaciente4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblSexoPaciente4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblApellidosPaciente4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNombrePaciente4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEdadPaciente4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEmailPaciente4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTelefonoPaciente4" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblPrioritarioPaciente4" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="txtNombrePaciente4" alignment="0" pref="200" max="32767" attributes="0"/>
+                                          <Component id="txtApellidosPaciente4" alignment="0" pref="200" max="32767" attributes="0"/>
+                                          <Component id="txtEdadPaciente4" alignment="0" pref="200" max="32767" attributes="0"/>
+                                          <Component id="txtEmailPaciente4" alignment="0" pref="200" max="32767" attributes="0"/>
+                                          <Component id="txtTelefonoPaciente4" alignment="0" pref="200" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txtNacionalidadPaciente4" min="-2" pref="200" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblPrioritarioSiNoPaciente4" min="-2" pref="37" max="-2" attributes="0"/>
+                                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="txtResidenciaPaciente4" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtTipoSangrePaciente4" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtAlergiasPaciente4" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtVacunasPaciente4" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                              <Component id="rbHombrePaciente4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="rbMujerPaciente4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="rbOtroPaciente4" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="91" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnEditarDatosPaciente4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btnCambiarVistaPaciente4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNombrePaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNombrePaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblApellidosPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtApellidosPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblEdadPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEdadPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtEmailPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEmailPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtTelefonoPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTelefonoPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblSexoPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbHombrePaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbMujerPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="rbOtroPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblNacionalidadPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNacionalidadPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblResidenciaPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtResidenciaPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtTipoSangrePaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTipoSangrePaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblAlergiasPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtAlergiasPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblVacunasPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtVacunasPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblPrioritarioPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblPrioritarioSiNoPaciente4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnEditarDatosPaciente4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnCambiarVistaPaciente4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblNombrePaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtNombrePaciente4">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblApellidosPaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Apellidos:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtApellidosPaciente4">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEdadPaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Edad:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEdadPaciente4">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEmailPaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Email:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEmailPaciente4">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblTelefonoPaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Telefono:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtTelefonoPaciente4">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblSexoPaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sexo:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbHombrePaciente4">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="grupoSexoPaciente4"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Hombre"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbMujerPaciente4">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="grupoSexoPaciente4"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Mujer"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="rbOtroPaciente4">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="grupoSexoPaciente4"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Otro"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblNacionalidadPaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nacionalidad:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtNacionalidadPaciente4">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblResidenciaPaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Residencia:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtResidenciaPaciente4">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblTipoSangrePaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tipo de Sangre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtTipoSangrePaciente4">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblAlergiasPaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Alergias:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtAlergiasPaciente4">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblVacunasPaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Vacunas:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtVacunasPaciente4">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPrioritarioPaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Prioritario:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPrioritarioSiNoPaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="-"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnEditarDatosPaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Editar datos del paciente"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarDatosPaciente4ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnCambiarVistaPaciente4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cambiar de vista"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCambiarVistaPaciente4ActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
