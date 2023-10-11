@@ -27,6 +27,7 @@ public class Inicio extends javax.swing.JFrame {
         txtInfo = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         lblContrasena.setText("Contraseña:");
 
@@ -59,6 +60,12 @@ public class Inicio extends javax.swing.JFrame {
         txtInfo.setColumns(20);
         txtInfo.setRows(2);
         txtInfo.setText("Bienvenido al sistema de pacientes, ingresa para poder ver o editar la\ninformación de los pacientes.");
+        txtInfo.setPreferredSize(new java.awt.Dimension(400, 36));
+        txtInfo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtInfoKeyPressed(evt);
+            }
+        });
         jScrollPane1.setViewportView(txtInfo);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -70,23 +77,21 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(btnIngresar)
                 .addGap(163, 163, 163))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 13, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblUsuario)
-                    .addComponent(lblContrasena))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                    .addComponent(pwdContrasena))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(130, 130, 130)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblUsuario)
+                            .addComponent(lblContrasena))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                            .addComponent(pwdContrasena)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,7 +110,7 @@ public class Inicio extends javax.swing.JFrame {
                     .addComponent(lblContrasena))
                 .addGap(36, 36, 36)
                 .addComponent(btnIngresar)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         pack();
@@ -123,6 +128,10 @@ public class Inicio extends javax.swing.JFrame {
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         procesoInicio();
     }//GEN-LAST:event_btnIngresarActionPerformed
+
+    private void txtInfoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtInfoKeyPressed
+        System.out.println("Se ha presionado la tecla " + evt.getKeyChar());
+    }//GEN-LAST:event_txtInfoKeyPressed
 
     /**
      * @param args the command line arguments
