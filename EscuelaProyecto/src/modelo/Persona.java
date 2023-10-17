@@ -40,10 +40,10 @@ public class Persona {
     
     public String mostrarInfo(){                  //agregar los saltos de linea
         String info = "Informacion:" +
-                "Nombre: " + getNombre() +
-                "Edad: " + getEdad() +
-                "Email: " + getEdad() +
-                "Codigo: " + getCodigo();
+                "\nNombre: " + getNombre() +
+                "\nEdad: " + getEdad() +
+                "\nEmail: " + getEmail() +
+                "\nCodigo: " + getCodigo();
         return info;
     }
 }

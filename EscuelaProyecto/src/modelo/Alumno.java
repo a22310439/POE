@@ -54,10 +54,12 @@ public class Alumno extends Persona {
     @Override
     public String mostrarInfo(){                        //agregar saltos de linea
         String info = super.mostrarInfo();
-        info += "Carrera: " + getCarrera() +
-                "Calificacion de Matematicas: " + getCalMate() +
-                "Calificacion de Fisica: " + getCalFisica() +
-                "Calificacion de Programacion: " + getCalProgra();
+        info += "\nCarrera: " + getCarrera() +
+                "\nCalificacion de Matematicas: " + getCalMate() +
+                "\nCalificacion de Fisica: " + getCalFisica() +
+                "\nCalificacion de Programacion: " + getCalProgra() +
+                "\nPromedio: " + getPromedio() +
+                "\nPromedio redondeado: " + Math.round(getPromedio());
         return info;
     }
 }
