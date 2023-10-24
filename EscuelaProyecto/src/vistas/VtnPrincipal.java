@@ -1,21 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package vistas;
+import modelo.Alumno;
 
-/**
- *
- * @author Asthok
- */
 public class VtnPrincipal extends javax.swing.JFrame {
 
     VtnAlumnos ventAlumnos = null;
     VtnDocentes ventDocentes = null;
+    Alumno objAl = new Alumno();
     
-    /**
-     * Creates new form Principal
-     */
     public VtnPrincipal() {
         initComponents();
     }
@@ -83,7 +74,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
 
     private void btnAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlumnoActionPerformed
         if(ventAlumnos == null){
-            ventAlumnos = new VtnAlumnos(this);
+            ventAlumnos = new VtnAlumnos(this, objAl);
         }
         ventAlumnos.setVisible(true);
         this.setVisible(false);

@@ -39,7 +39,7 @@ public class Persona {
     }
     
     public String mostrarInfo(){                  //agregar los saltos de linea
-        String info = "Informacion:" +
+        String info = "Información:\n" +
                 "\nNombre: " + getNombre() +
                 "\nEdad: " + getEdad() +
                 "\nEmail: " + getEmail() +

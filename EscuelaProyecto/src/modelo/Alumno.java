@@ -55,7 +55,7 @@ public class Alumno extends Persona {
     public String mostrarInfo(){                        //agregar saltos de linea
         String info = super.mostrarInfo();
         info += "\nCarrera: " + getCarrera() +
-                "\nCalificacion de Matematicas: " + getCalMate() +
+                "\n\nCalificacion de Matematicas: " + getCalMate() +
                 "\nCalificacion de Fisica: " + getCalFisica() +
                 "\nCalificacion de Programacion: " + getCalProgra() +
                 "\nPromedio: " + getPromedio() +

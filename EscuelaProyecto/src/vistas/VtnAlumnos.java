@@ -1,24 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package vistas;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author Asthok
- */
+import modelo.Alumno;
+
 public class VtnAlumnos extends javax.swing.JFrame {
     
     VtnPrincipal ventPrincipal = null;
+    Alumno objAl = null;
 
     /**
      * Creates new form VtnAlumnos
+     * @param ventPrincipal
+     * @param objAl
      */
     
-    public VtnAlumnos(VtnPrincipal ventPrincipal){
+    public VtnAlumnos(VtnPrincipal ventPrincipal, Alumno objAl){
         initComponents();
         this.ventPrincipal = ventPrincipal;
+        this.objAl = objAl;
     }
     
     public VtnAlumnos() {
@@ -35,6 +34,25 @@ public class VtnAlumnos extends javax.swing.JFrame {
     private void initComponents() {
 
         lblTitulo = new javax.swing.JLabel();
+        tbpAlumno = new javax.swing.JTabbedPane();
+        pnlRegistrar = new javax.swing.JPanel();
+        lblEdad = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        lblEdad1 = new javax.swing.JLabel();
+        txtEdad = new javax.swing.JTextField();
+        lblEmail = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        lblCarrera = new javax.swing.JLabel();
+        txtCarrera = new javax.swing.JTextField();
+        lblCodigo = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JButton();
+        pnlBuscar = new javax.swing.JPanel();
+        pnlBuscarAlumno = new javax.swing.JPanel();
+        btnBuscar = new javax.swing.JButton();
+        txtBuscar = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtADatos = new javax.swing.JTextArea();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -45,6 +63,116 @@ public class VtnAlumnos extends javax.swing.JFrame {
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
         lblTitulo.setText("Alumnos");
 
+        lblEdad.setText("Nombre:");
+
+        lblEdad1.setText("Edad:");
+
+        txtEdad.setColumns(3);
+
+        lblEmail.setText("Email");
+
+        lblCarrera.setText("Carrera:");
+
+        txtCarrera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCarreraActionPerformed(evt);
+            }
+        });
+
+        lblCodigo.setText("Codigo:");
+
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlRegistrarLayout = new javax.swing.GroupLayout(pnlRegistrar);
+        pnlRegistrar.setLayout(pnlRegistrarLayout);
+        pnlRegistrarLayout.setHorizontalGroup(
+            pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRegistrarLayout.createSequentialGroup()
+                .addGroup(pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlRegistrarLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addGroup(pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblCodigo)
+                            .addComponent(lblCarrera)
+                            .addComponent(lblEmail)
+                            .addComponent(lblEdad1)
+                            .addComponent(lblEdad))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtNombre)
+                            .addComponent(txtEdad, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                            .addComponent(txtEmail)
+                            .addComponent(txtCarrera)
+                            .addComponent(txtCodigo)))
+                    .addGroup(pnlRegistrarLayout.createSequentialGroup()
+                        .addGap(151, 151, 151)
+                        .addComponent(btnGuardar)))
+                .addContainerGap(134, Short.MAX_VALUE))
+        );
+        pnlRegistrarLayout.setVerticalGroup(
+            pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRegistrarLayout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEdad)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEdad1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmail)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCodigo)
+                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCarrera)
+                    .addComponent(txtCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58)
+                .addComponent(btnGuardar)
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+
+        tbpAlumno.addTab("Registrar", pnlRegistrar);
+
+        pnlBuscar.setLayout(new java.awt.BorderLayout());
+
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+        pnlBuscarAlumno.add(btnBuscar);
+
+        txtBuscar.setPreferredSize(new java.awt.Dimension(120, 30));
+        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarActionPerformed(evt);
+            }
+        });
+        pnlBuscarAlumno.add(txtBuscar);
+
+        pnlBuscar.add(pnlBuscarAlumno, java.awt.BorderLayout.PAGE_START);
+
+        txtADatos.setEditable(false);
+        txtADatos.setColumns(20);
+        txtADatos.setRows(5);
+        jScrollPane1.setViewportView(txtADatos);
+
+        pnlBuscar.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        tbpAlumno.addTab("Buscar", pnlBuscar);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -52,14 +180,20 @@ public class VtnAlumnos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(146, 146, 146)
                 .addComponent(lblTitulo)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tbpAlumno)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(17, 17, 17)
                 .addComponent(lblTitulo)
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(tbpAlumno)
+                .addContainerGap())
         );
 
         pack();
@@ -68,6 +202,48 @@ public class VtnAlumnos extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         ventPrincipal.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        objAl.setNombre(txtNombre.getText());
+        if (txtEdad.getText().equals("")){
+        objAl.setEdad(0);
+        }else{
+        objAl.setEdad(Integer.parseInt(txtEdad.getText()));
+        }
+        objAl.setEmail(txtEmail.getText());
+        objAl.setCodigo(txtCodigo.getText());
+        objAl.setCarrera(txtCarrera.getText());
+
+        JOptionPane.showMessageDialog(this, "Datos almacenados correctamente!");
+        limpiarCajas();
+
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        if(txtBuscar.getText().equals(objAl.getCodigo())){
+            txtADatos.setText(objAl.mostrarInfo());
+        }else{
+            JOptionPane.showMessageDialog(this, "El alumno buscado no existe!");
+            limpiarCajas();
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+        btnBuscarActionPerformed(evt);
+    }//GEN-LAST:event_txtBuscarActionPerformed
+
+    private void txtCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCarreraActionPerformed
+        btnGuardarActionPerformed(evt);
+    }//GEN-LAST:event_txtCarreraActionPerformed
+
+    public void limpiarCajas(){
+        txtNombre.setText("");
+        txtEdad.setText("");
+        txtEmail.setText("");
+        txtCodigo.setText("");
+        txtCarrera.setText("");
+        txtADatos.setText("");
+    }
 
     /**
      * @param args the command line arguments
@@ -105,6 +281,25 @@ public class VtnAlumnos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblCarrera;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblEdad;
+    private javax.swing.JLabel lblEdad1;
+    private javax.swing.JLabel lblEmail;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JPanel pnlBuscar;
+    private javax.swing.JPanel pnlBuscarAlumno;
+    private javax.swing.JPanel pnlRegistrar;
+    private javax.swing.JTabbedPane tbpAlumno;
+    private javax.swing.JTextArea txtADatos;
+    private javax.swing.JTextField txtBuscar;
+    private javax.swing.JTextField txtCarrera;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtEdad;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
