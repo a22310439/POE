@@ -1,20 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package vistas;
 
-/**
- *
- * @author Asthok
- */
 public class VtnDocentes extends javax.swing.JFrame {
     
     VtnPrincipal ventPrincipal = null;
-
-    /**
-     * Creates new form VtnDocentes
-     */
     
     public VtnDocentes(VtnPrincipal ventPrincipal){
         initComponents();
@@ -59,7 +47,7 @@ public class VtnDocentes extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(lblTitulo)
-                .addContainerGap(247, Short.MAX_VALUE))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
 
         pack();

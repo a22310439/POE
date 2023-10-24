@@ -43,7 +43,7 @@ public class Docente extends Persona {
     @Override
     public String mostrarInfo(){
         String info = super.mostrarInfo();
-        info += "\nHoras impartidas: " + getCantHoras() +
+        info += "\n\nHoras impartidas: " + getCantHoras() +
                 "\nPago por hora: " + getPagoHora() +
                 "\nSalario: " + getSalario();
         return info;
