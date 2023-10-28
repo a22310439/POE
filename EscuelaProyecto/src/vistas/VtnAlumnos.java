@@ -54,6 +54,7 @@ public class VtnAlumnos extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtADatos = new javax.swing.JTextArea();
 
+        setPreferredSize(new java.awt.Dimension(400, 400));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -93,9 +94,9 @@ public class VtnAlumnos extends javax.swing.JFrame {
         pnlRegistrarLayout.setHorizontalGroup(
             pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRegistrarLayout.createSequentialGroup()
+                .addContainerGap(97, Short.MAX_VALUE)
                 .addGroup(pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlRegistrarLayout.createSequentialGroup()
-                        .addGap(59, 59, 59)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRegistrarLayout.createSequentialGroup()
                         .addGroup(pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblCodigo)
                             .addComponent(lblCarrera)
@@ -105,19 +106,19 @@ public class VtnAlumnos extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNombre)
-                            .addComponent(txtEdad, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                             .addComponent(txtEmail)
                             .addComponent(txtCarrera)
-                            .addComponent(txtCodigo)))
-                    .addGroup(pnlRegistrarLayout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addComponent(btnGuardar)))
-                .addContainerGap(134, Short.MAX_VALUE))
+                            .addComponent(txtCodigo)
+                            .addComponent(txtEdad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(96, 96, 96))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRegistrarLayout.createSequentialGroup()
+                        .addComponent(btnGuardar)
+                        .addGap(158, 158, 158))))
         );
         pnlRegistrarLayout.setVerticalGroup(
             pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRegistrarLayout.createSequentialGroup()
-                .addGap(13, 13, 13)
+                .addGap(27, 27, 27)
                 .addGroup(pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEdad)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -137,9 +138,9 @@ public class VtnAlumnos extends javax.swing.JFrame {
                 .addGroup(pnlRegistrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCarrera)
                     .addComponent(txtCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(58, 58, 58)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(btnGuardar)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(46, 46, 46))
         );
 
         tbpAlumno.addTab("Registrar", pnlRegistrar);

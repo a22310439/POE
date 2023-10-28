@@ -1,11 +1,13 @@
 package vistas;
 import modelo.Alumno;
+import modelo.Docente;
 
 public class VtnPrincipal extends javax.swing.JFrame {
 
     VtnAlumnos ventAlumnos = null;
     VtnDocentes ventDocentes = null;
     Alumno objAl = new Alumno();
+    Docente objDoc = new Docente();
     
     public VtnPrincipal() {
         initComponents();
@@ -25,6 +27,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
         btnDocente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setFocusTraversalPolicyProvider(true);
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
         lblTitulo.setText("Sistema Escolar");
@@ -82,7 +85,7 @@ public class VtnPrincipal extends javax.swing.JFrame {
 
     private void btnDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocenteActionPerformed
         if(ventDocentes == null){
-            ventDocentes = new VtnDocentes(this);
+            ventDocentes = new VtnDocentes(this, objAl, objDoc);
         }
         ventDocentes.setVisible(true);
         this.setVisible(false);
