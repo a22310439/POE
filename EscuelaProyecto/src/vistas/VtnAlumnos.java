@@ -1,12 +1,14 @@
 package vistas;
 import javax.swing.JOptionPane;
 
+import dao.AlumnoImpDao;
 import modelo.Alumno;
 
 public class VtnAlumnos extends javax.swing.JFrame {
     
     VtnPrincipal ventPrincipal = null;
     Alumno objAl = null;
+    AlumnoImpDao bd = new AlumnoImpDao();
 
     /**
      * Creates new form VtnAlumnos
@@ -214,6 +216,10 @@ public class VtnAlumnos extends javax.swing.JFrame {
         objAl.setEmail(txtEmail.getText());
         objAl.setCodigo(txtCodigo.getText());
         objAl.setCarrera(txtCarrera.getText());
+
+        bd.abrirConexion();
+        bd.insertarAlumno(objAl);
+        bd.cerrarConexion();
 
         JOptionPane.showMessageDialog(this, "Datos almacenados correctamente!");
         limpiarCajas();
