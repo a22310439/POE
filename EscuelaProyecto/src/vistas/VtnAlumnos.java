@@ -227,7 +227,12 @@ public class VtnAlumnos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        if(txtBuscar.getText().equals(objAl.getCodigo())){
+        
+        bd.abrirConexion();
+        objAl = bd.consultarAlumno(txtBuscar.getText());
+        bd.cerrarConexion();
+        
+        if(objAl != null){
             txtADatos.setText(objAl.mostrarInfo());
         }else{
             JOptionPane.showMessageDialog(this, "El alumno buscado no existe!");

@@ -1,5 +1,7 @@
 package vistas;
 import javax.swing.JOptionPane;
+
+import dao.AlumnoImpDao;
 import modelo.Alumno;
 import modelo.Docente;
 
@@ -8,6 +10,7 @@ public class VtnDocentes extends javax.swing.JFrame {
     VtnPrincipal ventPrincipal = null;
     Alumno objAl = null;
     Docente objDoc = null;
+    AlumnoImpDao bd = new AlumnoImpDao();
     
     public VtnDocentes(VtnPrincipal ventPrincipal, Alumno alumno, Docente docente){
         initComponents();
@@ -277,8 +280,10 @@ public class VtnDocentes extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         String buscado = txtBuscar.getText();
+        bd.abrirConexion();
+        objAl = bd.consultarAlumno(buscado);
 
-        if(buscado.equals(objAl.getCodigo())){
+        if(objAl != null){
             JOptionPane.showMessageDialog(this, "Alumno encontrado");
             mostrarComponentes();
         }else{
@@ -286,10 +291,15 @@ public class VtnDocentes extends javax.swing.JFrame {
             ocultarComponentes();
         }
         limpiarCajas();
+        bd.cerrarConexion();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEvaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvaluarActionPerformed
         objDoc.evaluarAlumno(objAl, Double.parseDouble(txtMate.getText()), Double.parseDouble(txtFisica.getText()), Double.parseDouble(txtProgra.getText()));
+        bd.abrirConexion();
+        bd.actualizarAlumno(objAl);
+        bd.cerrarConexion();
+        
         JOptionPane.showMessageDialog(this, "Alumno evaluado");
         ocultarComponentes();
         limpiarCajas();
@@ -302,6 +312,7 @@ public class VtnDocentes extends javax.swing.JFrame {
         txtFisica.setVisible(true);
         lblProgra.setVisible(true);
         txtProgra.setVisible(true);
+        btnEvaluar.setVisible(true);
     }
 
     public void ocultarComponentes(){
@@ -311,6 +322,7 @@ public class VtnDocentes extends javax.swing.JFrame {
         txtFisica.setVisible(false);
         lblProgra.setVisible(false);
         txtProgra.setVisible(false);
+        btnEvaluar.setVisible(false);
     }
 
     public void limpiarCajas(){

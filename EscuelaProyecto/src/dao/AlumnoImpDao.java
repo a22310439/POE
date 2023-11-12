@@ -3,13 +3,15 @@ import modelo.Alumno;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-// import java.sql.ResultSet;
 
 public class AlumnoImpDao implements AlumnoDao{
 
     Connection conexion;
     PreparedStatement stInsertar;
+    PreparedStatement stConsultar;
+    PreparedStatement stActualizar;
 
     public AlumnoImpDao(){
         try{
@@ -27,6 +29,8 @@ public class AlumnoImpDao implements AlumnoDao{
             "root",
             "");
             stInsertar = conexion.prepareStatement("INSERT INTO alumno VALUES (?,?,?,?,?,?,?,?,?)");
+            stConsultar = conexion.prepareStatement("SELECT * FROM alumno WHERE codigo=?");
+            stActualizar = conexion.prepareStatement("UPDATE alumno set calMate=?, calFisica=?, calProgra=?, promedio=? WHERE codigo=?");
         }catch(SQLException ex){
             System.out.println("Error, no se logro conectar la conexion en la BD");
             System.out.println(ex.getMessage());
@@ -67,7 +71,30 @@ public class AlumnoImpDao implements AlumnoDao{
 
     @Override
     public Alumno consultarAlumno(String codigo){
-        return new Alumno();
+        Alumno objAl = null;
+        ResultSet rs = null;
+
+        try{
+            stConsultar.setString(1, codigo);
+            rs = stConsultar.executeQuery();
+            if(rs.next()){
+                objAl = new Alumno();
+                objAl.setNombre(rs.getString("nombre"));
+                objAl.setEdad(rs.getInt("edad"));
+                objAl.setCodigo(rs.getString("codigo"));
+                objAl.setEmail(rs.getString("email"));
+                objAl.setCarrera(rs.getString("carrera"));
+                objAl.setCalMate(rs.getDouble("calMate"));
+                objAl.setCalFisica(rs.getDouble("calFisica"));
+                objAl.setCalProgra(rs.getDouble("calProgra"));
+                objAl.setPromedio(rs.getDouble("promedio"));
+                objAl.mostrarInfo();
+            }
+        }catch(SQLException ex){
+            System.out.println("Error al consultar un alumno en la BD");
+            System.out.println(ex.getMessage());
+        }
+        return objAl;
     }
 
     @Override
@@ -77,7 +104,17 @@ public class AlumnoImpDao implements AlumnoDao{
 
     @Override
     public void actualizarAlumno(Alumno objAl){
-
+        try{
+            stActualizar.setDouble(1, objAl.getCalMate());
+            stActualizar.setDouble(2, objAl.getCalFisica());
+            stActualizar.setDouble(3, objAl.getCalProgra());
+            stActualizar.setDouble(4, objAl.getPromedio());
+            stActualizar.setString(5, objAl.getCodigo());
+            stActualizar.executeUpdate();
+        }catch(SQLException ex){
+            System.out.println("Error al actualizar los datos de un alumno en la BD");
+            System.out.println(ex.getMessage());
+        }
     }
     
 }
