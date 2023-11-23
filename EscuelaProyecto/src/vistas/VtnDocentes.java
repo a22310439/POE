@@ -59,6 +59,8 @@ public class VtnDocentes extends javax.swing.JFrame {
         txtProgra = new javax.swing.JTextField();
         lblProgra = new javax.swing.JLabel();
         btnEvaluar = new javax.swing.JButton();
+        lblAlumno = new javax.swing.JLabel();
+        lblNombreAlumno = new javax.swing.JLabel();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -175,31 +177,24 @@ public class VtnDocentes extends javax.swing.JFrame {
             }
         });
 
+        lblAlumno.setText("Alumno:");
+
         javax.swing.GroupLayout pnlEvaluarLayout = new javax.swing.GroupLayout(pnlEvaluar);
         pnlEvaluar.setLayout(pnlEvaluarLayout);
         pnlEvaluarLayout.setHorizontalGroup(
             pnlEvaluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlEvaluarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEvaluarLayout.createSequentialGroup()
+                .addContainerGap(72, Short.MAX_VALUE)
                 .addGroup(pnlEvaluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlEvaluarLayout.createSequentialGroup()
-                        .addComponent(btnBuscar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(95, 95, 95)
                         .addGroup(pnlEvaluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(pnlEvaluarLayout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(pnlEvaluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnlEvaluarLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(lblFisica))
-                                    .addComponent(txtFisica, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(6, 6, 6)
+                                .addComponent(lblFisica))
+                            .addComponent(txtFisica, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlEvaluarLayout.createSequentialGroup()
-                        .addGroup(pnlEvaluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlEvaluarLayout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(txtMate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblMate))
+                        .addComponent(lblMate)
                         .addGap(67, 67, 67)
                         .addGroup(pnlEvaluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlEvaluarLayout.createSequentialGroup()
@@ -207,12 +202,23 @@ public class VtnDocentes extends javax.swing.JFrame {
                                 .addComponent(txtProgra, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(pnlEvaluarLayout.createSequentialGroup()
                                 .addGap(33, 33, 33)
-                                .addComponent(lblProgra)))))
+                                .addComponent(lblProgra))))
+                    .addGroup(pnlEvaluarLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(txtMate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlEvaluarLayout.createSequentialGroup()
+                        .addComponent(btnBuscar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlEvaluarLayout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(btnEvaluar))
+                    .addGroup(pnlEvaluarLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(lblAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblNombreAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(73, 73, 73))
-            .addGroup(pnlEvaluarLayout.createSequentialGroup()
-                .addGap(158, 158, 158)
-                .addComponent(btnEvaluar)
-                .addContainerGap(158, Short.MAX_VALUE))
         );
         pnlEvaluarLayout.setVerticalGroup(
             pnlEvaluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,6 +227,10 @@ public class VtnDocentes extends javax.swing.JFrame {
                 .addGroup(pnlEvaluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscar)
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlEvaluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAlumno)
+                    .addComponent(lblNombreAlumno))
                 .addGap(18, 18, 18)
                 .addGroup(pnlEvaluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtMate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -232,9 +242,9 @@ public class VtnDocentes extends javax.swing.JFrame {
                     .addGroup(pnlEvaluarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(lblMate)
                         .addComponent(lblFisica)))
-                .addGap(62, 62, 62)
+                .addGap(35, 35, 35)
                 .addComponent(btnEvaluar)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         tbpDocente.addTab("Evaluar", pnlEvaluar);
@@ -282,6 +292,7 @@ public class VtnDocentes extends javax.swing.JFrame {
         String buscado = txtBuscar.getText();
         bd.abrirConexion();
         objAl = bd.consultarAlumno(buscado);
+        bd.cerrarConexion();
 
         if(objAl != null){
             JOptionPane.showMessageDialog(this, "Alumno encontrado");
@@ -291,7 +302,6 @@ public class VtnDocentes extends javax.swing.JFrame {
             ocultarComponentes();
         }
         limpiarCajas();
-        bd.cerrarConexion();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEvaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvaluarActionPerformed
@@ -306,6 +316,12 @@ public class VtnDocentes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEvaluarActionPerformed
 
     public void mostrarComponentes(){
+        lblNombreAlumno.setText(objAl.getNombre());
+        txtMate.setText(String.valueOf(objAl.getCalMate()));
+        txtFisica.setText(String.valueOf(objAl.getCalFisica()));
+        txtProgra.setText(String.valueOf(objAl.getCalProgra()));
+        lblAlumno.setVisible(true);
+        lblNombreAlumno.setVisible(true);
         lblMate.setVisible(true);
         txtMate.setVisible(true);
         lblFisica.setVisible(true);
@@ -316,6 +332,8 @@ public class VtnDocentes extends javax.swing.JFrame {
     }
 
     public void ocultarComponentes(){
+        lblAlumno.setVisible(false);
+        lblNombreAlumno.setVisible(false);
         lblMate.setVisible(false);
         txtMate.setVisible(false);
         lblFisica.setVisible(false);
@@ -333,9 +351,6 @@ public class VtnDocentes extends javax.swing.JFrame {
         txtCodigo.setText("");
         txtCantHoras.setText("");
         txtPagoHora.setText("");
-        txtMate.setText("");
-        txtFisica.setText("");
-        txtProgra.setText("");
     }
 
     /**
@@ -377,6 +392,7 @@ public class VtnDocentes extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEvaluar;
     private javax.swing.JButton btnGuardar;
+    private javax.swing.JLabel lblAlumno;
     private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblEdad;
     private javax.swing.JLabel lblEmail;
@@ -384,6 +400,7 @@ public class VtnDocentes extends javax.swing.JFrame {
     private javax.swing.JLabel lblHoras;
     private javax.swing.JLabel lblMate;
     private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombreAlumno;
     private javax.swing.JLabel lblPagoHora;
     private javax.swing.JLabel lblProgra;
     private javax.swing.JLabel lblTitulo;

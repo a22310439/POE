@@ -208,53 +208,54 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="72" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtBuscar" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                              <Component id="lblFisica" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="txtFisica" min="-2" pref="42" max="-2" attributes="0"/>
-                                      </Group>
+                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Component id="lblFisica" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="txtFisica" min="-2" pref="42" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                                      <Component id="txtMate" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="lblMate" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lblMate" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                       <Component id="txtProgra" min="-2" pref="52" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                       <Component id="lblProgra" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                              <Component id="txtMate" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtBuscar" min="-2" pref="156" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="btnEvaluar" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                              <Component id="lblAlumno" min="-2" pref="47" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblNombreAlumno" min="-2" pref="167" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
-                      <Component id="btnEvaluar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="158" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -265,6 +266,11 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblAlumno" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNombreAlumno" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -280,9 +286,9 @@
                               <Component id="lblFisica" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="btnEvaluar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="67" max="32767" attributes="0"/>
+                      <EmptySpace pref="60" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -332,6 +338,13 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEvaluarActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblAlumno">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Alumno:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblNombreAlumno">
             </Component>
           </SubComponents>
         </Container>
