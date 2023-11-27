@@ -101,6 +101,11 @@ public class vtnAdmin extends javax.swing.JFrame {
 
         menuEditarUsuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menuEditarUsuario.setText("Editar usuario");
+        menuEditarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuEditarUsuarioActionPerformed(evt);
+            }
+        });
         itemEditar.add(menuEditarUsuario);
 
         jMenuBar1.add(itemEditar);
@@ -130,6 +135,10 @@ public class vtnAdmin extends javax.swing.JFrame {
     private void itemEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEliminarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_itemEliminarActionPerformed
+
+    private void menuEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEditarUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuEditarUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
