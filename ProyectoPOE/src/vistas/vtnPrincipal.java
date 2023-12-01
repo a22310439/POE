@@ -2,6 +2,7 @@ package vistas;
 
 import vistas.Usuario.vtnUsuario;
 import vistas.Admin.vtnAdmin;
+import modelo.medico;
 import modelo.usuario;
 
 public class vtnPrincipal extends javax.swing.JFrame {
@@ -9,6 +10,7 @@ public class vtnPrincipal extends javax.swing.JFrame {
     vtnAdmin ventAdmin = null;
     vtnUsuario ventUsuario = null;
     usuario usu = new usuario();
+    medico med = new medico();
 
     public vtnPrincipal() {
         initComponents();
@@ -107,7 +109,7 @@ public class vtnPrincipal extends javax.swing.JFrame {
         usu.setTipoUsuario(txtNombreUsuario.getText());
         if(usu.getTipoUsuario().equals("Admin")){
             if(ventAdmin == null){
-                ventAdmin = new vtnAdmin(this, usu);
+                ventAdmin = new vtnAdmin(this, usu, med);
             }
             ventAdmin.setVisible(true);
         }else if(usu.getTipoUsuario().equals("Usuario")){

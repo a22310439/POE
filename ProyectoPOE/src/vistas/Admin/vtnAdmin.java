@@ -1,5 +1,6 @@
 package vistas.Admin;
 
+import modelo.medico;
 import modelo.usuario;
 import vistas.vtnPrincipal;
 
@@ -9,15 +10,17 @@ public class vtnAdmin extends javax.swing.JFrame {
     vtnAdminUsuario ventAdminUsuario = null;
     vtnAdminMedico ventAdminMedico = null;
     usuario usu = null;
+    medico med = null;
 
     public vtnAdmin() {
         initComponents();
     }
 
-    public vtnAdmin(vtnPrincipal ventPrincipal, usuario usu) {
+    public vtnAdmin(vtnPrincipal ventPrincipal, usuario usu, medico med) {
         initComponents();
         this.ventPrincipal = ventPrincipal;
         this.usu = usu;
+        this.med = med;
     }
 
     /**
@@ -70,6 +73,7 @@ public class vtnAdmin extends javax.swing.JFrame {
         jrbMedicos.setText("Médicos");
 
         btnIr.setText("Ir");
+        btnIr.setPreferredSize(new java.awt.Dimension(70, 23));
         btnIr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIrActionPerformed(evt);
@@ -81,16 +85,15 @@ public class vtnAdmin extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
-                        .addComponent(jrbUsuarios)
-                        .addGap(52, 52, 52)
-                        .addComponent(jrbMedicos))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(btnIr)))
+                .addGap(104, 104, 104)
+                .addComponent(jrbUsuarios)
+                .addGap(52, 52, 52)
+                .addComponent(jrbMedicos)
                 .addGap(108, 108, 108))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnIr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(163, 163, 163))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,9 +102,9 @@ public class vtnAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jrbUsuarios)
                     .addComponent(jrbMedicos))
-                .addGap(27, 27, 27)
-                .addComponent(btnIr)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(btnIr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel3, java.awt.BorderLayout.CENTER);
@@ -120,13 +123,13 @@ public class vtnAdmin extends javax.swing.JFrame {
     private void btnIrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIrActionPerformed
         if(jrbUsuarios.isSelected()){
             if(ventAdminUsuario == null){
-                ventAdminUsuario = new vtnAdminUsuario(this);
+                ventAdminUsuario = new vtnAdminUsuario(this, usu);
             }
             ventAdminUsuario.setVisible(true);
             this.setVisible(false);
         }else if(jrbMedicos.isSelected()){
             if(ventAdminMedico == null){
-                ventAdminMedico = new vtnAdminMedico(this);
+                ventAdminMedico = new vtnAdminMedico(this, med);
             }
             ventAdminMedico.setVisible(true);
             this.setVisible(false);

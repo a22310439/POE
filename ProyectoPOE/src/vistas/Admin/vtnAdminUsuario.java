@@ -1,16 +1,22 @@
 package vistas.Admin;
 
+import javax.swing.JOptionPane;
+
+import modelo.usuario;
+
 public class vtnAdminUsuario extends javax.swing.JFrame {
 
     vtnAdmin ventAdmin = null;
+    usuario usu = null;
 
     public vtnAdminUsuario() {
         initComponents();
     }
 
-    public vtnAdminUsuario(vtnAdmin ventAdmin) {
+    public vtnAdminUsuario(vtnAdmin ventAdmin, usuario usu) {
         initComponents();
         this.ventAdmin = ventAdmin;
+        this.usu = usu;
         ocultarComponentes();
     }
 
@@ -23,6 +29,7 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grpTipoUsuario = new javax.swing.ButtonGroup();
         tbpUsuarios = new javax.swing.JTabbedPane();
         pnlAgregarUsuario = new javax.swing.JPanel();
         pnlAgregarUsuario1 = new javax.swing.JPanel();
@@ -31,48 +38,51 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
         pnlDatos = new javax.swing.JPanel();
         lblNombre = new javax.swing.JLabel();
         lblContreasena = new javax.swing.JLabel();
-        txtContrasena = new javax.swing.JTextField();
-        txtApellidos = new javax.swing.JTextField();
-        txtCodigo = new javax.swing.JTextField();
+        txtContrasenaAgregar = new javax.swing.JTextField();
+        txtApellidosAgregar = new javax.swing.JTextField();
+        txtCodigoAgregar = new javax.swing.JTextField();
         lblCodigo = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
+        txtNombreAgregar = new javax.swing.JTextField();
         lblApellidos = new javax.swing.JLabel();
         lblNombreUsuario = new javax.swing.JLabel();
-        jrbUsuario = new javax.swing.JRadioButton();
-        jrbAdministrador = new javax.swing.JRadioButton();
-        txtNombreUsuario = new javax.swing.JTextField();
+        jrbUsuarioAgregar = new javax.swing.JRadioButton();
+        jrbAdministradorAgregar = new javax.swing.JRadioButton();
+        txtNombreUsuarioAgregar = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
         lblTipoUsuario = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
+        txtEmailAgregar = new javax.swing.JTextField();
+        btnRegresarAgregar = new javax.swing.JButton();
         pnlEditarUsuario = new javax.swing.JPanel();
         lblContreasena1 = new javax.swing.JLabel();
         lblTipoUsuario1 = new javax.swing.JLabel();
-        txtEmail1 = new javax.swing.JTextField();
+        txtEmailEditar = new javax.swing.JTextField();
         lblApellidos1 = new javax.swing.JLabel();
         lblNombre1 = new javax.swing.JLabel();
         jrbAdministrador1 = new javax.swing.JRadioButton();
         lblCodigo1 = new javax.swing.JLabel();
-        txtCodigo1 = new javax.swing.JTextField();
-        txtContrasena1 = new javax.swing.JTextField();
-        txtApellidos1 = new javax.swing.JTextField();
+        txtCodigoEditar = new javax.swing.JTextField();
+        txtContrasenaEditar = new javax.swing.JTextField();
+        txtApellidosEditar = new javax.swing.JTextField();
         lblNombreUsuario1 = new javax.swing.JLabel();
         jrbUsuario1 = new javax.swing.JRadioButton();
-        txtNombreUsuario1 = new javax.swing.JTextField();
+        txtNombreUsuarioEditar = new javax.swing.JTextField();
         lblEmail1 = new javax.swing.JLabel();
         lblAgregarUsuario1 = new javax.swing.JLabel();
         btnGuardar1 = new javax.swing.JButton();
-        txtNombre1 = new javax.swing.JTextField();
+        txtNombreEditar = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        btnRegresarEditar = new javax.swing.JButton();
         pnlEliminarUsuario = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         lblEliminarUsuario = new javax.swing.JLabel();
-        txtCodigo2 = new javax.swing.JTextField();
+        txtCodigoEliminar = new javax.swing.JTextField();
         lblCodigo2 = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtInfoContacto = new javax.swing.JTextArea();
         btnEliminarUsuario = new javax.swing.JButton();
+        btnRegresarEliminar = new javax.swing.JButton();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -86,6 +96,11 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
         lblAgregarUsuario.setText("Agregar un usuario");
 
         btnGuardar.setText("Guardar usuario");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         lblNombre.setText("Nombre:");
 
@@ -97,9 +112,11 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
 
         lblNombreUsuario.setText("Nombre de usuario:");
 
-        jrbUsuario.setText("Usuario");
+        grpTipoUsuario.add(jrbUsuarioAgregar);
+        jrbUsuarioAgregar.setText("Usuario");
 
-        jrbAdministrador.setText("Administrador");
+        grpTipoUsuario.add(jrbAdministradorAgregar);
+        jrbAdministradorAgregar.setText("Administrador");
 
         lblEmail.setText("Email:");
 
@@ -116,9 +133,9 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lblTipoUsuario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jrbAdministrador)
+                        .addComponent(jrbAdministradorAgregar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jrbUsuario))
+                        .addComponent(jrbUsuarioAgregar))
                     .addGroup(pnlDatosLayout.createSequentialGroup()
                         .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlDatosLayout.createSequentialGroup()
@@ -129,10 +146,10 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                                     .addComponent(lblNombreUsuario))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtApellidos, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtContrasena, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNombreUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtNombreAgregar, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtApellidosAgregar, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtContrasenaAgregar, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNombreUsuarioAgregar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(pnlDatosLayout.createSequentialGroup()
                                 .addGap(63, 63, 63)
                                 .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -140,8 +157,8 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                                     .addComponent(lblCodigo))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtCodigo)
-                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtCodigoAgregar)
+                                    .addComponent(txtEmailAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -151,43 +168,46 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombre)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombreAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblApellidos)
-                    .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtApellidosAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombreUsuario)
-                    .addComponent(txtNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNombreUsuarioAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblContreasena)
-                    .addComponent(txtContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtContrasenaAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmailAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEmail))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCodigo)
-                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCodigoAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jrbUsuario)
-                    .addComponent(jrbAdministrador)
+                    .addComponent(jrbUsuarioAgregar)
+                    .addComponent(jrbAdministradorAgregar)
                     .addComponent(lblTipoUsuario))
                 .addContainerGap())
         );
+
+        btnRegresarAgregar.setText("Regresar");
+        btnRegresarAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarAgregarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlAgregarUsuario1Layout = new javax.swing.GroupLayout(pnlAgregarUsuario1);
         pnlAgregarUsuario1.setLayout(pnlAgregarUsuario1Layout);
         pnlAgregarUsuario1Layout.setHorizontalGroup(
             pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAgregarUsuario1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnGuardar)
-                .addGap(155, 155, 155))
             .addGroup(pnlAgregarUsuario1Layout.createSequentialGroup()
                 .addGroup(pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlAgregarUsuario1Layout.createSequentialGroup()
@@ -197,6 +217,12 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                         .addGap(66, 66, 66)
                         .addComponent(pnlDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(66, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAgregarUsuario1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnRegresarAgregar)
+                .addGap(18, 18, 18)
+                .addComponent(btnGuardar)
+                .addGap(97, 97, 97))
         );
         pnlAgregarUsuario1Layout.setVerticalGroup(
             pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,9 +231,11 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                 .addComponent(lblAgregarUsuario)
                 .addGap(38, 38, 38)
                 .addComponent(pnlDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(btnGuardar)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addGroup(pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnRegresarAgregar))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlAgregarUsuarioLayout = new javax.swing.GroupLayout(pnlAgregarUsuario);
@@ -218,9 +246,7 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
         );
         pnlAgregarUsuarioLayout.setVerticalGroup(
             pnlAgregarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlAgregarUsuarioLayout.createSequentialGroup()
-                .addComponent(pnlAgregarUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 14, Short.MAX_VALUE))
+            .addComponent(pnlAgregarUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
         );
 
         tbpUsuarios.addTab("Agregar Usuario", pnlAgregarUsuario);
@@ -250,18 +276,17 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
 
         jScrollPane3.setViewportView(jList1);
 
+        btnRegresarEditar.setText("Regresar");
+        btnRegresarEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarEditarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlEditarUsuarioLayout = new javax.swing.GroupLayout(pnlEditarUsuario);
         pnlEditarUsuario.setLayout(pnlEditarUsuarioLayout);
         pnlEditarUsuarioLayout.setHorizontalGroup(
             pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
-                .addContainerGap(132, Short.MAX_VALUE)
-                .addComponent(lblAgregarUsuario1)
-                .addGap(100, 100, 100))
-            .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(btnGuardar1)
-                .addGap(0, 150, Short.MAX_VALUE))
             .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,15 +300,19 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                             .addComponent(lblNombre1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtApellidos1)
-                            .addComponent(txtNombreUsuario1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEmail1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodigo1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtContrasena1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtApellidosEditar)
+                            .addComponent(txtNombreUsuarioEditar, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEmailEditar, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCodigoEditar, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtContrasenaEditar, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNombreEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditarUsuarioLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblAgregarUsuario1)
+                        .addGap(100, 100, 100))
                     .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
                         .addGap(63, 63, 63)
                         .addComponent(lblTipoUsuario1)
@@ -292,6 +321,12 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addComponent(jrbUsuario1)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditarUsuarioLayout.createSequentialGroup()
+                .addContainerGap(108, Short.MAX_VALUE)
+                .addComponent(btnRegresarEditar)
+                .addGap(18, 18, 18)
+                .addComponent(btnGuardar1)
+                .addGap(108, 108, 108))
         );
         pnlEditarUsuarioLayout.setVerticalGroup(
             pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -303,36 +338,38 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                     .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
                         .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNombre1)
-                            .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNombreEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblApellidos1)
-                            .addComponent(txtApellidos1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtApellidosEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNombreUsuario1)
-                            .addComponent(txtNombreUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtNombreUsuarioEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblContreasena1)
-                            .addComponent(txtContrasena1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtContrasenaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblEmail1)
-                            .addComponent(txtEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtEmailEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblCodigo1)
-                            .addComponent(txtCodigo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtCodigoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jrbUsuario1)
                     .addComponent(jrbAdministrador1)
                     .addComponent(lblTipoUsuario1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(btnGuardar1)
-                .addGap(40, 40, 40))
+                .addGap(56, 56, 56)
+                .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGuardar1)
+                    .addComponent(btnRegresarEditar))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         tbpUsuarios.addTab("Editar Usuario", pnlEditarUsuario);
@@ -340,9 +377,9 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
         lblEliminarUsuario.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblEliminarUsuario.setText("Eliminar usuario");
 
-        txtCodigo2.addActionListener(new java.awt.event.ActionListener() {
+        txtCodigoEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigo2ActionPerformed(evt);
+                txtCodigoEliminarActionPerformed(evt);
             }
         });
 
@@ -361,6 +398,13 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
 
         btnEliminarUsuario.setText("Eliminar contacto");
 
+        btnRegresarEliminar.setText("Regresar");
+        btnRegresarEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarEliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -376,18 +420,19 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                         .addComponent(jScrollPane2)
                         .addContainerGap())))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(lblCodigo2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCodigo2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(btnEliminarUsuario)))
+                .addGap(22, 22, 22)
+                .addComponent(lblCodigo2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCodigoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBuscar)
                 .addGap(0, 30, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegresarEliminar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnEliminarUsuario)
+                .addGap(78, 78, 78))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,14 +441,15 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                 .addComponent(lblEliminarUsuario)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCodigo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodigoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCodigo2)
                     .addComponent(btnBuscar))
                 .addGap(22, 22, 22)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(btnEliminarUsuario)
-                .addContainerGap())
+                .addGap(24, 24, 24)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEliminarUsuario)
+                    .addComponent(btnRegresarEliminar)))
         );
 
         pnlEliminarUsuario.add(jPanel1);
@@ -427,20 +473,37 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        if(txtCodigo.getText().equals("a")){
+        if(txtCodigoAgregar.getText().equals("a")){
             mostrarComponentes();
         }else{
             ocultarComponentes();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void txtCodigo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigo2ActionPerformed
+    private void txtCodigoEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoEliminarActionPerformed
 
-    }//GEN-LAST:event_txtCodigo2ActionPerformed
+    }//GEN-LAST:event_txtCodigoEliminarActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         ventAdmin.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        JOptionPane.showMessageDialog(this, "Usuario agregado correctamente.");
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnRegresarAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarAgregarActionPerformed
+        ventAdmin.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnRegresarAgregarActionPerformed
+
+    private void btnRegresarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarEditarActionPerformed
+        btnRegresarAgregarActionPerformed(evt);
+    }//GEN-LAST:event_btnRegresarEditarActionPerformed
+
+    private void btnRegresarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarEliminarActionPerformed
+        btnRegresarAgregarActionPerformed(evt);
+    }//GEN-LAST:event_btnRegresarEliminarActionPerformed
 
     private void ocultarComponentes(){
         txtInfoContacto.setVisible(false);
@@ -450,6 +513,11 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
     private void mostrarComponentes(){
         txtInfoContacto.setVisible(true);
         btnEliminarUsuario.setVisible(true);
+    }
+
+    private void capturarDatosAgregar(){
+        usu.setNombre(txtNombreAgregar.getText());
+        
     }
     
     /**
@@ -493,14 +561,18 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarUsuario;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnGuardar1;
+    private javax.swing.JButton btnRegresarAgregar;
+    private javax.swing.JButton btnRegresarEditar;
+    private javax.swing.JButton btnRegresarEliminar;
+    private javax.swing.ButtonGroup grpTipoUsuario;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JRadioButton jrbAdministrador;
     private javax.swing.JRadioButton jrbAdministrador1;
-    private javax.swing.JRadioButton jrbUsuario;
+    private javax.swing.JRadioButton jrbAdministradorAgregar;
     private javax.swing.JRadioButton jrbUsuario1;
+    private javax.swing.JRadioButton jrbUsuarioAgregar;
     private javax.swing.JLabel lblAgregarUsuario;
     private javax.swing.JLabel lblAgregarUsuario1;
     private javax.swing.JLabel lblApellidos;
@@ -525,19 +597,19 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel pnlEditarUsuario;
     private javax.swing.JPanel pnlEliminarUsuario;
     private javax.swing.JTabbedPane tbpUsuarios;
-    private javax.swing.JTextField txtApellidos;
-    private javax.swing.JTextField txtApellidos1;
-    private javax.swing.JTextField txtCodigo;
-    private javax.swing.JTextField txtCodigo1;
-    private javax.swing.JTextField txtCodigo2;
-    private javax.swing.JTextField txtContrasena;
-    private javax.swing.JTextField txtContrasena1;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtEmail1;
+    private javax.swing.JTextField txtApellidosAgregar;
+    private javax.swing.JTextField txtApellidosEditar;
+    private javax.swing.JTextField txtCodigoAgregar;
+    private javax.swing.JTextField txtCodigoEditar;
+    private javax.swing.JTextField txtCodigoEliminar;
+    private javax.swing.JTextField txtContrasenaAgregar;
+    private javax.swing.JTextField txtContrasenaEditar;
+    private javax.swing.JTextField txtEmailAgregar;
+    private javax.swing.JTextField txtEmailEditar;
     private javax.swing.JTextArea txtInfoContacto;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtNombre1;
-    private javax.swing.JTextField txtNombreUsuario;
-    private javax.swing.JTextField txtNombreUsuario1;
+    private javax.swing.JTextField txtNombreAgregar;
+    private javax.swing.JTextField txtNombreEditar;
+    private javax.swing.JTextField txtNombreUsuarioAgregar;
+    private javax.swing.JTextField txtNombreUsuarioEditar;
     // End of variables declaration//GEN-END:variables
 }

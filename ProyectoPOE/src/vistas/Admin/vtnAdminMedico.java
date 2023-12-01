@@ -1,16 +1,21 @@
 package vistas.Admin;
 
+import javax.swing.JOptionPane;
+import modelo.medico;
+
 public class vtnAdminMedico extends javax.swing.JFrame {
 
     vtnAdmin ventAdmin = null;
+    medico med = null;
 
     public vtnAdminMedico() {
         initComponents();
     }
 
-    public vtnAdminMedico(vtnAdmin ventAdmin) {
+    public vtnAdminMedico(vtnAdmin ventAdmin, medico med) {
         initComponents();
         this.ventAdmin = ventAdmin;
+        this.med = med;
     }
 
     /**
@@ -41,6 +46,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         txtApellidosAgregar = new javax.swing.JTextField();
         txtAreaAgregar = new javax.swing.JTextField();
         lblArea = new javax.swing.JLabel();
+        btnRegresarAgregar = new javax.swing.JButton();
         pnlEditarUsuario = new javax.swing.JPanel();
         lblEditarMedico = new javax.swing.JLabel();
         btnGuardar1 = new javax.swing.JButton();
@@ -60,6 +66,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         lblArea21 = new javax.swing.JLabel();
         lblNombre1 = new javax.swing.JLabel();
         txtCodigoEditar = new javax.swing.JTextField();
+        btnRegresarEditar = new javax.swing.JButton();
         pnlEliminarUsuario = new javax.swing.JPanel();
         pnlEliminarMedico = new javax.swing.JPanel();
         lblEliminarMedico = new javax.swing.JLabel();
@@ -69,6 +76,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         txtInfoMedico = new javax.swing.JTextArea();
         btnEliminarMedico = new javax.swing.JButton();
+        btnRegresarEliminar = new javax.swing.JButton();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -82,6 +90,11 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         lblAgregarMédico.setText("Agregar un médico");
 
         btnGuardar.setText("Guardar médico");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         lblNombre.setText("Nombre:");
 
@@ -97,17 +110,24 @@ public class vtnAdminMedico extends javax.swing.JFrame {
 
         lblArea.setText("Area:");
 
+        btnRegresarAgregar.setText("Regresar");
+        btnRegresarAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarAgregarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlAgregarUsuario1Layout = new javax.swing.GroupLayout(pnlAgregarUsuario1);
         pnlAgregarUsuario1.setLayout(pnlAgregarUsuario1Layout);
         pnlAgregarUsuario1Layout.setHorizontalGroup(
             pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAgregarUsuario1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnGuardar)
-                .addGap(96, 96, 96))
             .addGroup(pnlAgregarUsuario1Layout.createSequentialGroup()
                 .addGap(69, 69, 69)
                 .addGroup(pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlAgregarUsuario1Layout.createSequentialGroup()
+                        .addComponent(btnRegresarAgregar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnGuardar))
                     .addGroup(pnlAgregarUsuario1Layout.createSequentialGroup()
                         .addGroup(pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCodigo, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -127,7 +147,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                             .addComponent(txtedulaProfesionalAgregar)
                             .addComponent(txtNombreAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(lblAgregarMédico))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         pnlAgregarUsuario1Layout.setVerticalGroup(
             pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,18 +182,18 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                 .addGroup(pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPosicion1)
                     .addComponent(txtedulaProfesionalAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addComponent(btnGuardar)
-                .addGap(61, 61, 61))
+                .addGap(56, 56, 56)
+                .addGroup(pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnRegresarAgregar))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlAgregarUsuarioLayout = new javax.swing.GroupLayout(pnlAgregarUsuario);
         pnlAgregarUsuario.setLayout(pnlAgregarUsuarioLayout);
         pnlAgregarUsuarioLayout.setHorizontalGroup(
             pnlAgregarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlAgregarUsuarioLayout.createSequentialGroup()
-                .addComponent(pnlAgregarUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
-                .addGap(32, 32, 32))
+            .addComponent(pnlAgregarUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnlAgregarUsuarioLayout.setVerticalGroup(
             pnlAgregarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,43 +223,51 @@ public class vtnAdminMedico extends javax.swing.JFrame {
 
         lblNombre1.setText("Nombre:");
 
+        btnRegresarEditar.setText("Regresar");
+        btnRegresarEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarEditarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlEditarUsuarioLayout = new javax.swing.GroupLayout(pnlEditarUsuario);
         pnlEditarUsuario.setLayout(pnlEditarUsuarioLayout);
         pnlEditarUsuarioLayout.setHorizontalGroup(
             pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCodigo1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblApellidos1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblNombre1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblArea21, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblPosicion2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblPosicion3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblEmailAgregar, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblCodigo1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblApellidos1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblNombre1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblArea21, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblPosicion2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblPosicion3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblEmailAgregar, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
-                                .addComponent(lblEditarMedico)
-                                .addGap(0, 89, Short.MAX_VALUE))
-                            .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
-                                .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtCodigoEditar)
-                                        .addComponent(txtEmailEditar)
-                                        .addComponent(txtNombreEditar)
-                                        .addComponent(txtApellidosEditar)
-                                        .addComponent(txtNombreUsuarioEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtPosicionEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txtCedulaProfesionalEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                        .addComponent(lblEditarMedico)
+                        .addGap(0, 89, Short.MAX_VALUE))
                     .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(btnGuardar1)))
+                        .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtCodigoEditar)
+                                .addComponent(txtEmailEditar)
+                                .addComponent(txtNombreEditar)
+                                .addComponent(txtApellidosEditar)
+                                .addComponent(txtNombreUsuarioEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtPosicionEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCedulaProfesionalEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditarUsuarioLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegresarEditar)
+                .addGap(18, 18, 18)
+                .addComponent(btnGuardar1)
+                .addGap(127, 127, 127))
         );
         pnlEditarUsuarioLayout.setVerticalGroup(
             pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -278,7 +306,9 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                             .addComponent(txtCedulaProfesionalEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(64, 64, 64)
-                .addComponent(btnGuardar1)
+                .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGuardar1)
+                    .addComponent(btnRegresarEditar))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
@@ -308,6 +338,13 @@ public class vtnAdminMedico extends javax.swing.JFrame {
 
         btnEliminarMedico.setText("Eliminar médico");
 
+        btnRegresarEliminar.setText("Regresar");
+        btnRegresarEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarEliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlEliminarMedicoLayout = new javax.swing.GroupLayout(pnlEliminarMedico);
         pnlEliminarMedico.setLayout(pnlEliminarMedicoLayout);
         pnlEliminarMedicoLayout.setHorizontalGroup(
@@ -323,17 +360,20 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                         .addComponent(jScrollPane2)
                         .addContainerGap())))
             .addGroup(pnlEliminarMedicoLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblCodigoMedico)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtCodigoMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBuscar)
+                .addGroup(pnlEliminarMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlEliminarMedicoLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(lblCodigoMedico)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCodigoMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBuscar))
+                    .addGroup(pnlEliminarMedicoLayout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(btnRegresarEliminar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEliminarMedico)))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEliminarMedicoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnEliminarMedico)
-                .addGap(145, 145, 145))
         );
         pnlEliminarMedicoLayout.setVerticalGroup(
             pnlEliminarMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -348,7 +388,9 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                 .addGap(24, 24, 24)
-                .addComponent(btnEliminarMedico))
+                .addGroup(pnlEliminarMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEliminarMedico)
+                    .addComponent(btnRegresarEliminar)))
         );
 
         pnlEliminarUsuario.add(pnlEliminarMedico);
@@ -370,7 +412,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCodigoMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoMedicoActionPerformed
-
+        
     }//GEN-LAST:event_txtCodigoMedicoActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -380,6 +422,23 @@ public class vtnAdminMedico extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         ventAdmin.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        JOptionPane.showMessageDialog(this, "Usuario editado exitosamente");
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnRegresarAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarAgregarActionPerformed
+        ventAdmin.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnRegresarAgregarActionPerformed
+
+    private void btnRegresarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarEliminarActionPerformed
+        btnRegresarAgregarActionPerformed(evt);
+    }//GEN-LAST:event_btnRegresarEliminarActionPerformed
+
+    private void btnRegresarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarEditarActionPerformed
+        btnRegresarAgregarActionPerformed(evt);
+    }//GEN-LAST:event_btnRegresarEditarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -422,6 +481,9 @@ public class vtnAdminMedico extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminarMedico;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnGuardar1;
+    private javax.swing.JButton btnRegresarAgregar;
+    private javax.swing.JButton btnRegresarEditar;
+    private javax.swing.JButton btnRegresarEliminar;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblAgregarMédico;

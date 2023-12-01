@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="grpTipoUsuario">
+    </Component>
+  </NonVisualComponents>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
@@ -57,10 +61,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="pnlAgregarUsuario1" min="-2" pref="413" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="pnlAgregarUsuario1" alignment="0" pref="427" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -75,11 +76,6 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
@@ -93,6 +89,13 @@
                           </Group>
                           <EmptySpace pref="66" max="32767" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="btnRegresarAgregar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -102,9 +105,12 @@
                           <Component id="lblAgregarUsuario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                           <Component id="pnlDatos" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="62" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnRegresarAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="68" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -122,6 +128,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Guardar usuario"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActionPerformed"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JPanel" name="pnlDatos">
 
@@ -135,9 +144,9 @@
                                       <EmptySpace pref="27" max="-2" attributes="0"/>
                                       <Component id="lblTipoUsuario" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jrbAdministrador" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jrbAdministradorAgregar" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jrbUsuario" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jrbUsuarioAgregar" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -150,10 +159,10 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="txtNombre" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="txtApellidos" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="txtContrasena" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="txtNombreUsuario" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                                                  <Component id="txtNombreAgregar" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txtApellidosAgregar" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txtContrasenaAgregar" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txtNombreUsuarioAgregar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
@@ -164,8 +173,8 @@
                                               </Group>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="txtCodigo" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="txtEmail" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                                                  <Component id="txtCodigoAgregar" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txtEmailAgregar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -182,37 +191,37 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNombreAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtApellidosAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblNombreUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtNombreUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNombreUsuarioAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblContreasena" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtContrasena" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtContrasenaAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtEmailAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblEmail" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCodigoAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jrbUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jrbAdministrador" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jrbUsuarioAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jrbAdministradorAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblTipoUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -231,18 +240,18 @@
                         <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtContrasena">
+                    <Component class="javax.swing.JTextField" name="txtContrasenaAgregar">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtApellidos">
+                    <Component class="javax.swing.JTextField" name="txtApellidosAgregar">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtCodigo">
+                    <Component class="javax.swing.JTextField" name="txtCodigoAgregar">
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblCodigo">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Codigo:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtNombre">
+                    <Component class="javax.swing.JTextField" name="txtNombreAgregar">
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblApellidos">
                       <Properties>
@@ -254,17 +263,23 @@
                         <Property name="text" type="java.lang.String" value="Nombre de usuario:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jrbUsuario">
+                    <Component class="javax.swing.JRadioButton" name="jrbUsuarioAgregar">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="grpTipoUsuario"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Usuario"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JRadioButton" name="jrbAdministrador">
+                    <Component class="javax.swing.JRadioButton" name="jrbAdministradorAgregar">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="grpTipoUsuario"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Administrador"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtNombreUsuario">
+                    <Component class="javax.swing.JTextField" name="txtNombreUsuarioAgregar">
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblEmail">
                       <Properties>
@@ -276,10 +291,18 @@
                         <Property name="text" type="java.lang.String" value="Tipo de usuario:"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtEmail">
+                    <Component class="javax.swing.JTextField" name="txtEmailAgregar">
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JButton" name="btnRegresarAgregar">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Regresar"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegresarAgregarActionPerformed"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -296,17 +319,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="132" max="32767" attributes="0"/>
-                      <Component id="lblAgregarUsuario1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
-                      <Component id="btnGuardar1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="150" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -320,16 +333,21 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="txtApellidos1" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="txtNombreUsuario1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtEmail1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtCodigo1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtContrasena1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="txtNombre1" alignment="1" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Component id="txtApellidosEditar" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="txtNombreUsuarioEditar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtEmailEditar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtCodigoEditar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtContrasenaEditar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="txtNombreEditar" alignment="1" min="-2" pref="130" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" pref="153" max="32767" attributes="0"/>
+                              <Component id="jScrollPane3" pref="0" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="lblAgregarUsuario1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
@@ -341,6 +359,13 @@
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="108" max="32767" attributes="0"/>
+                      <Component id="btnRegresarEditar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnGuardar1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -354,32 +379,32 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblNombre1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtNombre1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNombreEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblApellidos1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtApellidos1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtApellidosEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblNombreUsuario1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtNombreUsuario1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNombreUsuarioEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblContreasena1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtContrasena1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtContrasenaEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="lblEmail1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtEmail1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtEmailEditar" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblCodigo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtCodigo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtCodigoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jScrollPane3" alignment="1" min="-2" pref="162" max="-2" attributes="0"/>
@@ -390,9 +415,12 @@
                           <Component id="jrbAdministrador1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblTipoUsuario1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="81" max="32767" attributes="0"/>
-                      <Component id="btnGuardar1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnGuardar1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnRegresarEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="65" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -408,7 +436,7 @@
                 <Property name="text" type="java.lang.String" value="Tipo de usuario:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtEmail1">
+            <Component class="javax.swing.JTextField" name="txtEmailEditar">
             </Component>
             <Component class="javax.swing.JLabel" name="lblApellidos1">
               <Properties>
@@ -430,11 +458,11 @@
                 <Property name="text" type="java.lang.String" value="Codigo:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtCodigo1">
+            <Component class="javax.swing.JTextField" name="txtCodigoEditar">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtContrasena1">
+            <Component class="javax.swing.JTextField" name="txtContrasenaEditar">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtApellidos1">
+            <Component class="javax.swing.JTextField" name="txtApellidosEditar">
             </Component>
             <Component class="javax.swing.JLabel" name="lblNombreUsuario1">
               <Properties>
@@ -446,7 +474,7 @@
                 <Property name="text" type="java.lang.String" value="Usuario"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNombreUsuario1">
+            <Component class="javax.swing.JTextField" name="txtNombreUsuarioEditar">
             </Component>
             <Component class="javax.swing.JLabel" name="lblEmail1">
               <Properties>
@@ -466,7 +494,7 @@
                 <Property name="text" type="java.lang.String" value="Guardar usuario"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNombre1">
+            <Component class="javax.swing.JTextField" name="txtNombreEditar">
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane3">
               <AuxValues>
@@ -487,6 +515,14 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JButton" name="btnRegresarEditar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Regresar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegresarEditarActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="pnlEliminarUsuario">
@@ -520,21 +556,20 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                  <Component id="lblCodigo2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtCodigo2" min="-2" pref="109" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
-                                  <Component id="btnEliminarUsuario" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="lblCodigo2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtCodigoEliminar" min="-2" pref="109" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="30" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="btnRegresarEliminar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="btnEliminarUsuario" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -545,15 +580,17 @@
                           <Component id="lblEliminarUsuario" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtCodigo2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCodigoEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblCodigo2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Component id="jScrollPane2" pref="216" max="32767" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnEliminarUsuario" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnEliminarUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnRegresarEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -567,9 +604,9 @@
                     <Property name="text" type="java.lang.String" value="Eliminar usuario"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtCodigo2">
+                <Component class="javax.swing.JTextField" name="txtCodigoEliminar">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigo2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoEliminarActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblCodigo2">
@@ -604,6 +641,14 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Eliminar contacto"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnRegresarEliminar">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Regresar"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegresarEliminarActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
