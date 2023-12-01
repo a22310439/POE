@@ -1,6 +1,14 @@
 package vistas;
 
+import vistas.Usuario.vtnUsuario;
+import vistas.Admin.vtnAdmin;
+import modelo.usuario;
+
 public class vtnPrincipal extends javax.swing.JFrame {
+
+    vtnAdmin ventAdmin = null;
+    vtnUsuario ventUsuario = null;
+    usuario usu = new usuario();
 
     public vtnPrincipal() {
         initComponents();
@@ -34,6 +42,11 @@ public class vtnPrincipal extends javax.swing.JFrame {
         lblContrasena.setText("Contraseña:");
 
         btnIngresar.setText("Ingresar");
+        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresarActionPerformed(evt);
+            }
+        });
 
         lblInstrucciones.setText("Ingrese sus datos para ingresar al sistema");
 
@@ -89,6 +102,22 @@ public class vtnPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        usu.setTipoUsuario(txtNombreUsuario.getText());
+        if(usu.getTipoUsuario().equals("Admin")){
+            if(ventAdmin == null){
+                ventAdmin = new vtnAdmin(this, usu);
+            }
+            ventAdmin.setVisible(true);
+        }else if(usu.getTipoUsuario().equals("Usuario")){
+            if(ventUsuario == null){
+                ventUsuario = new vtnUsuario(this);
+            }
+            ventUsuario.setVisible(true);
+        }
+        this.setVisible(false);
+    }                                           
 
     /**
      * @param args the command line arguments

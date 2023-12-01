@@ -21,12 +21,13 @@ public class paciente extends persona{
     private String cirugiasPrevias;
     private String fracturas;
     private String transfusionesSanguineas;
-    private String transfusionesSanguineashospitalizaciones;
+    private String hospitalizaciones;
     private String motivoConsulta;
     private String evoPadecimientoActual;
     private String sospechaDiagnostica;
     private String planTratamiento;
     private String evoPaciente;
+    private String prioritario;
     
     public String getSexo() {
         return sexo;
@@ -88,8 +89,8 @@ public class paciente extends persona{
     public String getTransfusionesSanguineas() {
         return transfusionesSanguineas;
     }
-    public String getTransfusionesSanguineashospitalizaciones() {
-        return transfusionesSanguineashospitalizaciones;
+    public String getHospitalizaciones() {
+        return hospitalizaciones;
     }
     public String getMotivoConsulta() {
         return motivoConsulta;
@@ -106,6 +107,10 @@ public class paciente extends persona{
     public String getEvoPaciente() {
         return evoPaciente;
     }
+    public String getPrioritario() {
+        return prioritario;
+    }
+    
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
@@ -167,8 +172,8 @@ public class paciente extends persona{
     public void setTransfusionesSanguineas(String transfusionesSanguineas) {
         this.transfusionesSanguineas = transfusionesSanguineas;
     }
-    public void setTransfusionesSanguineashospitalizaciones(String transfusionesSanguineashospitalizaciones) {
-        this.transfusionesSanguineashospitalizaciones = transfusionesSanguineashospitalizaciones;
+    public void setHospitalizaciones(String hospitalizaciones) {
+        this.hospitalizaciones = hospitalizaciones;
     }
     public void setMotivoConsulta(String motivoConsulta) {
         this.motivoConsulta = motivoConsulta;
@@ -184,5 +189,8 @@ public class paciente extends persona{
     }
     public void setEvoPaciente(String evoPaciente) {
         this.evoPaciente = evoPaciente;
+    }
+    public void setPrioritario(String prioritario) {
+        this.prioritario = prioritario;
     }
 }

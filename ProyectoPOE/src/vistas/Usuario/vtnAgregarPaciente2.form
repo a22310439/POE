@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowClosing" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowClosing"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,48,0,0,1,-82"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="pnlTitulo">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="First"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="24" style="1"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Agregar paciente"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="card2"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="Center"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="pnlAgregarPaciente" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="pnlAgregarPaciente" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="pnlAgregarPaciente">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="lblSospechaDiagnostica" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblTransgusionesSanguineas" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblFracturas" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblTipoSangre" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblEstadoVivienda" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblEnfermedadesInfecciosas" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblEnfermedadesCronicoDegenerativas" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblAlergias" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblCirugiasPruebas" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblHospitalizaciones" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblPlanTratamiento" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblEvolucionPaciente" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblPacientePrioritario" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lblEnfermedadesInfancia" alignment="1" min="-2" pref="151" max="-2" attributes="0"/>
+                          <Component id="lblMotivoConsulta" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEvolucionPadecimientoActual" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtEstadoVivienda" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtTipoSangre" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtEnfermedadesInfancia" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtEnfermedadesInfecciosas" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtAlergias" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtCirugiasPrevias" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtFracturas" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtTransfusionesSanguineas" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtSospechaDiagnostica" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtEvolucionPadecimientoActual" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtMotivoConsulta" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtHospitalizaciones" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtPlanTratamiento" min="-2" pref="183" max="-2" attributes="0"/>
+                              <Component id="txtEnfermedadesCronicoDegenerativas" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="txtEvolucionPaciente" min="-2" pref="183" max="-2" attributes="0"/>
+                          <Component id="cbxPacientePrioritario" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnAnterior" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblEstadoVivienda" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEstadoVivienda" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblTipoSangre" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtTipoSangre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblEnfermedadesInfancia" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEnfermedadesInfancia" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblEnfermedadesInfecciosas" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEnfermedadesInfecciosas" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtEnfermedadesCronicoDegenerativas" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblEnfermedadesCronicoDegenerativas" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtAlergias" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblAlergias" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtCirugiasPrevias" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblCirugiasPruebas" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtFracturas" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblFracturas" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtTransfusionesSanguineas" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblTransgusionesSanguineas" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblHospitalizaciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtHospitalizaciones" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblMotivoConsulta" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtMotivoConsulta" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblEvolucionPadecimientoActual" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEvolucionPadecimientoActual" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblSospechaDiagnostica" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtSospechaDiagnostica" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblPlanTratamiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtPlanTratamiento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblEvolucionPaciente" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEvolucionPaciente" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblPacientePrioritario" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbxPacientePrioritario" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="31" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnAnterior" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblEstadoVivienda">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Estado de vivienda:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEstadoVivienda">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblTipoSangre">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tipo de sangre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtTipoSangre">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEnfermedadesInfancia">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Enfermedades de la Infancia:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEnfermedadesInfancia">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEnfermedadesInfecciosas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Enfermedades Infecciosas:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEnfermedadesInfecciosas">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEnfermedadesCronicoDegenerativas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Enfermedades Cronico Degenerativas:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEnfermedadesCronicoDegenerativas">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblAlergias">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Alergias:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtAlergias">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblCirugiasPruebas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cirugias Previas:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtCirugiasPrevias">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblFracturas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fracturas:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtFracturas">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblTransgusionesSanguineas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Transfusiones Sanguineas:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtTransfusionesSanguineas">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblHospitalizaciones">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Hospitalizaciones:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtHospitalizaciones">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblMotivoConsulta">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Motivo de Consulta:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtMotivoConsulta">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEvolucionPadecimientoActual">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Evolucion del Padecimiento Actual:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEvolucionPadecimientoActual">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblSospechaDiagnostica">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Sospecha Diagnostica:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtSospechaDiagnostica">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPlanTratamiento">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Plan de Tratamiento:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtPlanTratamiento">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEvolucionPaciente">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Evoluci&#xf3;n del Paciente:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEvolucionPaciente">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnAnterior">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Anterior"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAnteriorActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblPacientePrioritario">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Paciente Prioritario"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="cbxPacientePrioritario">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnGuardar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Guardar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
