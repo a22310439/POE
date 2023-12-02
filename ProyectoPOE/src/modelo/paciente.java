@@ -193,4 +193,38 @@ public class paciente extends persona{
     public void setPrioritario(String prioritario) {
         this.prioritario = prioritario;
     }
+
+    @Override
+    public String mostrarInfo(){
+    String info = super.mostrarInfo();
+    info += "\nSexo: " + getSexo() +
+            "\nFecha de Nacimiento: " + getFechaNacimiento() +
+            "\nOcupación: " + getOcupacion() +
+            "\nEstado Civil: " + getEstadoCivil() +
+            "\nCiudad de Nacimiento: " + getCiudadNacimiento() +
+            "\nCiudad de Residencia: " + getCiudadResidencia() +
+            "\nDomicilio: " + getDomicilio() +
+            "\nTelefono: " + getTelefono() +
+            "\nContacto de Emergencia: " + getContactoEmergencia() +
+            "\nVacunas: " + getVacunas() +
+            "\nContacto con Animales: " + getContactoAnimales() +
+            "\nEstado de Vivienda: " + getEstadoVivienda() +
+            "\nTipo de Sangre: " + getTipoSangre() +
+            "\nEnfermedades de Infancia: " + getEnfInfancia() +
+            "\nEnfermedades Infecciosas: " + getEnfInfecciosas() +
+            "\nEnfermedades Cronico Degenerativas: " + getEnfCronicoDegenerativas() +
+            "\nAlergias: " + getAlergias() +
+            "\nCirugias Previas: " + getCirugiasPrevias() +
+            "\nFracturas: " + getFracturas() +
+            "\nTransfusiones Sanguineas: " + getTransfusionesSanguineas() +
+            "\nHospitalizaciones: " + getHospitalizaciones() +
+            "\nMotivo de Consulta: " + getMotivoConsulta() +
+            "\nEvolucion del Padecimiento Actual: " + getEvoPadecimientoActual() +
+            "\nSospecha Diagnostica: " + getSospechaDiagnostica() +
+            "\nPlan de Tratamiento: " + getPlanTratamiento() +
+            "\nEvolucion del Paciente: " + getEvoPaciente() +
+            "\nPaciente Prioritario: " + getPrioritario();
+    return info;
+    }
 }
+

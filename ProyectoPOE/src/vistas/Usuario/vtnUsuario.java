@@ -79,6 +79,11 @@ public class vtnUsuario extends javax.swing.JFrame {
         lblBuscar.setText("Ingrese el código del paciente:");
 
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlUsuarioLayout = new javax.swing.GroupLayout(pnlUsuario);
         pnlUsuario.setLayout(pnlUsuarioLayout);
@@ -202,7 +207,13 @@ public class vtnUsuario extends javax.swing.JFrame {
     private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
         ventPrincipal.setVisible(true);
         this.setVisible(false);
+        txtBuscar.setText("");
+        txtInfoPaciente.setText("");
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        txtInfoPaciente.setText(pac.mostrarInfo());
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
      * @param args the command line arguments

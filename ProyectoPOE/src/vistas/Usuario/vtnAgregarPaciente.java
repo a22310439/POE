@@ -1,12 +1,13 @@
 package vistas.Usuario;
 
+import javax.swing.JOptionPane;
+
 import modelo.paciente;
 
 public class vtnAgregarPaciente extends javax.swing.JFrame {
 
     paciente pac = null;
     vtnUsuario ventUsuario = null;
-    vtnAgregarPaciente2 ventAgregarPaciente2 = null;
 
     /**
      * Creates new form vtnAgregarPaciente
@@ -64,9 +65,42 @@ public class vtnAgregarPaciente extends javax.swing.JFrame {
         txtVacunas = new javax.swing.JTextField();
         lblContactoAnimales = new javax.swing.JLabel();
         txtContactoAnimales = new javax.swing.JTextField();
-        btnSiguiente = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        lblEvolucionPaciente = new javax.swing.JLabel();
+        txtPlanTratamiento = new javax.swing.JTextField();
+        lblPlanTratamiento = new javax.swing.JLabel();
+        txtSospechaDiagnostica = new javax.swing.JTextField();
+        txtCirugiasPrevias = new javax.swing.JTextField();
+        lblSospechaDiagnostica = new javax.swing.JLabel();
+        lblCirugiasPruebas = new javax.swing.JLabel();
+        txtAlergias = new javax.swing.JTextField();
+        lblAlergias = new javax.swing.JLabel();
+        cbxPacientePrioritario = new javax.swing.JCheckBox();
+        lblPacientePrioritario = new javax.swing.JLabel();
+        txtEvoPaciente = new javax.swing.JTextField();
+        txtEnfCronicoDegenerativas = new javax.swing.JTextField();
+        lblEnfermedadesCronicoDegenerativas = new javax.swing.JLabel();
+        txtEnfInfecciosas = new javax.swing.JTextField();
+        lblEnfermedadesInfecciosas = new javax.swing.JLabel();
+        txtEnfInfancia = new javax.swing.JTextField();
+        lblEnfermedadesInfancia = new javax.swing.JLabel();
+        txtTransfusionesSanguineas = new javax.swing.JTextField();
+        lblTransgusionesSanguineas = new javax.swing.JLabel();
+        txtFracturas = new javax.swing.JTextField();
+        txtTipoSangre = new javax.swing.JTextField();
+        lblFracturas = new javax.swing.JLabel();
+        lblTipoSangre = new javax.swing.JLabel();
+        txtEstadoVivienda = new javax.swing.JTextField();
+        lblEstadoVivienda = new javax.swing.JLabel();
+        txtEvoPadecimientoActual = new javax.swing.JTextField();
+        lblEvolucionPadecimientoActual = new javax.swing.JLabel();
+        txtMotivoConsulta = new javax.swing.JTextField();
+        lblMotivoConsulta = new javax.swing.JLabel();
+        txtHospitalizaciones = new javax.swing.JTextField();
+        lblHospitalizaciones = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(430, 650));
+        setPreferredSize(new java.awt.Dimension(790, 690));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -118,12 +152,51 @@ public class vtnAgregarPaciente extends javax.swing.JFrame {
 
         lblContactoAnimales.setText("Contacto con animales");
 
-        btnSiguiente.setText("Siguiente");
-        btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSiguienteActionPerformed(evt);
+                btnGuardarActionPerformed(evt);
             }
         });
+
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+
+        lblEvolucionPaciente.setText("Evolución del Paciente:");
+
+        lblPlanTratamiento.setText("Plan de Tratamiento:");
+
+        lblSospechaDiagnostica.setText("Sospecha Diagnostica:");
+
+        lblCirugiasPruebas.setText("Cirugias Previas:");
+
+        lblAlergias.setText("Alergias:");
+
+        lblPacientePrioritario.setText("Paciente Prioritario");
+
+        lblEnfermedadesCronicoDegenerativas.setText("Enfermedades Cronico Degenerativas:");
+
+        lblEnfermedadesInfecciosas.setText("Enfermedades Infecciosas:");
+
+        lblEnfermedadesInfancia.setText("Enfermedades de la Infancia:");
+
+        lblTransgusionesSanguineas.setText("Transfusiones Sanguineas:");
+
+        lblFracturas.setText("Fracturas:");
+
+        lblTipoSangre.setText("Tipo de sangre:");
+
+        lblEstadoVivienda.setText("Estado de vivienda:");
+
+        lblEvolucionPadecimientoActual.setText("Evolucion del Padecimiento Actual:");
+
+        lblMotivoConsulta.setText("Motivo de Consulta:");
+
+        lblHospitalizaciones.setText("Hospitalizaciones:");
 
         javax.swing.GroupLayout pnlAgregarPacienteLayout = new javax.swing.GroupLayout(pnlAgregarPaciente);
         pnlAgregarPaciente.setLayout(pnlAgregarPacienteLayout);
@@ -134,7 +207,9 @@ public class vtnAgregarPaciente extends javax.swing.JFrame {
                 .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAgregarPacienteLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnSiguiente))
+                        .addComponent(btnCancelar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnGuardar))
                     .addGroup(pnlAgregarPacienteLayout.createSequentialGroup()
                         .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(pnlAgregarPacienteLayout.createSequentialGroup()
@@ -177,74 +252,180 @@ public class vtnAgregarPaciente extends javax.swing.JFrame {
                                 .addComponent(lblContactoAnimales)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtContactoAnimales)))
-                        .addGap(0, 84, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblSospechaDiagnostica)
+                                .addComponent(lblTransgusionesSanguineas)
+                                .addComponent(lblFracturas)
+                                .addComponent(lblTipoSangre)
+                                .addComponent(lblEstadoVivienda)
+                                .addComponent(lblEnfermedadesInfecciosas)
+                                .addComponent(lblEnfermedadesCronicoDegenerativas)
+                                .addComponent(lblAlergias)
+                                .addComponent(lblCirugiasPruebas)
+                                .addComponent(lblHospitalizaciones)
+                                .addComponent(lblPlanTratamiento)
+                                .addComponent(lblEvolucionPaciente)
+                                .addComponent(lblPacientePrioritario))
+                            .addComponent(lblEnfermedadesInfancia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblMotivoConsulta, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblEvolucionPadecimientoActual, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(txtEstadoVivienda)
+                                .addComponent(txtTipoSangre)
+                                .addComponent(txtEnfInfancia)
+                                .addComponent(txtEnfInfecciosas)
+                                .addComponent(txtAlergias)
+                                .addComponent(txtCirugiasPrevias)
+                                .addComponent(txtFracturas)
+                                .addComponent(txtTransfusionesSanguineas)
+                                .addComponent(txtSospechaDiagnostica)
+                                .addComponent(txtEvoPadecimientoActual)
+                                .addComponent(txtMotivoConsulta)
+                                .addComponent(txtHospitalizaciones)
+                                .addComponent(txtPlanTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtEnfCronicoDegenerativas, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtEvoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbxPacientePrioritario))
+                        .addGap(0, 9, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pnlAgregarPacienteLayout.setVerticalGroup(
             pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlAgregarPacienteLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombre)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblApellidos)
-                    .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEmail)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblCodigo)
-                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(pnlAgregarPacienteLayout.createSequentialGroup()
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblNombre)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblApellidos)
+                            .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblEmail)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCodigo)
+                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblSexo)
+                            .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblFechaNacimiento)
+                            .addComponent(txtFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblOcupacion)
+                            .addComponent(txtOcupacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblEstadoCivil)
+                            .addComponent(txtEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCiudadNacimiento)
+                            .addComponent(txtCiudadNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblCiudadResidencia)
+                            .addComponent(txtCiudadResidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblDomicilio)
+                            .addComponent(txtDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblTelefono)
+                            .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblContactoEmergencia)
+                            .addComponent(txtContactoEmergencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblVacunas)
+                            .addComponent(txtVacunas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblContactoAnimales)
+                            .addComponent(txtContactoAnimales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlAgregarPacienteLayout.createSequentialGroup()
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblEstadoVivienda)
+                            .addComponent(txtEstadoVivienda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblTipoSangre)
+                            .addComponent(txtTipoSangre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblEnfermedadesInfancia)
+                            .addComponent(txtEnfInfancia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblEnfermedadesInfecciosas)
+                            .addComponent(txtEnfInfecciosas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEnfCronicoDegenerativas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblEnfermedadesCronicoDegenerativas))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtAlergias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblAlergias))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCirugiasPrevias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblCirugiasPruebas))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtFracturas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblFracturas))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtTransfusionesSanguineas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTransgusionesSanguineas))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblHospitalizaciones)
+                            .addComponent(txtHospitalizaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblMotivoConsulta)
+                            .addComponent(txtMotivoConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblEvolucionPadecimientoActual)
+                            .addComponent(txtEvoPadecimientoActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblSospechaDiagnostica)
+                            .addComponent(txtSospechaDiagnostica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblPlanTratamiento)
+                            .addComponent(txtPlanTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblEvolucionPaciente)
+                            .addComponent(txtEvoPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblPacientePrioritario)
+                            .addComponent(cbxPacientePrioritario))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSexo)
-                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFechaNacimiento)
-                    .addComponent(txtFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblOcupacion)
-                    .addComponent(txtOcupacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEstadoCivil)
-                    .addComponent(txtEstadoCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCiudadNacimiento)
-                    .addComponent(txtCiudadNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCiudadResidencia)
-                    .addComponent(txtCiudadResidencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDomicilio)
-                    .addComponent(txtDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTelefono)
-                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblContactoEmergencia)
-                    .addComponent(txtContactoEmergencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblVacunas)
-                    .addComponent(txtVacunas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlAgregarPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblContactoAnimales)
-                    .addComponent(txtContactoAnimales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addComponent(btnSiguiente)
+                    .addComponent(btnGuardar)
+                    .addComponent(btnCancelar))
                 .addContainerGap())
         );
 
@@ -252,16 +433,11 @@ public class vtnAgregarPaciente extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlAgregarPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnlAgregarPaciente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(pnlAgregarPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnlAgregarPaciente, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 528, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -273,14 +449,18 @@ public class vtnAgregarPaciente extends javax.swing.JFrame {
         ventUsuario.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
-    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
-        if(ventAgregarPaciente2 == null){
-            ventAgregarPaciente2 = new vtnAgregarPaciente2(this, ventUsuario, pac);
-        }
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         agregarDatos();
-        ventAgregarPaciente2.setVisible(true);
+        JOptionPane.showMessageDialog(this, "Paciente agregado correctamente");
+        ventUsuario.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnSiguienteActionPerformed
+        limpiarDatos();
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        ventUsuario.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     public void agregarDatos(){
         pac.setNombre(txtNombre.getText());
@@ -298,7 +478,62 @@ public class vtnAgregarPaciente extends javax.swing.JFrame {
         pac.setContactoEmergencia(txtContactoEmergencia.getText());
         pac.setVacunas(txtVacunas.getText());
         pac.setContactoAnimales(txtContactoAnimales.getText());
+        pac.setEstadoVivienda(txtEstadoVivienda.getText());
+        pac.setTipoSangre(txtTipoSangre.getText());
+        pac.setEnfInfancia(txtEnfInfancia.getText());
+        pac.setEnfInfecciosas(txtEnfInfecciosas.getText());
+        pac.setEnfCronicoDegenerativas(txtEnfCronicoDegenerativas.getText());
+        pac.setAlergias(txtAlergias.getText());
+        pac.setCirugiasPrevias(txtCirugiasPrevias.getText());
+        pac.setFracturas(txtFracturas.getText());
+        pac.setTransfusionesSanguineas(txtTransfusionesSanguineas.getText());
+        pac.setHospitalizaciones(txtHospitalizaciones.getText());
+        pac.setMotivoConsulta(txtMotivoConsulta.getText());
+        pac.setEvoPadecimientoActual(txtEvoPadecimientoActual.getText());
+        pac.setSospechaDiagnostica(txtSospechaDiagnostica.getText());
+        pac.setPlanTratamiento(txtPlanTratamiento.getText());
+        pac.setEvoPaciente(txtEvoPaciente.getText());
+        if(cbxPacientePrioritario.isSelected()){
+            pac.setPrioritario("Si");
+        }else{
+            pac.setPrioritario("No");
+        }
     }
+
+    public void limpiarDatos(){
+        txtNombre.setText("");
+        txtApellidos.setText("");
+        txtEmail.setText("");
+        txtCodigo.setText("");
+        cbSexo.setSelectedIndex(0);
+        txtFechaNacimiento.setText("");
+        txtOcupacion.setText("");
+        txtEstadoCivil.setText("");
+        txtCiudadNacimiento.setText("");
+        txtCiudadResidencia.setText("");
+        txtDomicilio.setText("");
+        txtTelefono.setText("");
+        txtContactoEmergencia.setText("");
+        txtVacunas.setText("");
+        txtContactoAnimales.setText("");
+        txtEstadoVivienda.setText("");
+        txtTipoSangre.setText("");
+        txtEnfInfancia.setText("");
+        txtEnfInfecciosas.setText("");
+        txtEnfCronicoDegenerativas.setText("");
+        txtAlergias.setText("");
+        txtCirugiasPrevias.setText("");
+        txtFracturas.setText("");
+        txtTransfusionesSanguineas.setText("");
+        txtHospitalizaciones.setText("");
+        txtMotivoConsulta.setText("");
+        txtEvoPadecimientoActual.setText("");
+        txtSospechaDiagnostica.setText("");
+        txtPlanTratamiento.setText("");
+        txtEvoPaciente.setText("");
+        cbxPacientePrioritario.setSelected(false);
+    }
+    
 
     /**
      * @param args the command line arguments
@@ -336,11 +571,15 @@ public class vtnAgregarPaciente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSiguiente;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JComboBox<String> cbSexo;
+    private javax.swing.JCheckBox cbxPacientePrioritario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblAlergias;
     private javax.swing.JLabel lblApellidos;
+    private javax.swing.JLabel lblCirugiasPruebas;
     private javax.swing.JLabel lblCiudadNacimiento;
     private javax.swing.JLabel lblCiudadResidencia;
     private javax.swing.JLabel lblCodigo;
@@ -348,16 +587,32 @@ public class vtnAgregarPaciente extends javax.swing.JFrame {
     private javax.swing.JLabel lblContactoEmergencia;
     private javax.swing.JLabel lblDomicilio;
     private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblEnfermedadesCronicoDegenerativas;
+    private javax.swing.JLabel lblEnfermedadesInfancia;
+    private javax.swing.JLabel lblEnfermedadesInfecciosas;
     private javax.swing.JLabel lblEstadoCivil;
+    private javax.swing.JLabel lblEstadoVivienda;
+    private javax.swing.JLabel lblEvolucionPaciente;
+    private javax.swing.JLabel lblEvolucionPadecimientoActual;
     private javax.swing.JLabel lblFechaNacimiento;
+    private javax.swing.JLabel lblFracturas;
+    private javax.swing.JLabel lblHospitalizaciones;
+    private javax.swing.JLabel lblMotivoConsulta;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblOcupacion;
+    private javax.swing.JLabel lblPacientePrioritario;
+    private javax.swing.JLabel lblPlanTratamiento;
     private javax.swing.JLabel lblSexo;
+    private javax.swing.JLabel lblSospechaDiagnostica;
     private javax.swing.JLabel lblTelefono;
+    private javax.swing.JLabel lblTipoSangre;
+    private javax.swing.JLabel lblTransgusionesSanguineas;
     private javax.swing.JLabel lblVacunas;
     private javax.swing.JPanel pnlAgregarPaciente;
     private javax.swing.JPanel pnlTitulo;
+    private javax.swing.JTextField txtAlergias;
     private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtCirugiasPrevias;
     private javax.swing.JTextField txtCiudadNacimiento;
     private javax.swing.JTextField txtCiudadResidencia;
     private javax.swing.JTextField txtCodigo;
@@ -365,11 +620,24 @@ public class vtnAgregarPaciente extends javax.swing.JFrame {
     private javax.swing.JTextField txtContactoEmergencia;
     private javax.swing.JTextField txtDomicilio;
     private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtEnfCronicoDegenerativas;
+    private javax.swing.JTextField txtEnfInfancia;
+    private javax.swing.JTextField txtEnfInfecciosas;
     private javax.swing.JTextField txtEstadoCivil;
+    private javax.swing.JTextField txtEstadoVivienda;
+    private javax.swing.JTextField txtEvoPaciente;
+    private javax.swing.JTextField txtEvoPadecimientoActual;
     private javax.swing.JTextField txtFechaNacimiento;
+    private javax.swing.JTextField txtFracturas;
+    private javax.swing.JTextField txtHospitalizaciones;
+    private javax.swing.JTextField txtMotivoConsulta;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtOcupacion;
+    private javax.swing.JTextField txtPlanTratamiento;
+    private javax.swing.JTextField txtSospechaDiagnostica;
     private javax.swing.JTextField txtTelefono;
+    private javax.swing.JTextField txtTipoSangre;
+    private javax.swing.JTextField txtTransfusionesSanguineas;
     private javax.swing.JTextField txtVacunas;
     // End of variables declaration//GEN-END:variables
 }

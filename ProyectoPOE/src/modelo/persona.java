@@ -31,4 +31,13 @@ public class persona {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String mostrarInfo(){
+        String info = "Datos: " +
+        "\nNombre: " + getNombre() +
+        "\nApellidos: " + getApellido()+
+        "\nEmail: " + getEmail() +
+        "\nCodigo: " + getCodigo();
+        return info;
+    }
 }

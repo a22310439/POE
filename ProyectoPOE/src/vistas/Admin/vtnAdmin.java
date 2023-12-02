@@ -42,6 +42,7 @@ public class vtnAdmin extends javax.swing.JFrame {
         jrbUsuarios = new javax.swing.JRadioButton();
         jrbMedicos = new javax.swing.JRadioButton();
         btnIr = new javax.swing.JButton();
+        btnIr1 = new javax.swing.JButton();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -80,20 +81,30 @@ public class vtnAdmin extends javax.swing.JFrame {
             }
         });
 
+        btnIr1.setText("Cerrar sesion");
+        btnIr1.setPreferredSize(new java.awt.Dimension(70, 23));
+        btnIr1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIr1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(104, 104, 104)
-                .addComponent(jrbUsuarios)
-                .addGap(52, 52, 52)
-                .addComponent(jrbMedicos)
-                .addGap(108, 108, 108))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnIr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(163, 163, 163))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jrbUsuarios)
+                        .addGap(52, 52, 52)
+                        .addComponent(jrbMedicos))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnIr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(btnIr1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(89, 89, 89))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,9 +113,11 @@ public class vtnAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jrbUsuarios)
                     .addComponent(jrbMedicos))
-                .addGap(30, 30, 30)
-                .addComponent(btnIr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnIr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIr1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel3, java.awt.BorderLayout.CENTER);
@@ -135,6 +148,11 @@ public class vtnAdmin extends javax.swing.JFrame {
             this.setVisible(false);
         }
     }//GEN-LAST:event_btnIrActionPerformed
+
+    private void btnIr1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIr1ActionPerformed
+        ventPrincipal.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnIr1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,6 +191,7 @@ public class vtnAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIr;
+    private javax.swing.JButton btnIr1;
     private javax.swing.ButtonGroup grpSeleccion;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

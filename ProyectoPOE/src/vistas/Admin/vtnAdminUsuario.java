@@ -1,5 +1,6 @@
 package vistas.Admin;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 import modelo.usuario;
@@ -9,6 +10,8 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
     vtnAdmin ventAdmin = null;
     usuario usu = null;
 
+    DefaultListModel<String> model = new DefaultListModel<>();
+
     public vtnAdminUsuario() {
         initComponents();
     }
@@ -17,6 +20,7 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
         initComponents();
         this.ventAdmin = ventAdmin;
         this.usu = usu;
+        lstUsuario.setModel(model);
         ocultarComponentes();
     }
 
@@ -29,12 +33,13 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        grpTipoUsuario = new javax.swing.ButtonGroup();
+        grpTipoUsuarioAgregar = new javax.swing.ButtonGroup();
+        grpTipoUsuarioEditar = new javax.swing.ButtonGroup();
         tbpUsuarios = new javax.swing.JTabbedPane();
         pnlAgregarUsuario = new javax.swing.JPanel();
         pnlAgregarUsuario1 = new javax.swing.JPanel();
         lblAgregarUsuario = new javax.swing.JLabel();
-        btnGuardar = new javax.swing.JButton();
+        btnGuardarAgregar = new javax.swing.JButton();
         pnlDatos = new javax.swing.JPanel();
         lblNombre = new javax.swing.JLabel();
         lblContreasena = new javax.swing.JLabel();
@@ -58,20 +63,20 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
         txtEmailEditar = new javax.swing.JTextField();
         lblApellidos1 = new javax.swing.JLabel();
         lblNombre1 = new javax.swing.JLabel();
-        jrbAdministrador1 = new javax.swing.JRadioButton();
+        jrbAdministradorEditar = new javax.swing.JRadioButton();
         lblCodigo1 = new javax.swing.JLabel();
         txtCodigoEditar = new javax.swing.JTextField();
         txtContrasenaEditar = new javax.swing.JTextField();
         txtApellidosEditar = new javax.swing.JTextField();
         lblNombreUsuario1 = new javax.swing.JLabel();
-        jrbUsuario1 = new javax.swing.JRadioButton();
+        jrbUsuarioEditar = new javax.swing.JRadioButton();
         txtNombreUsuarioEditar = new javax.swing.JTextField();
         lblEmail1 = new javax.swing.JLabel();
         lblAgregarUsuario1 = new javax.swing.JLabel();
-        btnGuardar1 = new javax.swing.JButton();
+        btnGuardarEditar = new javax.swing.JButton();
         txtNombreEditar = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        lstUsuario = new javax.swing.JList<>();
         btnRegresarEditar = new javax.swing.JButton();
         pnlEliminarUsuario = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -80,7 +85,7 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
         lblCodigo2 = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        txtInfoContacto = new javax.swing.JTextArea();
+        txtInfoUsuario = new javax.swing.JTextArea();
         btnEliminarUsuario = new javax.swing.JButton();
         btnRegresarEliminar = new javax.swing.JButton();
 
@@ -95,10 +100,10 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
         lblAgregarUsuario.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblAgregarUsuario.setText("Agregar un usuario");
 
-        btnGuardar.setText("Guardar usuario");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarAgregar.setText("Guardar usuario");
+        btnGuardarAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                btnGuardarAgregarActionPerformed(evt);
             }
         });
 
@@ -112,10 +117,10 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
 
         lblNombreUsuario.setText("Nombre de usuario:");
 
-        grpTipoUsuario.add(jrbUsuarioAgregar);
+        grpTipoUsuarioAgregar.add(jrbUsuarioAgregar);
         jrbUsuarioAgregar.setText("Usuario");
 
-        grpTipoUsuario.add(jrbAdministradorAgregar);
+        grpTipoUsuarioAgregar.add(jrbAdministradorAgregar);
         jrbAdministradorAgregar.setText("Administrador");
 
         lblEmail.setText("Email:");
@@ -221,7 +226,7 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnRegresarAgregar)
                 .addGap(18, 18, 18)
-                .addComponent(btnGuardar)
+                .addComponent(btnGuardarAgregar)
                 .addGap(97, 97, 97))
         );
         pnlAgregarUsuario1Layout.setVerticalGroup(
@@ -233,7 +238,7 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                 .addComponent(pnlDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addGroup(pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
+                    .addComponent(btnGuardarAgregar)
                     .addComponent(btnRegresarAgregar))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
@@ -246,7 +251,7 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
         );
         pnlAgregarUsuarioLayout.setVerticalGroup(
             pnlAgregarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlAgregarUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
+            .addComponent(pnlAgregarUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
         );
 
         tbpUsuarios.addTab("Agregar Usuario", pnlAgregarUsuario);
@@ -259,22 +264,34 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
 
         lblNombre1.setText("Nombre:");
 
-        jrbAdministrador1.setText("Administrador");
+        grpTipoUsuarioEditar.add(jrbAdministradorEditar);
+        jrbAdministradorEditar.setText("Administrador");
 
         lblCodigo1.setText("Codigo:");
 
         lblNombreUsuario1.setText("Nombre de usuario:");
 
-        jrbUsuario1.setText("Usuario");
+        grpTipoUsuarioEditar.add(jrbUsuarioEditar);
+        jrbUsuarioEditar.setText("Usuario");
 
         lblEmail1.setText("Email:");
 
         lblAgregarUsuario1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblAgregarUsuario1.setText("Editar un usuario");
 
-        btnGuardar1.setText("Guardar usuario");
+        btnGuardarEditar.setText("Guardar usuario");
+        btnGuardarEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarEditarActionPerformed(evt);
+            }
+        });
 
-        jScrollPane3.setViewportView(jList1);
+        lstUsuario.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                lstUsuarioValueChanged(evt);
+            }
+        });
+        jScrollPane3.setViewportView(lstUsuario);
 
         btnRegresarEditar.setText("Regresar");
         btnRegresarEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -317,15 +334,15 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                         .addGap(63, 63, 63)
                         .addComponent(lblTipoUsuario1)
                         .addGap(7, 7, 7)
-                        .addComponent(jrbAdministrador1)
+                        .addComponent(jrbAdministradorEditar)
                         .addGap(5, 5, 5)
-                        .addComponent(jrbUsuario1)
+                        .addComponent(jrbUsuarioEditar)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditarUsuarioLayout.createSequentialGroup()
                 .addContainerGap(108, Short.MAX_VALUE)
                 .addComponent(btnRegresarEditar)
                 .addGap(18, 18, 18)
-                .addComponent(btnGuardar1)
+                .addComponent(btnGuardarEditar)
                 .addGap(108, 108, 108))
         );
         pnlEditarUsuarioLayout.setVerticalGroup(
@@ -362,12 +379,12 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jrbUsuario1)
-                    .addComponent(jrbAdministrador1)
+                    .addComponent(jrbUsuarioEditar)
+                    .addComponent(jrbAdministradorEditar)
                     .addComponent(lblTipoUsuario1))
                 .addGap(56, 56, 56)
                 .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar1)
+                    .addComponent(btnGuardarEditar)
                     .addComponent(btnRegresarEditar))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
@@ -392,11 +409,16 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
             }
         });
 
-        txtInfoContacto.setColumns(20);
-        txtInfoContacto.setRows(5);
-        jScrollPane2.setViewportView(txtInfoContacto);
+        txtInfoUsuario.setColumns(20);
+        txtInfoUsuario.setRows(5);
+        jScrollPane2.setViewportView(txtInfoUsuario);
 
         btnEliminarUsuario.setText("Eliminar contacto");
+        btnEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarUsuarioActionPerformed(evt);
+            }
+        });
 
         btnRegresarEliminar.setText("Regresar");
         btnRegresarEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -473,7 +495,7 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        if(txtCodigoAgregar.getText().equals("a")){
+        if(txtCodigoEliminar.getText().equals("a")){
             mostrarComponentes();
         }else{
             ocultarComponentes();
@@ -488,9 +510,17 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
         ventAdmin.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+    private void btnGuardarAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarAgregarActionPerformed
+        capturarDatosAgregar();
+        System.out.println(usu.getCodigo());
+        int ultimoIndex = model.getSize() - 1;
+        if(ultimoIndex >= 0){
+            int sigIndex = Math.min(ultimoIndex + 1, model.getSize() -1);
+            lstUsuario.setSelectedIndex(sigIndex);
+        }
+        model.addElement(usu.getCodigo());
         JOptionPane.showMessageDialog(this, "Usuario agregado correctamente.");
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    }//GEN-LAST:event_btnGuardarAgregarActionPerformed
 
     private void btnRegresarAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarAgregarActionPerformed
         ventAdmin.setVisible(true);
@@ -503,21 +533,76 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
 
     private void btnRegresarEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarEliminarActionPerformed
         btnRegresarAgregarActionPerformed(evt);
+        txtCodigoEliminar.setText("");
+        txtInfoUsuario.setText("");
+        ocultarComponentes();
     }//GEN-LAST:event_btnRegresarEliminarActionPerformed
 
+    private void btnGuardarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarEditarActionPerformed
+        capturarDatosEditar();
+        JOptionPane.showMessageDialog(this, "Usuario editado correctamente.");
+    }//GEN-LAST:event_btnGuardarEditarActionPerformed
+
+    private void btnEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarUsuarioActionPerformed
+        JOptionPane.showMessageDialog(this, "Usuario eliminado correctamente.");
+        ventAdmin.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnEliminarUsuarioActionPerformed
+
+    private void lstUsuarioValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstUsuarioValueChanged
+        mostrarDatosEditar();
+    }//GEN-LAST:event_lstUsuarioValueChanged
+
     private void ocultarComponentes(){
-        txtInfoContacto.setVisible(false);
+        txtInfoUsuario.setVisible(false);
         btnEliminarUsuario.setVisible(false);
     }
 
     private void mostrarComponentes(){
-        txtInfoContacto.setVisible(true);
+        txtInfoUsuario.setVisible(true);
         btnEliminarUsuario.setVisible(true);
     }
 
     private void capturarDatosAgregar(){
         usu.setNombre(txtNombreAgregar.getText());
-        
+        usu.setApellido(txtApellidosAgregar.getText());
+        usu.setNombreUsuario(txtNombreUsuarioAgregar.getText());
+        usu.setContrasena(txtContrasenaAgregar.getText());
+        usu.setEmail(txtEmailAgregar.getText());
+        usu.setCodigo(txtCodigoAgregar.getText());
+        if(jrbAdministradorAgregar.isSelected()){
+            usu.setTipoUsuario("Administrador");
+        }else{
+            usu.setTipoUsuario("Usuario");
+        }
+    }
+    
+    private void capturarDatosEditar(){
+        usu.setNombre(txtNombreEditar.getText());
+        usu.setApellido(txtApellidosEditar.getText());
+        usu.setNombreUsuario(txtNombreUsuarioEditar.getText());
+        usu.setContrasena(txtContrasenaEditar.getText());
+        usu.setEmail(txtEmailEditar.getText());
+        usu.setCodigo(txtCodigoEditar.getText());
+        if(jrbAdministradorEditar.isSelected()){
+            usu.setTipoUsuario("Administrador");
+        } else {
+            usu.setTipoUsuario("Usuario");
+        }
+    }
+    
+    private void mostrarDatosEditar() {
+        txtNombreEditar.setText(usu.getNombre());
+        txtApellidosEditar.setText(usu.getApellido());
+        txtEmailEditar.setText(usu.getEmail());
+        txtCodigoEditar.setText(usu.getCodigo());
+        txtNombreUsuarioEditar.setText(usu.getNombreUsuario());
+        txtContrasenaEditar.setText(usu.getContrasena());
+        if(usu.getTipoUsuario().equals("Administrador")){
+            jrbAdministradorEditar.setSelected(true);
+        }else{
+            jrbUsuarioEditar.setSelected(true);
+        }
     }
     
     /**
@@ -559,20 +644,20 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminarUsuario;
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnGuardar1;
+    private javax.swing.JButton btnGuardarAgregar;
+    private javax.swing.JButton btnGuardarEditar;
     private javax.swing.JButton btnRegresarAgregar;
     private javax.swing.JButton btnRegresarEditar;
     private javax.swing.JButton btnRegresarEliminar;
-    private javax.swing.ButtonGroup grpTipoUsuario;
-    private javax.swing.JList<String> jList1;
+    private javax.swing.ButtonGroup grpTipoUsuarioAgregar;
+    private javax.swing.ButtonGroup grpTipoUsuarioEditar;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JRadioButton jrbAdministrador1;
     private javax.swing.JRadioButton jrbAdministradorAgregar;
-    private javax.swing.JRadioButton jrbUsuario1;
+    private javax.swing.JRadioButton jrbAdministradorEditar;
     private javax.swing.JRadioButton jrbUsuarioAgregar;
+    private javax.swing.JRadioButton jrbUsuarioEditar;
     private javax.swing.JLabel lblAgregarUsuario;
     private javax.swing.JLabel lblAgregarUsuario1;
     private javax.swing.JLabel lblApellidos;
@@ -591,6 +676,7 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombreUsuario1;
     private javax.swing.JLabel lblTipoUsuario;
     private javax.swing.JLabel lblTipoUsuario1;
+    private javax.swing.JList<String> lstUsuario;
     private javax.swing.JPanel pnlAgregarUsuario;
     private javax.swing.JPanel pnlAgregarUsuario1;
     private javax.swing.JPanel pnlDatos;
@@ -606,7 +692,7 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField txtContrasenaEditar;
     private javax.swing.JTextField txtEmailAgregar;
     private javax.swing.JTextField txtEmailEditar;
-    private javax.swing.JTextArea txtInfoContacto;
+    private javax.swing.JTextArea txtInfoUsuario;
     private javax.swing.JTextField txtNombreAgregar;
     private javax.swing.JTextField txtNombreEditar;
     private javax.swing.JTextField txtNombreUsuarioAgregar;

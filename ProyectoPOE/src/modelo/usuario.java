@@ -24,4 +24,13 @@ public class usuario extends persona{
     public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
+
+    @Override
+    public String mostrarInfo(){
+        String info = super.mostrarInfo();
+        info += "\nNombre de usuario: " + getNombreUsuario() +
+        "\nContrasena: " + getContrasena() +
+        "\nTipo de usuario: " + getTipoUsuario();
+        return info;
+    }
 } 

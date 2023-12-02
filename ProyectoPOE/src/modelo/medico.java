@@ -27,4 +27,13 @@ public class medico extends persona{
     public void setCedula(String cedula) {
         this.cedula = cedula;
     }
+
+    @Override
+    public String mostrarInfo(){
+        String info = super.mostrarInfo();
+        info += "\nArea: " + getArea() +
+        "\nPosicion: " + getPosicion() +
+        "\nCedula: " + getCedula();
+        return info;
+    }
 }

@@ -1,5 +1,6 @@
 package vistas.Admin;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import modelo.medico;
 
@@ -8,14 +9,18 @@ public class vtnAdminMedico extends javax.swing.JFrame {
     vtnAdmin ventAdmin = null;
     medico med = null;
 
+    DefaultListModel<String> model = new DefaultListModel<>();
+
     public vtnAdminMedico() {
         initComponents();
     }
 
     public vtnAdminMedico(vtnAdmin ventAdmin, medico med) {
         initComponents();
+        lstMedicos.setModel(model);
         this.ventAdmin = ventAdmin;
         this.med = med;
+        ocultarComponentes();
     }
 
     /**
@@ -31,13 +36,13 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         pnlAgregarUsuario = new javax.swing.JPanel();
         pnlAgregarUsuario1 = new javax.swing.JPanel();
         lblAgregarMédico = new javax.swing.JLabel();
-        btnGuardar = new javax.swing.JButton();
+        btnGuardarAgregar = new javax.swing.JButton();
         lblNombre = new javax.swing.JLabel();
         txtNombreAgregar = new javax.swing.JTextField();
         txtCodigoAgregar = new javax.swing.JTextField();
         txtPosicionAgregar = new javax.swing.JTextField();
         lblPosicion = new javax.swing.JLabel();
-        txtedulaProfesionalAgregar = new javax.swing.JTextField();
+        txtCedulaProfesionalAgregar = new javax.swing.JTextField();
         lblEmail = new javax.swing.JLabel();
         lblPosicion1 = new javax.swing.JLabel();
         txtEmailAgregar = new javax.swing.JTextField();
@@ -49,7 +54,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         btnRegresarAgregar = new javax.swing.JButton();
         pnlEditarUsuario = new javax.swing.JPanel();
         lblEditarMedico = new javax.swing.JLabel();
-        btnGuardar1 = new javax.swing.JButton();
+        btnGuardarEditar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         lstMedicos = new javax.swing.JList<>();
         txtPosicionEditar = new javax.swing.JTextField();
@@ -62,7 +67,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         lblCodigo1 = new javax.swing.JLabel();
         txtNombreEditar = new javax.swing.JTextField();
         txtApellidosEditar = new javax.swing.JTextField();
-        txtNombreUsuarioEditar = new javax.swing.JTextField();
+        txtAreaEditar = new javax.swing.JTextField();
         lblArea21 = new javax.swing.JLabel();
         lblNombre1 = new javax.swing.JLabel();
         txtCodigoEditar = new javax.swing.JTextField();
@@ -70,7 +75,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         pnlEliminarUsuario = new javax.swing.JPanel();
         pnlEliminarMedico = new javax.swing.JPanel();
         lblEliminarMedico = new javax.swing.JLabel();
-        txtCodigoMedico = new javax.swing.JTextField();
+        txtCodigoEliminar = new javax.swing.JTextField();
         lblCodigoMedico = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -89,10 +94,10 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         lblAgregarMédico.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblAgregarMédico.setText("Agregar un médico");
 
-        btnGuardar.setText("Guardar médico");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardarAgregar.setText("Guardar médico");
+        btnGuardarAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                btnGuardarAgregarActionPerformed(evt);
             }
         });
 
@@ -127,7 +132,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                     .addGroup(pnlAgregarUsuario1Layout.createSequentialGroup()
                         .addComponent(btnRegresarAgregar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnGuardar))
+                        .addComponent(btnGuardarAgregar))
                     .addGroup(pnlAgregarUsuario1Layout.createSequentialGroup()
                         .addGroup(pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCodigo, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -144,7 +149,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                             .addComponent(txtApellidosAgregar)
                             .addComponent(txtAreaAgregar)
                             .addComponent(txtPosicionAgregar)
-                            .addComponent(txtedulaProfesionalAgregar)
+                            .addComponent(txtCedulaProfesionalAgregar)
                             .addComponent(txtNombreAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(lblAgregarMédico))
                 .addContainerGap(93, Short.MAX_VALUE))
@@ -181,10 +186,10 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPosicion1)
-                    .addComponent(txtedulaProfesionalAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCedulaProfesionalAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(56, 56, 56)
                 .addGroup(pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar)
+                    .addComponent(btnGuardarAgregar)
                     .addComponent(btnRegresarAgregar))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
@@ -205,8 +210,18 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         lblEditarMedico.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblEditarMedico.setText("Editar un médico");
 
-        btnGuardar1.setText("Guardar usuario");
+        btnGuardarEditar.setText("Guardar usuario");
+        btnGuardarEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarEditarActionPerformed(evt);
+            }
+        });
 
+        lstMedicos.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                lstMedicosValueChanged(evt);
+            }
+        });
         jScrollPane3.setViewportView(lstMedicos);
 
         lblPosicion2.setText("Posicion:");
@@ -248,7 +263,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                 .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
                         .addComponent(lblEditarMedico)
-                        .addGap(0, 89, Short.MAX_VALUE))
+                        .addGap(0, 85, Short.MAX_VALUE))
                     .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
                         .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -256,18 +271,18 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                                 .addComponent(txtEmailEditar)
                                 .addComponent(txtNombreEditar)
                                 .addComponent(txtApellidosEditar)
-                                .addComponent(txtNombreUsuarioEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtAreaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtPosicionEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtCedulaProfesionalEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditarUsuarioLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
+                .addGap(96, 96, 96)
                 .addComponent(btnRegresarEditar)
                 .addGap(18, 18, 18)
-                .addComponent(btnGuardar1)
-                .addGap(127, 127, 127))
+                .addComponent(btnGuardarEditar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlEditarUsuarioLayout.setVerticalGroup(
             pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,7 +310,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblArea21)
-                            .addComponent(txtNombreUsuarioEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtAreaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblPosicion2)
@@ -305,11 +320,11 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                             .addComponent(lblPosicion3)
                             .addComponent(txtCedulaProfesionalEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnGuardar1)
+                    .addComponent(btnGuardarEditar)
                     .addComponent(btnRegresarEditar))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addGap(49, 49, 49))
         );
 
         tbpMedicos.addTab("Editar Médico", pnlEditarUsuario);
@@ -317,9 +332,9 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         lblEliminarMedico.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblEliminarMedico.setText("Eliminar médico");
 
-        txtCodigoMedico.addActionListener(new java.awt.event.ActionListener() {
+        txtCodigoEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCodigoMedicoActionPerformed(evt);
+                txtCodigoEliminarActionPerformed(evt);
             }
         });
 
@@ -337,6 +352,11 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         jScrollPane2.setViewportView(txtInfoMedico);
 
         btnEliminarMedico.setText("Eliminar médico");
+        btnEliminarMedico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarMedicoActionPerformed(evt);
+            }
+        });
 
         btnRegresarEliminar.setText("Regresar");
         btnRegresarEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -365,7 +385,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                         .addGap(22, 22, 22)
                         .addComponent(lblCodigoMedico)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCodigoMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtCodigoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnBuscar))
                     .addGroup(pnlEliminarMedicoLayout.createSequentialGroup()
@@ -382,7 +402,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
                 .addComponent(lblEliminarMedico)
                 .addGap(18, 18, 18)
                 .addGroup(pnlEliminarMedicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCodigoMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCodigoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCodigoMedico)
                     .addComponent(btnBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -411,21 +431,30 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCodigoMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoMedicoActionPerformed
+    private void txtCodigoEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoEliminarActionPerformed
         
-    }//GEN-LAST:event_txtCodigoMedicoActionPerformed
+    }//GEN-LAST:event_txtCodigoEliminarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        
+        if(txtCodigoEliminar.getText().equals("a")){
+            mostrarComponentes();
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         ventAdmin.setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        JOptionPane.showMessageDialog(this, "Usuario editado exitosamente");
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    private void btnGuardarAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarAgregarActionPerformed
+        capturarDatosAgregar();
+        int ultimoIndex = model.getSize() - 1;
+        if(ultimoIndex >= 0){
+            int sigIndex = Math.min(ultimoIndex + 1, model.getSize() -1);
+            lstMedicos.setSelectedIndex(sigIndex);
+        }
+        model.addElement(med.getCodigo());
+        JOptionPane.showMessageDialog(this, "Medico agregado exitosamente");
+    }//GEN-LAST:event_btnGuardarAgregarActionPerformed
 
     private void btnRegresarAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarAgregarActionPerformed
         ventAdmin.setVisible(true);
@@ -439,6 +468,60 @@ public class vtnAdminMedico extends javax.swing.JFrame {
     private void btnRegresarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarEditarActionPerformed
         btnRegresarAgregarActionPerformed(evt);
     }//GEN-LAST:event_btnRegresarEditarActionPerformed
+
+    private void btnGuardarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarEditarActionPerformed
+        capturarDatosEditar();
+        JOptionPane.showMessageDialog(this, "Medico Editado exitosamente");
+    }//GEN-LAST:event_btnGuardarEditarActionPerformed
+
+    private void btnEliminarMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarMedicoActionPerformed
+        JOptionPane.showMessageDialog(this, "Medico eliminado correctamente.");
+    }//GEN-LAST:event_btnEliminarMedicoActionPerformed
+
+    private void lstMedicosValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstMedicosValueChanged
+        mostrarDatosEditar();
+    }//GEN-LAST:event_lstMedicosValueChanged
+
+    private void ocultarComponentes(){
+        txtInfoMedico.setVisible(false);
+        btnEliminarMedico.setVisible(false);
+    }
+
+    private void mostrarComponentes(){
+        txtInfoMedico.setVisible(true);
+        btnEliminarMedico.setVisible(true);
+    }
+
+    private void capturarDatosAgregar(){
+        med.setNombre(txtNombreAgregar.getText());
+        med.setApellido(txtApellidosAgregar.getText());
+        med.setEmail(txtEmailAgregar.getText());
+        med.setCodigo(txtCodigoAgregar.getText());
+        med.setArea(txtAreaAgregar.getText());
+        med.setPosicion(txtPosicionAgregar.getText());
+        med.setCedula(txtCedulaProfesionalAgregar.getText());
+    }
+
+    private void capturarDatosEditar(){
+        med.setNombre(txtNombreEditar.getText());
+        med.setApellido(txtApellidosEditar.getText());
+        med.setEmail(txtEmailEditar.getText());
+        med.setCodigo(txtCodigoEditar.getText());
+        med.setArea(txtAreaEditar.getText());
+        med.setPosicion(txtPosicionEditar.getText());
+        med.setCedula(txtCedulaProfesionalEditar.getText());
+    }
+
+    private void mostrarDatosEditar() {
+        txtNombreEditar.setText(med.getNombre());
+        txtApellidosEditar.setText(med.getApellido());
+        txtEmailEditar.setText(med.getEmail());
+        txtCodigoEditar.setText(med.getCodigo());
+        txtAreaEditar.setText(med.getArea());
+        txtPosicionEditar.setText(med.getPosicion());
+        txtCedulaProfesionalEditar.setText(med.getCedula());
+    }
+    
 
     /**
      * @param args the command line arguments
@@ -479,8 +562,8 @@ public class vtnAdminMedico extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEliminarMedico;
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnGuardar1;
+    private javax.swing.JButton btnGuardarAgregar;
+    private javax.swing.JButton btnGuardarEditar;
     private javax.swing.JButton btnRegresarAgregar;
     private javax.swing.JButton btnRegresarEditar;
     private javax.swing.JButton btnRegresarEliminar;
@@ -514,18 +597,18 @@ public class vtnAdminMedico extends javax.swing.JFrame {
     private javax.swing.JTextField txtApellidosAgregar;
     private javax.swing.JTextField txtApellidosEditar;
     private javax.swing.JTextField txtAreaAgregar;
+    private javax.swing.JTextField txtAreaEditar;
+    private javax.swing.JTextField txtCedulaProfesionalAgregar;
     private javax.swing.JTextField txtCedulaProfesionalEditar;
     private javax.swing.JTextField txtCodigoAgregar;
     private javax.swing.JTextField txtCodigoEditar;
-    private javax.swing.JTextField txtCodigoMedico;
+    private javax.swing.JTextField txtCodigoEliminar;
     private javax.swing.JTextField txtEmailAgregar;
     private javax.swing.JTextField txtEmailEditar;
     private javax.swing.JTextArea txtInfoMedico;
     private javax.swing.JTextField txtNombreAgregar;
     private javax.swing.JTextField txtNombreEditar;
-    private javax.swing.JTextField txtNombreUsuarioEditar;
     private javax.swing.JTextField txtPosicionAgregar;
     private javax.swing.JTextField txtPosicionEditar;
-    private javax.swing.JTextField txtedulaProfesionalAgregar;
     // End of variables declaration//GEN-END:variables
 }

@@ -75,7 +75,7 @@
                               <Group type="102" attributes="0">
                                   <Component id="btnRegresarAgregar" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnGuardar" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnGuardarAgregar" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -94,7 +94,7 @@
                                       <Component id="txtApellidosAgregar" max="32767" attributes="0"/>
                                       <Component id="txtAreaAgregar" max="32767" attributes="0"/>
                                       <Component id="txtPosicionAgregar" max="32767" attributes="0"/>
-                                      <Component id="txtedulaProfesionalAgregar" max="32767" attributes="0"/>
+                                      <Component id="txtCedulaProfesionalAgregar" max="32767" attributes="0"/>
                                       <Component id="txtNombreAgregar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -142,11 +142,11 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="lblPosicion1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtedulaProfesionalAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCedulaProfesionalAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnGuardarAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnRegresarAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="62" max="32767" attributes="0"/>
@@ -163,12 +163,12 @@
                     <Property name="text" type="java.lang.String" value="Agregar un m&#xe9;dico"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="btnGuardar">
+                <Component class="javax.swing.JButton" name="btnGuardarAgregar">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Guardar m&#xe9;dico"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarAgregarActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblNombre">
@@ -187,7 +187,7 @@
                     <Property name="text" type="java.lang.String" value="Posicion:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtedulaProfesionalAgregar">
+                <Component class="javax.swing.JTextField" name="txtCedulaProfesionalAgregar">
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblEmail">
                   <Properties>
@@ -259,7 +259,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lblEditarMedico" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="89" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="85" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -268,7 +268,7 @@
                                       <Component id="txtEmailEditar" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtNombreEditar" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtApellidosEditar" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtNombreUsuarioEditar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
+                                      <Component id="txtAreaEditar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                       <Component id="txtPosicionEditar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="txtCedulaProfesionalEditar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
@@ -279,12 +279,12 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
                       <Component id="btnRegresarEditar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnGuardar1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+                      <Component id="btnGuardarEditar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -318,7 +318,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lblArea21" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtNombreUsuarioEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtAreaEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -333,12 +333,12 @@
                           </Group>
                           <Component id="jScrollPane3" alignment="1" min="-2" pref="190" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                      <EmptySpace pref="71" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnGuardar1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnGuardarEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnRegresarEditar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="56" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -352,10 +352,13 @@
                 <Property name="text" type="java.lang.String" value="Editar un m&#xe9;dico"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnGuardar1">
+            <Component class="javax.swing.JButton" name="btnGuardarEditar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Guardar usuario"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarEditarActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane3">
               <AuxValues>
@@ -370,6 +373,9 @@
                       <StringArray count="0"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="lstMedicosValueChanged"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
@@ -411,7 +417,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtApellidosEditar">
             </Component>
-            <Component class="javax.swing.JTextField" name="txtNombreUsuarioEditar">
+            <Component class="javax.swing.JTextField" name="txtAreaEditar">
             </Component>
             <Component class="javax.swing.JLabel" name="lblArea21">
               <Properties>
@@ -471,7 +477,7 @@
                                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   <Component id="lblCodigoMedico" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtCodigoMedico" min="-2" pref="109" max="-2" attributes="0"/>
+                                  <Component id="txtCodigoEliminar" min="-2" pref="109" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -493,7 +499,7 @@
                           <Component id="lblEliminarMedico" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtCodigoMedico" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCodigoEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblCodigoMedico" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -517,9 +523,9 @@
                     <Property name="text" type="java.lang.String" value="Eliminar m&#xe9;dico"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtCodigoMedico">
+                <Component class="javax.swing.JTextField" name="txtCodigoEliminar">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoMedicoActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoEliminarActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblCodigoMedico">
@@ -554,6 +560,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Eliminar m&#xe9;dico"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarMedicoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnRegresarEliminar">
                   <Properties>
