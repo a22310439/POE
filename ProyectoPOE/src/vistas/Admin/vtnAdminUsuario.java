@@ -1,7 +1,6 @@
 package vistas.Admin;
 
 import javax.swing.JOptionPane;
-
 import modelo.usuario;
 import dao.UsuarioImpDao;
 
@@ -531,6 +530,7 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
             mostrarComponentes();
             txtInfoUsuario.setText(usu.mostrarInfo());
         }else{
+            JOptionPane.showMessageDialog(this, "El usuario buscado no existe en el registro.");
             ocultarComponentes();
         }
     }//GEN-LAST:event_btnBuscarEliminarActionPerformed

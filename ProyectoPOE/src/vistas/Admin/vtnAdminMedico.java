@@ -2,14 +2,13 @@ package vistas.Admin;
 
 import javax.swing.JOptionPane;
 import modelo.medico;
+import dao.MedicoImpDao;
 
 public class vtnAdminMedico extends javax.swing.JFrame {
 
     vtnAdmin ventAdmin = null;
     medico med = null;
-    pnlAgregarMedico panAgregarMedico = new pnlAgregarMedico();
-    pnlEditarMedico panEditarMedico = new pnlEditarMedico();
-    pnlEliminarMedico panEliminarMedico = new pnlEliminarMedico();
+    MedicoImpDao bdMedico = new MedicoImpDao();
 
     public vtnAdminMedico() {
         initComponents();
@@ -19,6 +18,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         initComponents();
         this.ventAdmin = ventAdmin;
         this.med = med;
+        ocultarComponentes();
     }
 
     /**
@@ -38,9 +38,48 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         lstOpciones = new javax.swing.JList<>();
         pnlDatos = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        pnlAgregar = new javax.swing.JPanel();
+        lblAgregarMédico = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        txtNombreAgregar = new javax.swing.JTextField();
+        txtApellidosAgregar = new javax.swing.JTextField();
+        lblApellidos = new javax.swing.JLabel();
+        txtEmailAgregar = new javax.swing.JTextField();
+        txtCodigoAgregar = new javax.swing.JTextField();
+        lblEmail = new javax.swing.JLabel();
+        lblCodigo = new javax.swing.JLabel();
+        lblArea = new javax.swing.JLabel();
+        txtAreaAgregar = new javax.swing.JTextField();
+        txtPosicionAgregar = new javax.swing.JTextField();
+        lblPosicion = new javax.swing.JLabel();
+        lblPosicion1 = new javax.swing.JLabel();
+        txtCedulaProfesionalAgregar = new javax.swing.JTextField();
+        pnlEditar = new javax.swing.JPanel();
+        txtEmailEditar = new javax.swing.JTextField();
+        lblPosicion3 = new javax.swing.JLabel();
+        lblApellidos1 = new javax.swing.JLabel();
+        txtAreaEditar = new javax.swing.JTextField();
+        lblCodigo1 = new javax.swing.JLabel();
+        txtCedulaProfesionalEditar = new javax.swing.JTextField();
+        lblArea21 = new javax.swing.JLabel();
+        lblNombre1 = new javax.swing.JLabel();
+        txtPosicionEditar = new javax.swing.JTextField();
+        lblPosicion2 = new javax.swing.JLabel();
+        txtCodigoEditar = new javax.swing.JTextField();
+        lblEmailAgregar = new javax.swing.JLabel();
+        lblEditarMedico = new javax.swing.JLabel();
+        txtApellidosEditar = new javax.swing.JTextField();
+        txtNombreEditar = new javax.swing.JTextField();
+        txtBuscarEditar = new javax.swing.JTextField();
+        btnBuscarEditar = new javax.swing.JButton();
+        lblInstruccionesEditar = new javax.swing.JLabel();
+        pnlEliminar = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtInfoMedico = new javax.swing.JTextArea();
+        btnBuscar = new javax.swing.JButton();
+        lblCodigoMedico = new javax.swing.JLabel();
+        txtCodigoEliminar = new javax.swing.JTextField();
+        lblEliminarMedico = new javax.swing.JLabel();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -53,6 +92,11 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         pnlBotones.setPreferredSize(new java.awt.Dimension(278, 30));
 
         btnAccion.setText("Accion");
+        btnAccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccionActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setText("Regresar");
 
@@ -61,7 +105,7 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         pnlBotonesLayout.setHorizontalGroup(
             pnlBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBotonesLayout.createSequentialGroup()
-                .addContainerGap(251, Short.MAX_VALUE)
+                .addContainerGap(333, Short.MAX_VALUE)
                 .addComponent(btnCancelar)
                 .addGap(18, 18, 18)
                 .addComponent(btnAccion)
@@ -101,54 +145,271 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         );
         pnlListaLayout.setVerticalGroup(
             pnlListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlListaLayout.createSequentialGroup()
-                .addGap(144, 144, 144)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlListaLayout.createSequentialGroup()
+                .addContainerGap(141, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(155, Short.MAX_VALUE))
+                .addGap(120, 120, 120))
         );
 
         pnlAdminMedico.add(pnlLista, java.awt.BorderLayout.LINE_END);
 
         pnlDatos.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+        lblAgregarMédico.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblAgregarMédico.setText("Agregar un médico");
+
+        lblNombre.setText("Nombre:");
+
+        lblApellidos.setText("Apellidos:");
+
+        lblEmail.setText("Email:");
+
+        lblCodigo.setText("Codigo:");
+
+        lblArea.setText("Area:");
+
+        lblPosicion.setText("Posicion:");
+
+        lblPosicion1.setText("Cedula Profesional:");
+
+        javax.swing.GroupLayout pnlAgregarLayout = new javax.swing.GroupLayout(pnlAgregar);
+        pnlAgregar.setLayout(pnlAgregarLayout);
+        pnlAgregarLayout.setHorizontalGroup(
+            pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAgregarLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlAgregarLayout.createSequentialGroup()
+                        .addGroup(pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCodigo, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblApellidos, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblArea, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblPosicion, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblPosicion1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblEmail, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblNombre, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtCodigoAgregar)
+                            .addComponent(txtEmailAgregar)
+                            .addComponent(txtApellidosAgregar)
+                            .addComponent(txtAreaAgregar)
+                            .addComponent(txtPosicionAgregar)
+                            .addComponent(txtCedulaProfesionalAgregar)
+                            .addComponent(txtNombreAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlAgregarLayout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(lblAgregarMédico)))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 371, Short.MAX_VALUE)
+        pnlAgregarLayout.setVerticalGroup(
+            pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAgregarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblAgregarMédico)
+                .addGap(65, 65, 65)
+                .addGroup(pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombre)
+                    .addComponent(txtNombreAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblApellidos)
+                    .addComponent(txtApellidosAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEmailAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEmail))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCodigoAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCodigo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblArea)
+                    .addComponent(txtAreaAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPosicion)
+                    .addComponent(txtPosicionAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPosicion1)
+                    .addComponent(txtCedulaProfesionalAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
-        pnlDatos.add(jPanel3, "card4");
+        pnlDatos.add(pnlAgregar, "card4");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+        lblPosicion3.setText("Cedula Profesional:");
+
+        lblApellidos1.setText("Apellidos:");
+
+        lblCodigo1.setText("Codigo:");
+
+        lblArea21.setText("Area:");
+
+        lblNombre1.setText("Nombre:");
+
+        lblPosicion2.setText("Posicion:");
+
+        lblEmailAgregar.setText("Email:");
+
+        lblEditarMedico.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblEditarMedico.setText("Editar un médico");
+
+        btnBuscarEditar.setText("Buscar");
+        btnBuscarEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarEditarActionPerformed(evt);
+            }
+        });
+
+        lblInstruccionesEditar.setText("Ingrese el codigo del medico a editar:");
+
+        javax.swing.GroupLayout pnlEditarLayout = new javax.swing.GroupLayout(pnlEditar);
+        pnlEditar.setLayout(pnlEditarLayout);
+        pnlEditarLayout.setHorizontalGroup(
+            pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditarLayout.createSequentialGroup()
+                .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlEditarLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlEditarLayout.createSequentialGroup()
+                                .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCodigo1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblApellidos1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblNombre1, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblArea21, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblPosicion2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblPosicion3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblEmailAgregar, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtCodigoEditar)
+                                        .addComponent(txtEmailEditar)
+                                        .addComponent(txtNombreEditar)
+                                        .addComponent(txtApellidosEditar)
+                                        .addComponent(txtAreaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtPosicionEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtCedulaProfesionalEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnlEditarLayout.createSequentialGroup()
+                                .addGap(56, 56, 56)
+                                .addComponent(lblEditarMedico)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(pnlEditarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblInstruccionesEditar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtBuscarEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBuscarEditar)))
+                .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 371, Short.MAX_VALUE)
+        pnlEditarLayout.setVerticalGroup(
+            pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblEditarMedico)
+                .addGap(18, 18, 18)
+                .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBuscarEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarEditar)
+                    .addComponent(lblInstruccionesEditar))
+                .addGap(23, 23, 23)
+                .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombre1)
+                    .addComponent(txtNombreEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblApellidos1)
+                    .addComponent(txtApellidosEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEmailEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblEmailAgregar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCodigoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCodigo1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblArea21)
+                    .addComponent(txtAreaEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPosicion2)
+                    .addComponent(txtPosicionEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlEditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPosicion3)
+                    .addComponent(txtCedulaProfesionalEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
-        pnlDatos.add(jPanel2, "card3");
+        pnlDatos.add(pnlEditar, "card3");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+        pnlEliminar.setPreferredSize(new java.awt.Dimension(376, 365));
+
+        txtInfoMedico.setColumns(20);
+        txtInfoMedico.setRows(5);
+        jScrollPane2.setViewportView(txtInfoMedico);
+
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+
+        lblCodigoMedico.setText("Codigo del médico a eliminar:");
+
+        txtCodigoEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoEliminarActionPerformed(evt);
+            }
+        });
+
+        lblEliminarMedico.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblEliminarMedico.setText("Eliminar médico");
+
+        javax.swing.GroupLayout pnlEliminarLayout = new javax.swing.GroupLayout(pnlEliminar);
+        pnlEliminar.setLayout(pnlEliminarLayout);
+        pnlEliminarLayout.setHorizontalGroup(
+            pnlEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEliminarLayout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addGroup(pnlEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+                    .addGroup(pnlEliminarLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(lblCodigoMedico)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCodigoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBuscar))
+                    .addGroup(pnlEliminarLayout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(lblEliminarMedico)))
+                .addGap(9, 9, 9))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 371, Short.MAX_VALUE)
+        pnlEliminarLayout.setVerticalGroup(
+            pnlEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEliminarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblEliminarMedico)
+                .addGap(18, 18, 18)
+                .addGroup(pnlEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCodigoEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCodigoMedico)
+                    .addComponent(btnBuscar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
-        pnlDatos.add(jPanel1, "card2");
+        pnlDatos.add(pnlEliminar, "card2");
 
         pnlAdminMedico.add(pnlDatos, java.awt.BorderLayout.CENTER);
 
@@ -163,16 +424,116 @@ public class vtnAdminMedico extends javax.swing.JFrame {
 
     private void lstOpcionesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstOpcionesValueChanged
         switch(lstOpciones.getSelectedIndex()){
+            case 0:
+                pnlAgregar.setVisible(true);
+                pnlEditar.setVisible(false);
+                pnlEliminar.setVisible(false);
+                break;
             case 1:
-                pnlAccion = panAgregarMedico;
-                pnlAccion.setVisible(true);
+                pnlAgregar.setVisible(false);
+                pnlEditar.setVisible(true);
+                pnlEliminar.setVisible(false);
                 break;
             case 2:
-                pnlAccion = panEditarMedico;
-                pnlAccion.setVisible(true);
+                pnlAgregar.setVisible(false);
+                pnlEditar.setVisible(false);
+                pnlEliminar.setVisible(true);
                 break;
         }
     }//GEN-LAST:event_lstOpcionesValueChanged
+
+    private void txtCodigoEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoEliminarActionPerformed
+        btnBuscarActionPerformed(evt);
+    }//GEN-LAST:event_txtCodigoEliminarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        bdMedico.abrirConexion();
+        med = bdMedico.consultarMedico(txtCodigoEliminar.getText());
+        bdMedico.cerrarConexion();
+        if(med != null){
+            mostrarComponentes();
+            med.mostrarInfo();
+        }else{
+            JOptionPane.showMessageDialog(this, "El medico buscado no existe en el registro");
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccionActionPerformed
+        if(pnlAgregar.isVisible()){
+            capturarDatosAgregar();
+            bdMedico.abrirConexion();
+            bdMedico.agregarMedico(med);
+            bdMedico.cerrarConexion();
+            JOptionPane.showMessageDialog(this, "Medico agregado correctamente.");
+        }else if(pnlEditar.isVisible()){
+            capturarDatosEditar();
+            bdMedico.abrirConexion();
+            bdMedico.actualizarMedico(med, txtBuscarEditar.getText());
+            bdMedico.cerrarConexion();
+        }else if(pnlEliminar.isVisible()){
+
+        }
+    }//GEN-LAST:event_btnAccionActionPerformed
+
+    private void btnBuscarEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEditarActionPerformed
+        bdMedico.abrirConexion();
+        med = bdMedico.consultarMedico(txtBuscarEditar.getText());
+        bdMedico.cerrarConexion();
+        if(med != null){
+            mostrarDatosEditar();
+        }else{
+            JOptionPane.showMessageDialog(this, "El medico buscado no existe en el registro.");
+            limpiarDatosEditar();
+        }
+    }//GEN-LAST:event_btnBuscarEditarActionPerformed
+
+    private void ocultarComponentes(){
+        txtInfoMedico.setVisible(false);
+    }
+
+    private void mostrarComponentes(){
+        txtInfoMedico.setVisible(true);
+    }
+
+    private void capturarDatosAgregar(){
+        med.setNombre(txtNombreAgregar.getText());
+        med.setApellido(txtApellidosAgregar.getText());
+        med.setEmail(txtEmailAgregar.getText());
+        med.setCodigo(txtCodigoAgregar.getText());
+        med.setArea(txtAreaAgregar.getText());
+        med.setPosicion(txtPosicionAgregar.getText());
+        med.setCedula(txtCedulaProfesionalAgregar.getText());
+    }
+
+    private void capturarDatosEditar(){
+        med.setNombre(txtNombreEditar.getText());
+        med.setApellido(txtApellidosEditar.getText());
+        med.setEmail(txtEmailEditar.getText());
+        med.setCodigo(txtCodigoEditar.getText());
+        med.setArea(txtAreaEditar.getText());
+        med.setPosicion(txtPosicionEditar.getText());
+        med.setCedula(txtCedulaProfesionalEditar.getText());
+    }
+
+    private void mostrarDatosEditar() {
+        txtNombreEditar.setText(med.getNombre());
+        txtApellidosEditar.setText(med.getApellido());
+        txtEmailEditar.setText(med.getEmail());
+        txtCodigoEditar.setText(med.getCodigo());
+        txtAreaEditar.setText(med.getArea());
+        txtPosicionEditar.setText(med.getPosicion());
+        txtCedulaProfesionalEditar.setText(med.getCedula());
+    }
+
+    private void limpiarDatosEditar() {
+        txtNombreEditar.setText("");
+        txtApellidosEditar.setText("");
+        txtEmailEditar.setText("");
+        txtCodigoEditar.setText("");
+        txtAreaEditar.setText("");
+        txtPosicionEditar.setText("");
+        txtCedulaProfesionalEditar.setText("");
+    }
     
     /**
      * @param args the command line arguments
@@ -212,15 +573,54 @@ public class vtnAdminMedico extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAccion;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnBuscarEditar;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblAgregarMédico;
+    private javax.swing.JLabel lblApellidos;
+    private javax.swing.JLabel lblApellidos1;
+    private javax.swing.JLabel lblArea;
+    private javax.swing.JLabel lblArea21;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblCodigo1;
+    private javax.swing.JLabel lblCodigoMedico;
+    private javax.swing.JLabel lblEditarMedico;
+    private javax.swing.JLabel lblEliminarMedico;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblEmailAgregar;
+    private javax.swing.JLabel lblInstruccionesEditar;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblNombre1;
+    private javax.swing.JLabel lblPosicion;
+    private javax.swing.JLabel lblPosicion1;
+    private javax.swing.JLabel lblPosicion2;
+    private javax.swing.JLabel lblPosicion3;
     private javax.swing.JList<String> lstOpciones;
     private javax.swing.JPanel pnlAdminMedico;
+    private javax.swing.JPanel pnlAgregar;
     private javax.swing.JPanel pnlBotones;
     private javax.swing.JPanel pnlDatos;
+    private javax.swing.JPanel pnlEditar;
+    private javax.swing.JPanel pnlEliminar;
     private javax.swing.JPanel pnlLista;
+    private javax.swing.JTextField txtApellidosAgregar;
+    private javax.swing.JTextField txtApellidosEditar;
+    private javax.swing.JTextField txtAreaAgregar;
+    private javax.swing.JTextField txtAreaEditar;
+    private javax.swing.JTextField txtBuscarEditar;
+    private javax.swing.JTextField txtCedulaProfesionalAgregar;
+    private javax.swing.JTextField txtCedulaProfesionalEditar;
+    private javax.swing.JTextField txtCodigoAgregar;
+    private javax.swing.JTextField txtCodigoEditar;
+    private javax.swing.JTextField txtCodigoEliminar;
+    private javax.swing.JTextField txtEmailAgregar;
+    private javax.swing.JTextField txtEmailEditar;
+    private javax.swing.JTextArea txtInfoMedico;
+    private javax.swing.JTextField txtNombreAgregar;
+    private javax.swing.JTextField txtNombreEditar;
+    private javax.swing.JTextField txtPosicionAgregar;
+    private javax.swing.JTextField txtPosicionEditar;
     // End of variables declaration//GEN-END:variables
 }
