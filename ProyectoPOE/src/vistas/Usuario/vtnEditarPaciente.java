@@ -3,11 +3,13 @@ package vistas.Usuario;
 import javax.swing.JOptionPane;
 
 import modelo.paciente;
+import dao.PacienteImpDao;
 
 public class vtnEditarPaciente extends javax.swing.JFrame {
 
     paciente pac = null;
     vtnUsuario ventUsuario = null;
+    PacienteImpDao bdPaciente = null;
 
     /**
      * Creates new form vtnAgregarPaciente
@@ -16,10 +18,11 @@ public class vtnEditarPaciente extends javax.swing.JFrame {
         initComponents();
     }
 
-    public vtnEditarPaciente(vtnUsuario ventUsuario, paciente pac) {
+    public vtnEditarPaciente(vtnUsuario ventUsuario, paciente pac, PacienteImpDao bdPaciente) {
         initComponents();
         this.ventUsuario = ventUsuario;
         this.pac = pac;
+        this.bdPaciente = bdPaciente;
     }
 
     /**
@@ -476,7 +479,10 @@ public class vtnEditarPaciente extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         agregarDatos();
-        JOptionPane.showMessageDialog(this, "Paciente agregado correctamente");
+        bdPaciente.abrirConexion();
+        bdPaciente.actualizarPaciente(pac, txtBuscar.getText());
+        bdPaciente.cerrarConexion();
+        JOptionPane.showMessageDialog(this, "Paciente editado correctamente");
         ventUsuario.setVisible(true);
         this.setVisible(false);
         limpiarDatos();
@@ -488,7 +494,14 @@ public class vtnEditarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        mostrarDatos();
+        bdPaciente.abrirConexion();
+        pac = bdPaciente.consultarPaciente(txtBuscar.getText());
+        bdPaciente.cerrarConexion();
+        if(pac != null){
+            mostrarDatos();
+        }else{
+            JOptionPane.showMessageDialog(this, "El paciente buscado no existe en el registro");
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     public void agregarDatos(){
@@ -619,7 +632,7 @@ public class vtnEditarPaciente extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

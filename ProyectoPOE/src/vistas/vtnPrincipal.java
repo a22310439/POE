@@ -50,6 +50,12 @@ public class vtnPrincipal extends javax.swing.JFrame {
 
         lblContrasena.setText("Contraseña:");
 
+        pwdContrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pwdContrasenaActionPerformed(evt);
+            }
+        });
+
         btnIngresar.setText("Ingresar");
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,6 +117,10 @@ public class vtnPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void pwdContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pwdContrasenaActionPerformed
+        btnIngresarActionPerformed(evt);
+    }//GEN-LAST:event_pwdContrasenaActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {
 

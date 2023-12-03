@@ -218,14 +218,13 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                         .addComponent(lblAgregarUsuario))
                     .addGroup(pnlAgregarUsuario1Layout.createSequentialGroup()
                         .addGap(66, 66, 66)
-                        .addComponent(pnlDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(189, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAgregarUsuario1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnRegresarAgregar)
-                .addGap(18, 18, 18)
-                .addComponent(btnGuardarAgregar)
-                .addGap(97, 97, 97))
+                        .addComponent(pnlDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlAgregarUsuario1Layout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(btnRegresarAgregar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnGuardarAgregar)))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         pnlAgregarUsuario1Layout.setVerticalGroup(
             pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,22 +233,22 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                 .addComponent(lblAgregarUsuario)
                 .addGap(38, 38, 38)
                 .addComponent(pnlDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(34, 34, 34)
                 .addGroup(pnlAgregarUsuario1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarAgregar)
                     .addComponent(btnRegresarAgregar))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnlAgregarUsuarioLayout = new javax.swing.GroupLayout(pnlAgregarUsuario);
         pnlAgregarUsuario.setLayout(pnlAgregarUsuarioLayout);
         pnlAgregarUsuarioLayout.setHorizontalGroup(
             pnlAgregarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlAgregarUsuario1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 547, Short.MAX_VALUE)
+            .addComponent(pnlAgregarUsuario1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
         );
         pnlAgregarUsuarioLayout.setVerticalGroup(
             pnlAgregarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlAgregarUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+            .addComponent(pnlAgregarUsuario1, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
         );
 
         tbpUsuarios.addTab("Agregar Usuario", pnlAgregarUsuario);
@@ -304,8 +303,8 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
         pnlEditarUsuario.setLayout(pnlEditarUsuarioLayout);
         pnlEditarUsuarioLayout.setHorizontalGroup(
             pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditarUsuarioLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
+                .addContainerGap(58, Short.MAX_VALUE)
                 .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditarUsuarioLayout.createSequentialGroup()
                         .addComponent(btnRegresarEditar)
@@ -313,43 +312,42 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                         .addComponent(btnGuardarEditar)
                         .addGap(108, 108, 108))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditarUsuarioLayout.createSequentialGroup()
-                        .addComponent(lblAgregarUsuario1)
-                        .addGap(169, 169, 169))))
-            .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
-                .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
-                        .addGap(120, 120, 120)
-                        .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
+                                        .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(lblCodigo1)
+                                            .addComponent(lblEmail1)
+                                            .addComponent(lblContreasena1)
+                                            .addComponent(lblNombreUsuario1)
+                                            .addComponent(lblApellidos1)
+                                            .addComponent(lblNombre1))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(txtApellidosEditar)
+                                            .addComponent(txtNombreUsuarioEditar, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtEmailEditar, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtCodigoEditar, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtContrasenaEditar, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtNombreEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
+                                        .addComponent(lblTipoUsuario1)
+                                        .addGap(7, 7, 7)
+                                        .addComponent(jrbAdministradorEditar)
+                                        .addGap(5, 5, 5)
+                                        .addComponent(jrbUsuarioEditar))))
                             .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
                                 .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lblCodigo1)
-                                    .addComponent(lblEmail1)
-                                    .addComponent(lblContreasena1)
-                                    .addComponent(lblNombreUsuario1)
-                                    .addComponent(lblApellidos1)
-                                    .addComponent(lblNombre1))
+                                    .addComponent(lblAgregarUsuario1)
+                                    .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
+                                        .addComponent(lblInstruccionesEditar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtUsuarioBuscarEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtApellidosEditar)
-                                    .addComponent(txtNombreUsuarioEditar, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEmailEditar, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtCodigoEditar, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtContrasenaEditar, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNombreEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
-                                .addComponent(lblTipoUsuario1)
-                                .addGap(7, 7, 7)
-                                .addComponent(jrbAdministradorEditar)
-                                .addGap(5, 5, 5)
-                                .addComponent(jrbUsuarioEditar))))
-                    .addGroup(pnlEditarUsuarioLayout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(lblInstruccionesEditar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtUsuarioBuscarEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBuscarEditar)))
-                .addContainerGap(128, Short.MAX_VALUE))
+                                .addComponent(btnBuscarEditar)))
+                        .addGap(39, 39, 39))))
         );
         pnlEditarUsuarioLayout.setVerticalGroup(
             pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -385,16 +383,16 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
                 .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCodigo1)
                     .addComponent(txtCodigoEditar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jrbUsuarioEditar)
                     .addComponent(jrbAdministradorEditar)
                     .addComponent(lblTipoUsuario1))
-                .addGap(50, 50, 50)
+                .addGap(44, 44, 44)
                 .addGroup(pnlEditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardarEditar)
                     .addComponent(btnRegresarEditar))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         tbpUsuarios.addTab("Editar Usuario", pnlEditarUsuario);
@@ -421,7 +419,7 @@ public class vtnAdminUsuario extends javax.swing.JFrame {
         txtInfoUsuario.setRows(5);
         jScrollPane2.setViewportView(txtInfoUsuario);
 
-        btnEliminarUsuario.setText("Eliminar contacto");
+        btnEliminarUsuario.setText("Eliminar usuario");
         btnEliminarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarUsuarioActionPerformed(evt);

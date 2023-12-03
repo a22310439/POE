@@ -3,11 +3,13 @@ package vistas.Usuario;
 import javax.swing.JOptionPane;
 
 import modelo.paciente;
+import dao.PacienteImpDao;
 
 public class vtnAgregarPaciente extends javax.swing.JFrame {
 
     paciente pac = null;
     vtnUsuario ventUsuario = null;
+    PacienteImpDao bdPaciente = null;
 
     /**
      * Creates new form vtnAgregarPaciente
@@ -16,10 +18,11 @@ public class vtnAgregarPaciente extends javax.swing.JFrame {
         initComponents();
     }
 
-    public vtnAgregarPaciente(vtnUsuario ventUsuario, paciente pac) {
+    public vtnAgregarPaciente(vtnUsuario ventUsuario, paciente pac, PacienteImpDao bdPaciente) {
         initComponents();
         this.ventUsuario = ventUsuario;
         this.pac = pac;
+        this.bdPaciente = bdPaciente;
     }
 
     /**
@@ -451,6 +454,9 @@ public class vtnAgregarPaciente extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         agregarDatos();
+        bdPaciente.abrirConexion();
+        bdPaciente.agregarPaciente(pac);
+        bdPaciente.cerrarConexion();
         JOptionPane.showMessageDialog(this, "Paciente agregado correctamente");
         ventUsuario.setVisible(true);
         this.setVisible(false);
@@ -546,7 +552,7 @@ public class vtnAgregarPaciente extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

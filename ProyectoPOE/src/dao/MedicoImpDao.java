@@ -14,8 +14,6 @@ public class MedicoImpDao implements MedicoDao{
     PreparedStatement stConsultarMedico;
     PreparedStatement stActualizarMedico;
     PreparedStatement stEliminarMedico;
-    PreparedStatement stNumeroMedicos;
-    PreparedStatement stConsultaCodigo;
 
     public MedicoImpDao(){
         try{
@@ -45,12 +43,6 @@ public class MedicoImpDao implements MedicoDao{
            
              stEliminarMedico = conexion.prepareStatement(
                     "DELETE FROM medicos WHERE codigo=?");
-
-            stNumeroMedicos = conexion.prepareStatement(
-                    "SELECT COUNT(*) FROM medicos");
-
-            stConsultaCodigo = conexion.prepareStatement(
-                    "SELECT codigo FROM medicos LIMIT ?, 1");
              
         }catch(SQLException ex) {
             System.out.println("Error, no se logró la conexión con la BD");
@@ -78,6 +70,7 @@ public class MedicoImpDao implements MedicoDao{
             stInsertarMedico.setString(5, med.getEmail());
             stInsertarMedico.setString(6, med.getPosicion());
             stInsertarMedico.setString(7, med.getCedula());
+            stInsertarMedico.executeUpdate();
         }catch(SQLException ex) {
             System.out.println("Error al registrar un medico en la BD");    
             System.out.println(ex.getMessage());
@@ -102,7 +95,6 @@ public class MedicoImpDao implements MedicoDao{
                 med.setEmail(rs.getString("email"));
                 med.setPosicion(rs.getString("posicion"));
                 med.setCedula(rs.getString("cedulaProfesional"));
-
             }
         }catch(SQLException ex) {
             System.out.println("Error al consultar un medico en la BD");

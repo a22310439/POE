@@ -19,6 +19,9 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         this.ventAdmin = ventAdmin;
         this.med = med;
         ocultarComponentes();
+        pnlAgregar.setVisible(false);
+        pnlEditar.setVisible(false);
+        pnlEliminar.setVisible(false);
     }
 
     /**
@@ -99,6 +102,11 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         });
 
         btnCancelar.setText("Regresar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlBotonesLayout = new javax.swing.GroupLayout(pnlBotones);
         pnlBotones.setLayout(pnlBotonesLayout);
@@ -452,9 +460,9 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         bdMedico.cerrarConexion();
         if(med != null){
             mostrarComponentes();
-            med.mostrarInfo();
+            txtInfoMedico.setText(med.mostrarInfo());
         }else{
-            JOptionPane.showMessageDialog(this, "El medico buscado no existe en el registro");
+            JOptionPane.showMessageDialog(this, "El medico buscado no existe en el registro.");
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -471,7 +479,10 @@ public class vtnAdminMedico extends javax.swing.JFrame {
             bdMedico.actualizarMedico(med, txtBuscarEditar.getText());
             bdMedico.cerrarConexion();
         }else if(pnlEliminar.isVisible()){
-
+            bdMedico.abrirConexion();
+            bdMedico.eliminarMedico(txtCodigoEliminar.getText());
+            bdMedico.cerrarConexion();
+            JOptionPane.showMessageDialog(this, "El medico se ha eliminado correctamente.");
         }
     }//GEN-LAST:event_btnAccionActionPerformed
 
@@ -486,6 +497,11 @@ public class vtnAdminMedico extends javax.swing.JFrame {
             limpiarDatosEditar();
         }
     }//GEN-LAST:event_btnBuscarEditarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        ventAdmin.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void ocultarComponentes(){
         txtInfoMedico.setVisible(false);

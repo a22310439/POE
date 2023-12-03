@@ -2,6 +2,8 @@ package vistas.Usuario;
 
 import modelo.paciente;
 import vistas.vtnPrincipal;
+import dao.PacienteImpDao;
+import javax.swing.JOptionPane;
 
 public class vtnUsuario extends javax.swing.JFrame {
 
@@ -10,6 +12,7 @@ public class vtnUsuario extends javax.swing.JFrame {
     vtnAgregarPaciente ventAgregarPaciente = null;
     vtnEditarPaciente ventEditarPaciente = null;
     vtnEliminarPaciente ventEliminarPaciente = null;
+    PacienteImpDao bdPaciente = new PacienteImpDao();
 
     public vtnUsuario() {
         initComponents();
@@ -178,7 +181,7 @@ public class vtnUsuario extends javax.swing.JFrame {
 
     private void itemEditarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEditarPacienteActionPerformed
         if(ventEditarPaciente == null){
-            ventEditarPaciente = new vtnEditarPaciente(this, pac);
+            ventEditarPaciente = new vtnEditarPaciente(this, pac, bdPaciente);
         }
         ventEditarPaciente.setVisible(true);
         this.setVisible(false);
@@ -186,7 +189,7 @@ public class vtnUsuario extends javax.swing.JFrame {
 
     private void itemAgregarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAgregarPacienteActionPerformed
         if(ventAgregarPaciente == null){
-            ventAgregarPaciente = new vtnAgregarPaciente(this, pac);
+            ventAgregarPaciente = new vtnAgregarPaciente(this, pac, bdPaciente);
         }
         ventAgregarPaciente.setVisible(true);
         this.setVisible(false);
@@ -194,7 +197,7 @@ public class vtnUsuario extends javax.swing.JFrame {
 
     private void itemEliminarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEliminarPacienteActionPerformed
         if(ventEliminarPaciente == null){
-            ventEliminarPaciente = new vtnEliminarPaciente(this, pac);
+            ventEliminarPaciente = new vtnEliminarPaciente(this, pac, bdPaciente);
         }
         ventEliminarPaciente.setVisible(true);
         this.setVisible(false);
@@ -212,7 +215,14 @@ public class vtnUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        bdPaciente.abrirConexion();
+        pac = bdPaciente.consultarPaciente(txtBuscar.getText());
+        bdPaciente.cerrarConexion();
+        if(pac != null){
         txtInfoPaciente.setText(pac.mostrarInfo());
+        }else{
+            JOptionPane.showMessageDialog(this, "El paciente buscado no existe en el registro");
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
@@ -226,7 +236,7 @@ public class vtnUsuario extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

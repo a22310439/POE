@@ -1,22 +1,25 @@
 package vistas.Usuario;
 
 import javax.swing.JOptionPane;
-
+import dao.PacienteImpDao;
 import modelo.paciente;
 
 public class vtnEliminarPaciente extends javax.swing.JFrame {
 
     paciente pac;
     vtnUsuario ventUsuario = null;
+    PacienteImpDao bdPaciente = null;
 
     public vtnEliminarPaciente() {
         initComponents();
     }
 
-    public vtnEliminarPaciente(vtnUsuario ventUsuario, paciente pac) {
+    public vtnEliminarPaciente(vtnUsuario ventUsuario, paciente pac, PacienteImpDao bdPaciente) {
         initComponents();
         this.ventUsuario = ventUsuario;
         this.pac = pac;
+        this.bdPaciente = bdPaciente;
+        ocultarComponentes();
     }
 
     /**
@@ -156,20 +159,28 @@ public class vtnEliminarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowClosing
 
     private void txtCodigoEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoEliminarActionPerformed
-
+        btnBuscarActionPerformed(evt);
     }//GEN-LAST:event_txtCodigoEliminarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        if(txtCodigoEliminar.getText().equals("a")){
+        bdPaciente.abrirConexion();
+        pac = bdPaciente.consultarPaciente(txtCodigoEliminar.getText());
+        bdPaciente.cerrarConexion();
+        if(pac != null){
             mostrarComponentes();
             txtInfoUsuario.setText(pac.mostrarInfo());
         }else{
+            JOptionPane.showConfirmDialog(this, "El paciente buscado no existe en el registro.");
             ocultarComponentes();
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEliminarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPacienteActionPerformed
-        JOptionPane.showMessageDialog(this, "Usuario eliminado correctamente.");
+        bdPaciente.abrirConexion();
+        bdPaciente.eliminarPaciente(txtCodigoEliminar.getText());
+        bdPaciente.cerrarConexion();
+        JOptionPane.showMessageDialog(this, "Paciente eliminado correctamente.");
+        limpiarDatos();
         ventUsuario.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnEliminarPacienteActionPerformed
@@ -192,6 +203,11 @@ public class vtnEliminarPaciente extends javax.swing.JFrame {
         btnEliminarPaciente.setVisible(true);
     }
 
+    private void limpiarDatos(){
+        txtInfoUsuario.setText("");
+        txtCodigoEliminar.setText("");
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -203,7 +219,7 @@ public class vtnEliminarPaciente extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
