@@ -18,363 +18,78 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-112,0,0,1,-112"/>
   </AuxValues>
 
-  <Layout>
-    <DimensionLayout dim="0">
-      <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="tbpMedicos" alignment="0" pref="400" max="32767" attributes="0"/>
-      </Group>
-    </DimensionLayout>
-    <DimensionLayout dim="1">
-      <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="tbpMedicos" alignment="1" max="32767" attributes="0"/>
-      </Group>
-    </DimensionLayout>
-  </Layout>
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
   <SubComponents>
-    <Container class="javax.swing.JTabbedPane" name="tbpMedicos">
+    <Container class="javax.swing.JPanel" name="pnlAdminMedico">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+          <BorderConstraints direction="Center"/>
+        </Constraint>
+      </Constraints>
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="pnlAgregarUsuario">
+        <Container class="javax.swing.JPanel" name="pnlLista">
+          <Properties>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[130, 400]"/>
+            </Property>
+          </Properties>
           <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Agregar M&#xe9;dico">
-                <Property name="tabTitle" type="java.lang.String" value="Agregar M&#xe9;dico"/>
-              </JTabbedPaneConstraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+              <BorderConstraints direction="After"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="pnlAgregarUsuario1" alignment="0" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="pnlAgregarUsuario1" alignment="0" pref="419" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Container class="javax.swing.JPanel" name="pnlAgregarUsuario1">
-              <Properties>
-                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                  <Dimension value="[400, 410]"/>
-                </Property>
-              </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="btnRegresarAgregar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnGuardarAgregar" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblCodigo" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblApellidos" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblArea" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblPosicion" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblPosicion1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblEmail" alignment="1" min="-2" max="-2" attributes="0"/>
-                                      <Component id="lblNombre" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtCodigoAgregar" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtEmailAgregar" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtApellidosAgregar" max="32767" attributes="0"/>
-                                      <Component id="txtAreaAgregar" max="32767" attributes="0"/>
-                                      <Component id="txtPosicionAgregar" max="32767" attributes="0"/>
-                                      <Component id="txtCedulaProfesionalAgregar" max="32767" attributes="0"/>
-                                      <Component id="txtNombreAgregar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="lblAgregarMédico" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="93" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="lblAgregarMédico" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtNombreAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblApellidos" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtApellidosAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtEmailAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblEmail" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtCodigoAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblArea" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtAreaAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblPosicion" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtPosicionAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblPosicion1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtCedulaProfesionalAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnGuardarAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnRegresarAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="62" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Component class="javax.swing.JLabel" name="lblAgregarM&#xe9;dico">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="24" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Agregar un m&#xe9;dico"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnGuardarAgregar">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Guardar m&#xe9;dico"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarAgregarActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblNombre">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Nombre:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtNombreAgregar">
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtCodigoAgregar">
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtPosicionAgregar">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblPosicion">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Posicion:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtCedulaProfesionalAgregar">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblEmail">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Email:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblPosicion1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Cedula Profesional:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtEmailAgregar">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblApellidos">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Apellidos:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblCodigo">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Codigo:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtApellidosAgregar">
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtAreaAgregar">
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblArea">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Area:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnRegresarAgregar">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Regresar"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegresarAgregarActionPerformed"/>
-                  </Events>
-                </Component>
-              </SubComponents>
-            </Container>
-          </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="pnlEditarUsuario">
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Editar M&#xe9;dico">
-                <Property name="tabTitle" type="java.lang.String" value="Editar M&#xe9;dico"/>
-              </JTabbedPaneConstraints>
-            </Constraint>
-          </Constraints>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblCodigo1" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblApellidos1" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblNombre1" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblArea21" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPosicion2" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblPosicion3" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblEmailAgregar" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lblEditarMedico" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="85" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtCodigoEditar" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtEmailEditar" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtNombreEditar" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtApellidosEditar" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtAreaEditar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                                      <Component id="txtPosicionEditar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="txtCedulaProfesionalEditar" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                      <Component id="btnRegresarEditar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnGuardarEditar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="33" max="32767" attributes="0"/>
                   </Group>
+                  <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      <Component id="lblEditarMedico" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblNombre1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtNombreEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblApellidos1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtApellidosEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtEmailEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblEmailAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtCodigoEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblCodigo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblArea21" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtAreaEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblPosicion2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtPosicionEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblPosicion3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtCedulaProfesionalEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="jScrollPane3" alignment="1" min="-2" pref="190" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="71" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnGuardarEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnRegresarEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="62" max="-2" attributes="0"/>
+                      <EmptySpace pref="146" max="32767" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="lblEditarMedico">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="24" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Editar un m&#xe9;dico"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnGuardarEditar">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Guardar usuario"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarEditarActionPerformed"/>
-              </Events>
-            </Component>
-            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JList" name="lstMedicos">
+                <Component class="javax.swing.JList" name="lstOpciones">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI" size="12" style="1"/>
+                    </Property>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                      <StringArray count="0"/>
+                      <StringArray count="3">
+                        <StringItem index="0" value="Agregar Medico"/>
+                        <StringItem index="1" value="Editar Medico"/>
+                        <StringItem index="2" value="Eliminar Medico"/>
+                      </StringArray>
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="lstMedicosValueChanged"/>
+                    <EventHandler event="valueChanged" listener="javax.swing.event.ListSelectionListener" parameters="javax.swing.event.ListSelectionEvent" handler="lstOpcionesValueChanged"/>
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -382,197 +97,79 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JTextField" name="txtPosicionEditar">
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblPosicion2">
+            <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Posicion:"/>
+                <Property name="text" type="java.lang.String" value="jButton1"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtCedulaProfesionalEditar">
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblEmailAgregar">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Email:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblPosicion3">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cedula Profesional:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtEmailEditar">
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblApellidos1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Apellidos:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblCodigo1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Codigo:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNombreEditar">
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtApellidosEditar">
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtAreaEditar">
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblArea21">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Area:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblNombre1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Nombre:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtCodigoEditar">
-            </Component>
-            <Component class="javax.swing.JButton" name="btnRegresarEditar">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Regresar"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegresarEditarActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="pnlEliminarUsuario">
+        <Container class="javax.swing.JPanel" name="pnlAccion">
           <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="Eliminar M&#xe9;dico">
-                <Property name="tabTitle" type="java.lang.String" value="Eliminar M&#xe9;dico"/>
-              </JTabbedPaneConstraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+              <BorderConstraints direction="Center"/>
             </Constraint>
           </Constraints>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="pnlEliminarMedico">
+            <Container class="javax.swing.JPanel" name="pnlBotones">
+              <Properties>
+                <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                  <Dimension value="[278, 30]"/>
+                </Property>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                  <BorderConstraints direction="Last"/>
+                </Constraint>
+              </Constraints>
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="109" max="32767" attributes="0"/>
-                                  <Component id="lblEliminarMedico" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jScrollPane2" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                  <Component id="lblCodigoMedico" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txtCodigoEliminar" min="-2" pref="109" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
-                                  <Component id="btnRegresarEliminar" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="btnEliminarMedico" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="195" max="32767" attributes="0"/>
+                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="lblEliminarMedico" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtCodigoEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lblCodigoMedico" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" pref="232" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btnEliminarMedico" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnRegresarEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="7" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="lblEliminarMedico">
+                <Component class="javax.swing.JButton" name="jButton2">
                   <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="24" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Eliminar m&#xe9;dico"/>
+                    <Property name="text" type="java.lang.String" value="jButton2"/>
                   </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtCodigoEliminar">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoEliminarActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JLabel" name="lblCodigoMedico">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Codigo del m&#xe9;dico a eliminar:"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnBuscar">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Buscar"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarActionPerformed"/>
-                  </Events>
-                </Component>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="txtInfoMedico">
-                      <Properties>
-                        <Property name="columns" type="int" value="20"/>
-                        <Property name="rows" type="int" value="5"/>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
-                <Component class="javax.swing.JButton" name="btnEliminarMedico">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Eliminar m&#xe9;dico"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarMedicoActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="btnRegresarEliminar">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Regresar"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegresarEliminarActionPerformed"/>
-                  </Events>
                 </Component>
               </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="pnlDatos">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
+                  <BorderConstraints direction="Center"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="270" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <EmptySpace min="0" pref="370" max="32767" attributes="0"/>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
             </Container>
           </SubComponents>
         </Container>

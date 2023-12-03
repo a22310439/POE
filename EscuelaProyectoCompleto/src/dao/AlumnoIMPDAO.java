@@ -20,16 +20,12 @@ public class AlumnoIMPDAO implements AlumnoDAO {
    
     
     public AlumnoIMPDAO(){
-          
        try{
-               
            Class.forName("com.mysql.cj.jdbc.Driver");
-       
        }catch(ClassNotFoundException ex){
            System.out.println("Error al cargar el Driver");
            System.out.println(ex.getMessage());
        }
-     
     }
  
        
@@ -116,18 +112,16 @@ public class AlumnoIMPDAO implements AlumnoDAO {
             
             if( rs.next() ){
                 objAl = new Alumno();
-                objAl.setNombre(  rs.getString("nombre") );
+                objAl.setNombre(rs.getString("nombre"));
                 objAl.setEdad(rs.getInt("edad"));
-                objAl.setCodigo( rs.getString("codigo"));
-                objAl.setEmail( rs.getString("email"));
-                objAl.setCarrera( rs.getString("carrera"));
-                objAl.setCalMate( rs.getDouble("calMate"));
-                objAl.setCalFisica( rs.getDouble("calFisica"));
-                objAl.setCalProgra( rs.getDouble("calProgra"));
-                objAl.setPromedio( rs.getDouble("promedio"));
+                objAl.setCodigo(rs.getString("codigo"));
+                objAl.setEmail(rs.getString("email"));
+                objAl.setCarrera(rs.getString("carrera"));
+                objAl.setCalMate(rs.getDouble("calMate"));
+                objAl.setCalFisica(rs.getDouble("calFisica"));
+                objAl.setCalProgra(rs.getDouble("calProgra"));
+                objAl.setPromedio(rs.getDouble("promedio"));
              }
-            
-            
         }catch(SQLException ex) {
             System.out.println("Errro al Consultar un Alumno en la BD");
             System.out.println(ex.getMessage());

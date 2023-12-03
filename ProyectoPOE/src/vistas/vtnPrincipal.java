@@ -5,12 +5,19 @@ import vistas.Admin.vtnAdmin;
 import modelo.medico;
 import modelo.usuario;
 
+import javax.swing.JOptionPane;
+
+import dao.PrincipalImpDao;
+import dao.UsuarioImpDao;
+
 public class vtnPrincipal extends javax.swing.JFrame {
 
     vtnAdmin ventAdmin = null;
     vtnUsuario ventUsuario = null;
     usuario usu = new usuario();
     medico med = new medico();
+    PrincipalImpDao bdPrincipal = new PrincipalImpDao();
+    UsuarioImpDao bdUsuario = new UsuarioImpDao();
 
     public vtnPrincipal() {
         initComponents();
@@ -105,20 +112,36 @@ public class vtnPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        usu.setTipoUsuario(txtNombreUsuario.getText());
-        if(usu.getTipoUsuario().equals("Admin")){
-            if(ventAdmin == null){
-                ventAdmin = new vtnAdmin(this, usu, med);
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {
+
+        String nombreUsuario = txtNombreUsuario.getText();
+        String contrasena = new String(pwdContrasena.getPassword());
+        
+        bdPrincipal.abrirConexion();
+        nombreUsuario = bdPrincipal.obtenerNombreUsuario(nombreUsuario);
+        contrasena = bdPrincipal.obtenerContrasena(nombreUsuario);
+        bdPrincipal.cerrarConexion();
+
+        if(nombreUsuario.equals(txtNombreUsuario.getText()) && contrasena.equals(new String(pwdContrasena.getPassword()))){
+            bdUsuario.abrirConexion();
+            usu = bdUsuario.consultarUsuario(nombreUsuario);
+            bdUsuario.cerrarConexion();
+            if(usu.getTipoUsuario().equals("Administrador")){
+                if(ventAdmin == null){
+                    ventAdmin = new vtnAdmin(this, usu, med);
+                }
+                ventAdmin.setVisible(true);
+                this.setVisible(false);
+            }else if(usu.getTipoUsuario().equals("Usuario")){
+                if(ventUsuario == null){
+                    ventUsuario = new vtnUsuario(this);
+                }
+                ventUsuario.setVisible(true);
+                this.setVisible(false);
             }
-            ventAdmin.setVisible(true);
-        }else if(usu.getTipoUsuario().equals("Usuario")){
-            if(ventUsuario == null){
-                ventUsuario = new vtnUsuario(this);
-            }
-            ventUsuario.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(this, "Las credenciales son incorrectas, vuelve a intentarlo.");
         }
-        this.setVisible(false);
     }                                           
 
     /**
