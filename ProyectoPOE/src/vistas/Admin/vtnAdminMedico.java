@@ -31,14 +31,16 @@ public class vtnAdminMedico extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlAdminMedico = new javax.swing.JPanel();
+        pnlBotones = new javax.swing.JPanel();
+        btnAccion = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         pnlLista = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lstOpciones = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
-        pnlAccion = new javax.swing.JPanel();
-        pnlBotones = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
         pnlDatos = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -48,7 +50,33 @@ public class vtnAdminMedico extends javax.swing.JFrame {
 
         pnlAdminMedico.setLayout(new java.awt.BorderLayout());
 
-        pnlLista.setPreferredSize(new java.awt.Dimension(130, 400));
+        pnlBotones.setPreferredSize(new java.awt.Dimension(278, 30));
+
+        btnAccion.setText("Accion");
+
+        btnCancelar.setText("Regresar");
+
+        javax.swing.GroupLayout pnlBotonesLayout = new javax.swing.GroupLayout(pnlBotones);
+        pnlBotones.setLayout(pnlBotonesLayout);
+        pnlBotonesLayout.setHorizontalGroup(
+            pnlBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBotonesLayout.createSequentialGroup()
+                .addContainerGap(251, Short.MAX_VALUE)
+                .addComponent(btnCancelar)
+                .addGap(18, 18, 18)
+                .addComponent(btnAccion)
+                .addContainerGap())
+        );
+        pnlBotonesLayout.setVerticalGroup(
+            pnlBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBotonesLayout.createSequentialGroup()
+                .addGroup(pnlBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAccion)
+                    .addComponent(btnCancelar))
+                .addGap(0, 7, Short.MAX_VALUE))
+        );
+
+        pnlAdminMedico.add(pnlBotones, java.awt.BorderLayout.PAGE_END);
 
         lstOpciones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lstOpciones.setModel(new javax.swing.AbstractListModel<String>() {
@@ -63,67 +91,66 @@ public class vtnAdminMedico extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lstOpciones);
 
-        jButton1.setText("jButton1");
-
         javax.swing.GroupLayout pnlListaLayout = new javax.swing.GroupLayout(pnlLista);
         pnlLista.setLayout(pnlListaLayout);
         pnlListaLayout.setHorizontalGroup(
             pnlListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlListaLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jButton1)
-                .addContainerGap(33, Short.MAX_VALUE))
-            .addComponent(jScrollPane1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlListaLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pnlListaLayout.setVerticalGroup(
             pnlListaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlListaLayout.createSequentialGroup()
-                .addGap(163, 163, 163)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(144, 144, 144)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         pnlAdminMedico.add(pnlLista, java.awt.BorderLayout.LINE_END);
 
-        pnlAccion.setLayout(new java.awt.BorderLayout());
+        pnlDatos.setLayout(new java.awt.CardLayout());
 
-        pnlBotones.setPreferredSize(new java.awt.Dimension(278, 30));
-
-        jButton2.setText("jButton2");
-
-        javax.swing.GroupLayout pnlBotonesLayout = new javax.swing.GroupLayout(pnlBotones);
-        pnlBotones.setLayout(pnlBotonesLayout);
-        pnlBotonesLayout.setHorizontalGroup(
-            pnlBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlBotonesLayout.createSequentialGroup()
-                .addGap(0, 195, Short.MAX_VALUE)
-                .addComponent(jButton2))
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
         );
-        pnlBotonesLayout.setVerticalGroup(
-            pnlBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlBotonesLayout.createSequentialGroup()
-                .addComponent(jButton2)
-                .addGap(0, 7, Short.MAX_VALUE))
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 371, Short.MAX_VALUE)
         );
 
-        pnlAccion.add(pnlBotones, java.awt.BorderLayout.PAGE_END);
+        pnlDatos.add(jPanel3, "card4");
 
-        javax.swing.GroupLayout pnlDatosLayout = new javax.swing.GroupLayout(pnlDatos);
-        pnlDatos.setLayout(pnlDatosLayout);
-        pnlDatosLayout.setHorizontalGroup(
-            pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
         );
-        pnlDatosLayout.setVerticalGroup(
-            pnlDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 370, Short.MAX_VALUE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 371, Short.MAX_VALUE)
         );
 
-        pnlAccion.add(pnlDatos, java.awt.BorderLayout.CENTER);
+        pnlDatos.add(jPanel2, "card3");
 
-        pnlAdminMedico.add(pnlAccion, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 371, Short.MAX_VALUE)
+        );
+
+        pnlDatos.add(jPanel1, "card2");
+
+        pnlAdminMedico.add(pnlDatos, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(pnlAdminMedico, java.awt.BorderLayout.CENTER);
 
@@ -184,11 +211,13 @@ public class vtnAdminMedico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAccion;
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> lstOpciones;
-    private javax.swing.JPanel pnlAccion;
     private javax.swing.JPanel pnlAdminMedico;
     private javax.swing.JPanel pnlBotones;
     private javax.swing.JPanel pnlDatos;
